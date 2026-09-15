@@ -759,6 +759,8 @@ document.querySelectorAll("[data-map]").forEach((btn) => {
         '用上面的「Google 全天导航」在手机上打开即可。</span>' +
         '<iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="当日路线地图" src="' +
         btn.dataset.src + '"></iframe>';
+      const frame = box.querySelector("iframe");
+      frame.addEventListener("load", () => box.querySelector(".fallback")?.remove());
     }
     btn.textContent = open ? "× 收起地图" : "🗺 展开今日路线地图";
   });
