@@ -368,3 +368,87 @@ cloudflare免费额度每天 10 万次访问，一趟旅行用不掉零头。
 [04:53] 你们可以试一下
 ```
 
+---
+
+## 6. 实际的仓库与文件结构
+
+视频 t ≈ 183–223s 的 Claude Code 会话里能直接看到仓库与文件树。
+
+- GitHub 仓库：**`Josie999777/daily-todo`**（作者把多个旅行页面放在同一个仓库里），生产分支 `main`
+- Cloudflare 账户子域：`josietravelbook`
+- Worker 名：`texas` → 最终线上地址 **`texas.josietravelbook.workers.dev`**
+- 此前已有一个同款的芝加哥页面（`chicago.josietravelbook.workers.dev`），所以这次是"照着老规矩再来一个"
+
+### 6.1 侧边栏文件树（t ≈ 207s 截图可见）
+
+```text
+daily-todo/
+├── .claude/              # Claude Code 的项目配置目录
+├── texas/
+│   └── index.html        # 本次的德州旅行手册（单文件页面）
+├── CLAUDE.md             # 给 Claude Code 的项目说明
+├── README.md             # 记录目录结构和部署方式
+├── index.html            # 之前的芝加哥页面（41 KB，单文件）
+└── wrangler.jsonc        # Cloudflare Workers 静态资产配置
+```
+
+### 6.2 AI 自己给出的整理说明（逐字，t ≈ 207s）
+
+> 好，就按 Git 连接部署的方案来。我把仓库整理成「一次连接、push 即上线」的结构：travel book 页要 `texas/` 目录，加 `wrangler.jsonc`（worker 名就叫 `texas`，正好对上你 `chicago.josietravelbook.workers.dev` 的命名规律，上线后就是 `texas.josietravelbook.workers.dev`），再补个 README 说明。
+
+> 搭好并推送了，现在仓库结构是：
+> - `texas/index.html` —— 旅行手册（原 `texas.html` 挪进目录，这样 worker 直接把它当首页伺服）
+> - `wrangler.jsonc` —— worker 名为 `texas`、静态资产模式，上线后地址就是 `texas.josietravelbook.workers.dev`，和你的 chicago 命名完全一致
+> - `README.md` —— 记录了目录结构和部署方式
+> - 配置用 `wrangler deploy --dry-run` 验证过，正常识别页面文件
+
+演进过程：最初 AI 直接在仓库根目录建了 `texas.html`（「德州旅行手册做好了，新文件 `texas.html` 已提交并推送」，t ≈ 199s），后来为了让 Worker 把它当首页伺服，才挪成 `texas/index.html`。
+
+---
+
+## 7. GitHub + Cloudflare 部署步骤（视频中实际执行的版本）
+
+### 7.1 一次性配置
+
+```text
+1) 注册 GitHub 账号（3 分钟，免费）
+2) 注册 Cloudflare 账号（3 分钟，免费）
+3) 在 claude.ai/code 里连接 GitHub
+   （或在 设置 → Connectors 里授权），让 AI 能把页面推上去
+4) AI 写出页面并 push 到仓库（你只负责描述需求 + 来回聊）
+5) Cloudflare Dashboard → Workers & Pages → Create → Workers → Import a repository
+      · 选仓库：Josie999777/daily-todo
+      · 生产分支：main
+      · Build command：留空
+      · Deploy command：npx wrangler deploy
+   它会读到仓库里的 wrangler.jsonc；首次构建完成后
+   texas.josietravelbook.workers.dev 就上线了
+6) 给页面起名字（= 网址前缀，只能用小写英文）
+7) 之后每次修改：跟 AI 说一句 → AI push 合进 main → 页面几十秒内自动更新
+   （实测从合并进 main 到页面更新完成 47 秒，中间没有人操作）
+```
+
+### 7.2 关键坑：Worker 名字决定网址前缀
+
+视频 t ≈ 210–225s 专门讲了这个问题（AI 原话，逐字）：
+
+> **为什么必须做这一步：** Cloudflare 的规则是 `workers.dev` 的网址前缀 = **Worker 的名字**。当初在 Dashboard 导入仓库时，名字那栏默认填了仓库名 `daily-todo`，所以网址成了 `daily-todo.josietravelbook.workers.dev`。改名成 `texas` 之后就变成 `texas.josietravelbook.workers.dev`，和你的 chicago 一个规律。这个字段只存在于 Cloudflare 账户里，仓库代码改不了它 —— 我能改的仓库那边（`wrangler.jsonc` 里）早就写的是 `texas` 了。
+
+改名路径（AI 给出的操作指引）：
+
+> 首选方案就是改个名 —— 进 **Workers & Pages → 点开 `daily-todo` → Settings → Rename 成 `texas`**。只有在 Rename 入口找不到的情况下才需要删除重建那条备选路，那是保底，不是主方案。
+
+另外，Git 连接的 Worker 在 Dashboard 里的名字必须和仓库 `wrangler.jsonc` 里的 `name` 一致，否则后续构建会出问题。
+
+### 7.3 为什么不让 AI 直接 `wrangler deploy`
+
+AI 在会话里解释过（t ≈ 203–205s）：
+
+- `wrangler login` 是交互式 OAuth，要弹浏览器回跳 `localhost`，在无头远程环境里天然走不通；
+- 无头环境下 `wrangler` 只认 `CLOUDFLARE_API_TOKEN` 环境变量；
+- 当时那个仓库「两样都没有：没有 wrangler 配置、没连 Cloudflare、环境里没 token」。
+
+所以走 **Git 连接部署**（最常见、推荐）：在 Cloudflare Dashboard 里把 Worker 连上 GitHub 仓库（Workers Builds），之后 push 即发布。
+
+备选路径（视频里提到但没走）：在 `claude.ai/code` 的环境设置里加 `CLOUDFLARE_API_TOKEN`（权限只需 **Workers Scripts: Edit**），并把网络策略放行 `api.cloudflare.com`，AI 就能在会话里直接 `wrangler deploy`。
+
