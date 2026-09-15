@@ -87,3 +87,5 @@ npx wrangler deploy --dry-run
 ## 成本
 
 GitHub 免费；Cloudflare Workers 免费额度每天 10 万次请求，一趟旅行用不掉零头。**合计 0 元。**
+
+<!-- last verified: 2026-09-15 06:52:08 UTC -->
