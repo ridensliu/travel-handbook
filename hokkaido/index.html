@@ -8,6 +8,7 @@
 <meta name="theme-color" content="#14110f" media="(prefers-color-scheme: dark)">
 <meta name="description" content="北海道秋色自驾 5 天行程手册 · 新千岁进出 · 富良野 美瑛 层云峡 小樽 札幌">
 <title>🍁 北海道秋色自驾 · 行程手册</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E🍁%3C/text%3E%3C/svg%3E">
 <style>
 :root{
   --bg:#fdf6ec; --bg2:#fffaf3; --card:#ffffff; --line:#e8ddcc; --line2:#f0e7d9;
@@ -251,80 +252,77 @@ footer{margin-top:34px;padding-top:18px;border-top:1px solid var(--line2);font-s
   <h2>🗺 行程总览</h2>
   <p class="lead" id="ov-lead"></p>
   <div class="card mapbox">
-    <svg viewBox="0 0 900 640" role="img" aria-label="北海道手绘路线图">
+    <svg viewBox="0 0 900 660" role="img" aria-label="北海道手绘路线图">
       <defs>
         <style>
           .ol{fill:var(--mapland);stroke:var(--mapink);stroke-width:2.6;stroke-linejoin:round;stroke-linecap:round;opacity:.9}
           .ol2{fill:none;stroke:var(--mapink);stroke-width:1.1;stroke-linejoin:round;opacity:.35}
           .rt{fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
-          .lbl{fill:var(--mapink);font:600 15px/1 -apple-system,"PingFang SC","Noto Sans SC",sans-serif}
-          .lbl-s{fill:var(--mapink);font:500 13px/1 -apple-system,"PingFang SC","Noto Sans SC",sans-serif;opacity:.75}
+          .lbl{fill:var(--mapink);font:600 16px/1 -apple-system,"PingFang SC","Noto Sans SC",sans-serif}
+          .lbl-s{fill:var(--mapink);font:500 13px/1 -apple-system,"PingFang SC","Noto Sans SC",sans-serif;opacity:.78}
           .nd{stroke:var(--mapbg);stroke-width:2.5}
         </style>
       </defs>
 
       <!-- 手绘感北海道轮廓（双线，外圈略偏移制造手绘抖动） -->
-      <path class="ol2" d="M358 30 q40 42 76 84 q64 36 130 74 q70 30 138 40 q26-30 96-42 q-4 38-20 66 q30 32 52 74 q-70 26-146 66 q-88 44-162 120 q-52 42-110 -2 q-30-22-64-24 q-24 26-46 66 q-42-8-78-40 q26-52 26-104 q-4-58 6-108 q28-56 62-102 q22-58 40-168 z"/>
-      <path class="ol" d="M355 36 q42 40 74 86 q66 34 132 72 q68 32 136 40 q28-28 94-40 q-6 36-22 64 q32 34 54 76 q-72 24-148 64 q-86 46-160 118 q-54 44-112 0 q-28-24-62-22 q-26 24-48 64 q-40-6-76-38 q28-50 28-102 q-6-56 4-106 q30-54 64-100 q20-60 42-176 z"/>
-      <!-- 内浦湾缺口 -->
-      <path class="ol2" d="M214 462 q34 26 62 22 q10 26-6 44 q-36-24-56-66 z"/>
+      <path class="ol2" d="M354 34 L428 106 L521 178 L636 219 L683 232 L771 180 L751 221 L802 306 L654 348 L523 434 L516 484 L453 447 L308 390 L231 429 L158 405 L183 455 L202 504 L124 545 L128 484 L93 420 L139 370 L164 301 L279 315 L312 230 L320 179 Z"/>
+      <path class="ol" d="M351 42 L430 113 L524 184 L638 225 L685 238 L767 187 L748 225 L797 309 L651 352 L520 437 L513 480 L455 451 L311 395 L234 432 L162 409 L186 458 L205 500 L128 541 L131 487 L97 423 L142 374 L167 306 L281 320 L314 235 L323 184 Z"/>
 
       <!-- 指北针 -->
-      <g transform="translate(818,64)">
+      <g transform="translate(832,72)">
         <circle r="30" fill="none" stroke="var(--mapink)" stroke-width="1.6" opacity=".5"/>
         <path d="M0 -24 L8 6 L0 0 L-8 6 Z" fill="var(--accent)"/>
-        <text x="0" y="-32" text-anchor="middle" class="lbl-s">北</text>
+        <text x="0" y="-34" text-anchor="middle" class="lbl-s">北</text>
       </g>
 
       <!-- 来程航线 -->
-      <path d="M40 596 q120 -60 276 -198" fill="none" stroke="var(--ink3)" stroke-width="2.2" stroke-dasharray="9 8" opacity=".75"/>
-      <text x="44" y="618" class="lbl-s">✈ 9/25 自上海 PVG 飞来 · 约 3h45m</text>
+      <path d="M40 612 Q170 548 316 382" fill="none" stroke="var(--ink3)" stroke-width="2.2" stroke-dasharray="9 8" opacity=".75"/>
+      <text x="40" y="640" class="lbl-s">✈ 9/25 自上海 PVG 飞来 · 约 3h45m</text>
 
       <!-- D1 新千岁 → 富良野 -->
-      <path class="rt" stroke="var(--d1)" d="M324 393 q26 -22 44 -34 q22 -20 46 -39"/>
+      <path class="rt" stroke="var(--d1)" d="M322 377 Q362 352 406 309"/>
       <!-- D2 富良野 → 美瑛 → 旭川 → 层云峡 -->
-      <path class="rt" stroke="var(--d2)" d="M414 320 q10 -18 11 -32 q-4 -16 -13 -24 q30 -6 80 7"/>
+      <path class="rt" stroke="var(--d2)" d="M406 309 L416 279 L404 256 Q442 249 480 263"/>
       <!-- D3 层云峡 → 旭川 → 小樽 -->
-      <path class="rt" stroke="var(--d3)" d="M492 271 q-44 -6 -80 -7 q-96 20 -179 75"/>
+      <path class="rt" stroke="var(--d3)" d="M480 263 Q442 249 404 256 Q318 278 237 327"/>
       <!-- D4 小樽 → 余市 → 札幌 -->
-      <path class="rt" stroke="var(--d4)" d="M233 339 q-14 4 -26 0 q16 10 30 6 q26 6 43 11"/>
+      <path class="rt" stroke="var(--d4)" d="M237 327 L212 327 Q250 338 281 343"/>
       <!-- D5 札幌 → 新千岁 -->
-      <path class="rt" stroke="var(--d5)" d="M280 356 q26 16 44 37"/>
+      <path class="rt" stroke="var(--d5)" d="M281 343 Q305 356 322 377"/>
 
       <!-- 节点 -->
       <g>
-        <circle class="nd" cx="324" cy="393" r="7.5" fill="var(--accent)"/>
-        <text x="308" y="416" text-anchor="end" class="lbl">✈ 新千岁 CTS</text>
-        <text x="308" y="433" text-anchor="end" class="lbl-s">进出港 · 取还车</text>
+        <circle class="nd" cx="322" cy="377" r="7.5" fill="var(--accent)"/>
+        <text x="322" y="402" text-anchor="middle" class="lbl">✈ 新千岁 CTS</text>
+        <text x="322" y="419" text-anchor="middle" class="lbl-s">进出港 · 取还车</text>
 
-        <circle class="nd" cx="414" cy="320" r="7" fill="var(--d1)"/>
-        <text x="428" y="318" class="lbl">富良野 · 夜1</text>
-        <text x="428" y="335" class="lbl-s">新富良野王子 · 森林精灵露台</text>
+        <circle class="nd" cx="281" cy="343" r="7" fill="var(--d4)"/>
+        <text x="293" y="339" class="lbl">札幌 · 夜4</text>
 
-        <circle class="nd" cx="425" cy="288" r="6" fill="var(--d2)"/>
-        <text x="439" y="284" class="lbl-s">美瑛 · 青池 / 四季彩之丘</text>
+        <circle class="nd" cx="237" cy="327" r="7" fill="var(--d3)"/>
+        <text x="227" y="320" text-anchor="end" class="lbl">小樽 · 夜3</text>
 
-        <circle class="nd" cx="412" cy="264" r="6" fill="var(--d2)"/>
-        <text x="398" y="252" text-anchor="end" class="lbl-s">旭川 · 旭山动物园</text>
+        <circle class="nd" cx="212" cy="327" r="6" fill="var(--d4)"/>
+        <text x="200" y="352" text-anchor="end" class="lbl-s">余市 · NIKKA 蒸馏所</text>
 
-        <circle class="nd" cx="492" cy="271" r="7" fill="var(--d2)"/>
-        <text x="506" y="268" class="lbl">层云峡 · 夜2</text>
-        <text x="506" y="285" class="lbl-s">黑岳红叶 · 银河流星瀑布</text>
+        <circle class="nd" cx="406" cy="309" r="7" fill="var(--d1)"/>
+        <text x="418" y="306" class="lbl">富良野 · 夜1</text>
+        <text x="418" y="323" class="lbl-s">新富良野王子 · 精灵露台</text>
 
-        <circle class="nd" cx="233" cy="339" r="7" fill="var(--d3)"/>
-        <text x="219" y="330" text-anchor="end" class="lbl">小樽 · 夜3</text>
+        <circle class="nd" cx="416" cy="279" r="6" fill="var(--d2)"/>
+        <text x="406" y="292" text-anchor="end" class="lbl-s">美瑛 · 青池</text>
 
-        <circle class="nd" cx="207" cy="339" r="6" fill="var(--d4)"/>
-        <text x="193" y="361" text-anchor="end" class="lbl-s">余市 · NIKKA 蒸馏所</text>
+        <circle class="nd" cx="404" cy="256" r="6" fill="var(--d2)"/>
+        <text x="394" y="242" text-anchor="end" class="lbl-s">旭川 · 旭山动物园</text>
 
-        <circle class="nd" cx="280" cy="356" r="7" fill="var(--d4)"/>
-        <text x="286" y="374" class="lbl">札幌 · 夜4</text>
-        <text x="286" y="391" class="lbl-s">藻岩山夜景 · 大通公园</text>
+        <circle class="nd" cx="480" cy="263" r="7" fill="var(--d2)"/>
+        <text x="492" y="260" class="lbl">层云峡 · 夜2</text>
+        <text x="492" y="277" class="lbl-s">黑岳红叶 · 银河瀑布</text>
       </g>
 
       <!-- 图例 -->
-      <g transform="translate(560,470)">
-        <rect x="-14" y="-24" width="330" height="152" rx="12" fill="var(--mapbg)" stroke="var(--mapink)" stroke-width="1.2" opacity=".92"/>
+      <g transform="translate(578,432)">
+        <rect x="-16" y="-26" width="318" height="156" rx="12" fill="var(--mapbg)" stroke="var(--mapink)" stroke-width="1.2" opacity=".93"/>
         <g class="lbl-s" fill="var(--mapink)">
           <line x1="0" y1="0" x2="30" y2="0" stroke="var(--d1)" stroke-width="5" stroke-linecap="round"/><text x="40" y="5">D1 新千岁 → 富良野 · 2h10m</text>
           <line x1="0" y1="26" x2="30" y2="26" stroke="var(--d2)" stroke-width="5" stroke-linecap="round"/><text x="40" y="31">D2 美瑛 → 旭川 → 层云峡 · 3h</text>
