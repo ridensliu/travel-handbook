@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#fdf6ec" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14110f" media="(prefers-color-scheme: dark)">
+<meta name="description" content="北海道秋色自驾 5 天行程手册 · 新千岁进出 · 富良野 美瑛 层云峡 小樽 札幌">
+<title>🍁 北海道秋色自驾 · 行程手册</title>
+<style>
+:root{
+  --bg:#fdf6ec; --bg2:#fffaf3; --card:#ffffff; --line:#e8ddcc; --line2:#f0e7d9;
+  --ink:#2f2a24; --ink2:#6b6154; --ink3:#9a9081;
+  --accent:#c0392b; --accent2:#e07a3f; --ok:#3f7d52; --warn:#b4762a;
+  --shadow:0 1px 2px rgba(60,45,25,.06),0 8px 24px rgba(60,45,25,.06);
+  --d1:#e07a3f; --d2:#2e7fa8; --d3:#8b5fbf; --d4:#3f8f5e; --d5:#c9548a;
+  --mapbg:#fbf3e4; --mapland:#f3e7d0; --mapink:#5d5443;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#14110f; --bg2:#1b1714; --card:#1f1a16; --line:#332b24; --line2:#292220;
+    --ink:#ece4d9; --ink2:#a89b8b; --ink3:#7b6f61;
+    --accent:#e8664f; --accent2:#f0955b; --ok:#6cc08a; --warn:#e0b05f;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);
+    --d1:#f0955b; --d2:#5fb4dd; --d3:#b98ae8; --d4:#6cc08a; --d5:#ef85b4;
+    --mapbg:#1a1512; --mapland:#241d18; --mapink:#c3b7a4;
+  }
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.65 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif;
+  padding:0 0 64px;
+}
+.wrap{max-width:960px;margin:0 auto;padding:0 16px}
+a{color:inherit}
+
+/* ---------- 页头 ---------- */
+header{padding:28px 0 6px}
+h1{font-size:clamp(23px,5.4vw,34px);line-height:1.25;margin:0 0 8px;letter-spacing:-.4px}
+.sub{color:var(--ink2);font-size:13.5px;line-height:1.7;margin:0 0 14px}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:6px}
+.chip{
+  display:inline-flex;align-items:center;gap:5px;font-size:12px;line-height:1;
+  padding:7px 11px;border-radius:999px;border:1px solid var(--line);
+  background:var(--bg2);color:var(--ink2);white-space:nowrap;
+}
+.chip.done{color:var(--ok);border-color:color-mix(in srgb,var(--ok) 35%,var(--line))}
+.chip.pending{color:var(--warn);border-color:color-mix(in srgb,var(--warn) 35%,var(--line))}
+
+/* ---------- NOW 卡片 ---------- */
+.now{
+  margin:16px 0 18px;border-radius:18px;padding:18px 18px 15px;color:#fff;
+  background:linear-gradient(145deg,#c0392b,#a8321f 55%,#8d2a1a);
+  box-shadow:0 10px 30px rgba(160,50,30,.28);position:relative;overflow:hidden;
+}
+@media (prefers-color-scheme:dark){.now{background:linear-gradient(145deg,#8f2c1f,#6f1f15 60%,#551610);box-shadow:0 10px 30px rgba(0,0,0,.5)}}
+.now::after{content:"";position:absolute;right:-60px;top:-60px;width:190px;height:190px;border-radius:50%;background:rgba(255,255,255,.07)}
+.now-label{display:flex;align-items:center;gap:7px;font-size:11.5px;letter-spacing:1.4px;opacity:.9;margin-bottom:9px}
+.dot{width:8px;height:8px;border-radius:50%;background:#fff;animation:pulse 1.6s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.72)}}
+.now-title{font-size:clamp(18px,4.6vw,23px);font-weight:700;margin:0 0 4px;position:relative}
+.now-note{font-size:12.5px;opacity:.86;margin:0 0 12px;position:relative;line-height:1.6}
+.count{
+  font:700 clamp(27px,7.4vw,42px)/1.1 ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+  letter-spacing:.5px;position:relative;font-variant-numeric:tabular-nums;
+}
+.count small{font-size:.44em;font-weight:600;opacity:.8;letter-spacing:0;margin-left:6px}
+.now-todo{
+  margin-top:13px;padding-top:11px;border-top:1px dashed rgba(255,255,255,.3);
+  display:flex;align-items:center;gap:9px;font-size:12.5px;position:relative;
+}
+.now-todo b{
+  background:rgba(255,255,255,.18);padding:3px 8px;border-radius:6px;
+  font-size:11px;font-weight:600;white-space:nowrap;
+}
+.now-todo span{flex:1;min-width:0;opacity:.94;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.now-todo a{color:#fff;text-decoration:none;opacity:.85;white-space:nowrap;font-size:12px}
+
+/* ---------- 章节导航 ---------- */
+nav{
+  position:sticky;top:0;z-index:30;margin:0 -16px;padding:9px 16px;
+  background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:saturate(1.6) blur(12px);-webkit-backdrop-filter:saturate(1.6) blur(12px);
+  border-bottom:1px solid var(--line2);
+  display:flex;gap:7px;overflow-x:auto;scrollbar-width:none;
+}
+nav::-webkit-scrollbar{display:none}
+nav a{
+  flex:0 0 auto;font-size:13px;padding:7px 13px;border-radius:999px;text-decoration:none;
+  background:var(--card);border:1px solid var(--line);color:var(--ink2);
+}
+nav a:hover{color:var(--ink);border-color:var(--ink3)}
+
+/* ---------- 通用 ---------- */
+section{padding-top:30px;scroll-margin-top:60px}
+h2{font-size:19px;margin:0 0 5px;letter-spacing:-.2px}
+.lead{color:var(--ink2);font-size:13px;line-height:1.75;margin:0 0 15px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:15px;box-shadow:var(--shadow)}
+
+/* ---------- 地图 ---------- */
+.mapbox{padding:8px;overflow:hidden}
+.mapbox svg{width:100%;height:auto;display:block;border-radius:9px;background:var(--mapbg)}
+.daylist{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:7px}
+.daylist li{
+  display:flex;gap:10px;align-items:baseline;font-size:13px;color:var(--ink2);
+  padding:9px 12px;border-radius:10px;background:var(--bg2);border:1px solid var(--line2);
+}
+.daylist b{color:var(--ink);font-weight:600;white-space:nowrap;font-size:12.5px}
+.daylist i{width:7px;height:7px;border-radius:50%;flex:0 0 auto;align-self:center}
+
+/* ---------- 航班 ---------- */
+.grid2{display:grid;gap:12px;grid-template-columns:1fr}
+@media(min-width:720px){.grid2{grid-template-columns:1fr 1fr}}
+.fl{padding:15px 16px}
+.fl-top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:13px;font-size:12.5px;color:var(--ink2)}
+.tag-ok{color:var(--ok);border:1px solid color-mix(in srgb,var(--ok) 35%,var(--line));padding:2px 8px;border-radius:999px;font-size:11px}
+.fl-row{display:flex;align-items:center;gap:10px}
+.fl-pt{flex:1;min-width:0}
+.fl-pt .iata{font-size:21px;font-weight:700;letter-spacing:.5px}
+.fl-pt .tm{font:600 15px/1.3 ui-monospace,Menlo,monospace;margin-top:1px}
+.fl-pt .city{font-size:11.5px;color:var(--ink3);margin-top:2px}
+.fl-mid{text-align:center;color:var(--ink3);font-size:11px;flex:0 0 auto}
+.fl-mid .ln{height:1px;background:var(--line);margin:5px 0;width:56px;position:relative}
+.fl-mid .ln::after{content:"✈";position:absolute;right:-4px;top:-9px;font-size:11px}
+.fl-note{margin-top:12px;padding-top:11px;border-top:1px solid var(--line2);font-size:12px;color:var(--ink2);line-height:1.65}
+
+/* ---------- 每日行程 ---------- */
+.day{margin-bottom:14px;overflow:hidden}
+.day.today{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 14%,transparent),var(--shadow)}
+.day-hd{display:flex;gap:13px;padding:15px 16px 13px;align-items:flex-start}
+.dbox{
+  flex:0 0 auto;width:52px;text-align:center;border-radius:11px;padding:7px 0;
+  background:var(--bg2);border:1px solid var(--line2);
+}
+.dbox .dd{font:700 16px/1.15 ui-monospace,Menlo,monospace}
+.dbox .dw{font-size:10.5px;color:var(--ink3);margin-top:2px}
+.day-hd h3{margin:0 0 3px;font-size:16px;letter-spacing:-.2px}
+.day-hd .rt{font-size:12.5px;color:var(--ink2);line-height:1.6}
+.badge-today{
+  display:inline-block;margin-left:7px;vertical-align:2px;font-size:10.5px;font-weight:600;
+  color:#fff;background:var(--accent);padding:2px 7px;border-radius:999px;
+}
+.tools{
+  display:flex;flex-wrap:wrap;align-items:center;gap:9px;padding:10px 16px;
+  border-top:1px solid var(--line2);border-bottom:1px solid var(--line2);background:var(--bg2);
+}
+.btn{
+  font:inherit;font-size:12.5px;cursor:pointer;border:1px solid var(--line);background:var(--card);
+  color:var(--ink);padding:7px 12px;border-radius:9px;line-height:1.3;
+}
+.btn:hover{border-color:var(--ink3)}
+.tools .sum{font-size:12px;color:var(--ink3);flex:1;min-width:110px}
+.navlink{font-size:12.5px;text-decoration:none;color:var(--accent);font-weight:600;white-space:nowrap}
+.mapwrap{display:none;padding:0;background:#000;line-height:0}
+.mapwrap.open{display:block}
+.mapwrap iframe{width:100%;height:290px;border:0;display:block}
+.mapwrap .fallback{
+  display:block;padding:14px 16px;font-size:12px;line-height:1.7;color:var(--ink3);
+  background:var(--bg2);
+}
+
+/* 时间轴 */
+.tl{list-style:none;margin:0;padding:6px 16px 16px}
+.tl li{display:flex;gap:13px;padding:11px 0;border-bottom:1px dashed var(--line2)}
+.tl li:last-child{border-bottom:0;padding-bottom:2px}
+.tl .t{
+  flex:0 0 52px;font:600 13.5px/1.5 ui-monospace,Menlo,monospace;color:var(--accent);
+  font-variant-numeric:tabular-nums;padding-top:1px;
+}
+.tl .c{flex:1;min-width:0}
+.tl .c .h{font-size:14.5px;line-height:1.55;font-weight:500}
+.tl .c .n{font-size:12.5px;color:var(--ink2);line-height:1.7;margin-top:3px}
+.place{
+  text-decoration:underline dotted;text-underline-offset:3px;text-decoration-thickness:1px;
+  color:inherit;font-weight:600;
+}
+.place::after{content:"↗";font-size:.72em;vertical-align:1px;margin-left:2px;color:var(--ink3);text-decoration:none}
+.mk{
+  display:inline-block;font-size:10.5px;line-height:1;padding:3px 7px;border-radius:5px;
+  margin-left:6px;vertical-align:2px;white-space:nowrap;font-weight:600;
+}
+.mk.need{color:var(--warn);background:color-mix(in srgb,var(--warn) 13%,transparent)}
+.mk.done{color:var(--ok);background:color-mix(in srgb,var(--ok) 13%,transparent)}
+.mk.free{color:var(--ink2);background:var(--bg2);border:1px solid var(--line2)}
+.mk.stay{color:var(--d3);background:color-mix(in srgb,var(--d3) 13%,transparent)}
+
+/* ---------- 待办 ---------- */
+.tgroup{margin-bottom:13px;padding:14px 16px}
+.tgroup h4{margin:0 0 4px;font-size:14px}
+.tgroup .gn{font-size:12px;color:var(--ink3);margin:0 0 11px;line-height:1.6}
+.todo{display:flex;gap:11px;padding:11px 0;border-top:1px dashed var(--line2)}
+.todo .bx{
+  flex:0 0 auto;width:17px;height:17px;border-radius:5px;margin-top:3px;
+  border:1.5px solid var(--ink3);display:flex;align-items:center;justify-content:center;
+  font-size:11px;color:transparent;
+}
+.todo.done .bx{background:var(--ok);border-color:var(--ok);color:#fff}
+.todo .bd{flex:1;min-width:0}
+.todo .tt{font-size:14px;font-weight:600;line-height:1.55;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.todo .tt .num{color:var(--ink3);font:600 13px/1 ui-monospace,Menlo,monospace}
+.todo.done .tt{color:var(--ink2)}
+.sync{font-size:10.5px;font-weight:600;color:var(--ok);background:color-mix(in srgb,var(--ok) 13%,transparent);padding:3px 7px;border-radius:5px}
+.todo .dt{font-size:12.5px;color:var(--ink2);line-height:1.75;margin-top:4px}
+.tlinks{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.tlinks a{
+  font-size:12px;text-decoration:none;color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 30%,var(--line));
+  padding:5px 10px;border-radius:8px;
+}
+.tlinks a:hover{background:color-mix(in srgb,var(--accent) 8%,transparent)}
+
+/* ---------- 贴士 ---------- */
+.tips{display:grid;gap:11px;grid-template-columns:1fr}
+@media(min-width:720px){.tips{grid-template-columns:1fr 1fr}}
+.tip{padding:14px 16px}
+.tip h4{margin:0 0 5px;font-size:14px}
+.tip p{margin:0;font-size:12.5px;color:var(--ink2);line-height:1.75}
+footer{margin-top:34px;padding-top:18px;border-top:1px solid var(--line2);font-size:11.5px;color:var(--ink3);line-height:1.8}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1 id="h-title"></h1>
+  <p class="sub" id="h-sub"></p>
+  <div class="chips" id="h-chips"></div>
+</header>
+
+<div class="now">
+  <div class="now-label"><span class="dot"></span>此刻关注 · NOW</div>
+  <p class="now-title" id="n-title">正在计算…</p>
+  <p class="now-note" id="n-note"></p>
+  <div class="count" id="n-count">--</div>
+  <div class="now-todo" id="n-todo" hidden>
+    <b>当前待办</b><span id="n-todo-text"></span><a href="#todo">去清单 →</a>
+  </div>
+</div>
+
+<nav>
+  <a href="#overview">🗺 总览</a>
+  <a href="#flights">✈ 航班</a>
+  <a href="#days">📅 每日行程</a>
+  <a href="#todo">✅ 待办清单</a>
+  <a href="#tips">💡 贴士</a>
+</nav>
+
+<section id="overview">
+  <h2>🗺 行程总览</h2>
+  <p class="lead" id="ov-lead"></p>
+  <div class="card mapbox">
+    <svg viewBox="0 0 900 640" role="img" aria-label="北海道手绘路线图">
+      <defs>
+        <style>
+          .ol{fill:var(--mapland);stroke:var(--mapink);stroke-width:2.6;stroke-linejoin:round;stroke-linecap:round;opacity:.9}
+          .ol2{fill:none;stroke:var(--mapink);stroke-width:1.1;stroke-linejoin:round;opacity:.35}
+          .rt{fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+          .lbl{fill:var(--mapink);font:600 15px/1 -apple-system,"PingFang SC","Noto Sans SC",sans-serif}
+          .lbl-s{fill:var(--mapink);font:500 13px/1 -apple-system,"PingFang SC","Noto Sans SC",sans-serif;opacity:.75}
+          .nd{stroke:var(--mapbg);stroke-width:2.5}
+        </style>
+      </defs>
+
+      <!-- 手绘感北海道轮廓（双线，外圈略偏移制造手绘抖动） -->
+      <path class="ol2" d="M358 30 q40 42 76 84 q64 36 130 74 q70 30 138 40 q26-30 96-42 q-4 38-20 66 q30 32 52 74 q-70 26-146 66 q-88 44-162 120 q-52 42-110 -2 q-30-22-64-24 q-24 26-46 66 q-42-8-78-40 q26-52 26-104 q-4-58 6-108 q28-56 62-102 q22-58 40-168 z"/>
+      <path class="ol" d="M355 36 q42 40 74 86 q66 34 132 72 q68 32 136 40 q28-28 94-40 q-6 36-22 64 q32 34 54 76 q-72 24-148 64 q-86 46-160 118 q-54 44-112 0 q-28-24-62-22 q-26 24-48 64 q-40-6-76-38 q28-50 28-102 q-6-56 4-106 q30-54 64-100 q20-60 42-176 z"/>
+      <!-- 内浦湾缺口 -->
+      <path class="ol2" d="M214 462 q34 26 62 22 q10 26-6 44 q-36-24-56-66 z"/>
+
+      <!-- 指北针 -->
+      <g transform="translate(818,64)">
+        <circle r="30" fill="none" stroke="var(--mapink)" stroke-width="1.6" opacity=".5"/>
+        <path d="M0 -24 L8 6 L0 0 L-8 6 Z" fill="var(--accent)"/>
+        <text x="0" y="-32" text-anchor="middle" class="lbl-s">北</text>
+      </g>
+
+      <!-- 来程航线 -->
+      <path d="M40 596 q120 -60 276 -198" fill="none" stroke="var(--ink3)" stroke-width="2.2" stroke-dasharray="9 8" opacity=".75"/>
+      <text x="44" y="618" class="lbl-s">✈ 9/25 自上海 PVG 飞来 · 约 3h45m</text>
+
+      <!-- D1 新千岁 → 富良野 -->
+      <path class="rt" stroke="var(--d1)" d="M324 393 q26 -22 44 -34 q22 -20 46 -39"/>
+      <!-- D2 富良野 → 美瑛 → 旭川 → 层云峡 -->
+      <path class="rt" stroke="var(--d2)" d="M414 320 q10 -18 11 -32 q-4 -16 -13 -24 q30 -6 80 7"/>
+      <!-- D3 层云峡 → 旭川 → 小樽 -->
+      <path class="rt" stroke="var(--d3)" d="M492 271 q-44 -6 -80 -7 q-96 20 -179 75"/>
+      <!-- D4 小樽 → 余市 → 札幌 -->
+      <path class="rt" stroke="var(--d4)" d="M233 339 q-14 4 -26 0 q16 10 30 6 q26 6 43 11"/>
+      <!-- D5 札幌 → 新千岁 -->
+      <path class="rt" stroke="var(--d5)" d="M280 356 q26 16 44 37"/>
+
+      <!-- 节点 -->
+      <g>
+        <circle class="nd" cx="324" cy="393" r="7.5" fill="var(--accent)"/>
+        <text x="308" y="416" text-anchor="end" class="lbl">✈ 新千岁 CTS</text>
+        <text x="308" y="433" text-anchor="end" class="lbl-s">进出港 · 取还车</text>
+
+        <circle class="nd" cx="414" cy="320" r="7" fill="var(--d1)"/>
+        <text x="428" y="318" class="lbl">富良野 · 夜1</text>
+        <text x="428" y="335" class="lbl-s">新富良野王子 · 森林精灵露台</text>
+
+        <circle class="nd" cx="425" cy="288" r="6" fill="var(--d2)"/>
+        <text x="439" y="284" class="lbl-s">美瑛 · 青池 / 四季彩之丘</text>
+
+        <circle class="nd" cx="412" cy="264" r="6" fill="var(--d2)"/>
+        <text x="398" y="252" text-anchor="end" class="lbl-s">旭川 · 旭山动物园</text>
+
+        <circle class="nd" cx="492" cy="271" r="7" fill="var(--d2)"/>
+        <text x="506" y="268" class="lbl">层云峡 · 夜2</text>
+        <text x="506" y="285" class="lbl-s">黑岳红叶 · 银河流星瀑布</text>
+
+        <circle class="nd" cx="233" cy="339" r="7" fill="var(--d3)"/>
+        <text x="219" y="330" text-anchor="end" class="lbl">小樽 · 夜3</text>
+
+        <circle class="nd" cx="207" cy="339" r="6" fill="var(--d4)"/>
+        <text x="193" y="361" text-anchor="end" class="lbl-s">余市 · NIKKA 蒸馏所</text>
+
+        <circle class="nd" cx="280" cy="356" r="7" fill="var(--d4)"/>
+        <text x="286" y="374" class="lbl">札幌 · 夜4</text>
+        <text x="286" y="391" class="lbl-s">藻岩山夜景 · 大通公园</text>
+      </g>
+
+      <!-- 图例 -->
+      <g transform="translate(560,470)">
+        <rect x="-14" y="-24" width="330" height="152" rx="12" fill="var(--mapbg)" stroke="var(--mapink)" stroke-width="1.2" opacity=".92"/>
+        <g class="lbl-s" fill="var(--mapink)">
+          <line x1="0" y1="0" x2="30" y2="0" stroke="var(--d1)" stroke-width="5" stroke-linecap="round"/><text x="40" y="5">D1 新千岁 → 富良野 · 2h10m</text>
+          <line x1="0" y1="26" x2="30" y2="26" stroke="var(--d2)" stroke-width="5" stroke-linecap="round"/><text x="40" y="31">D2 美瑛 → 旭川 → 层云峡 · 3h</text>
+          <line x1="0" y1="52" x2="30" y2="52" stroke="var(--d3)" stroke-width="5" stroke-linecap="round"/><text x="40" y="57">D3 层云峡 → 旭川 → 小樽 · 4h20m</text>
+          <line x1="0" y1="78" x2="30" y2="78" stroke="var(--d4)" stroke-width="5" stroke-linecap="round"/><text x="40" y="83">D4 小樽 → 余市 → 札幌 · 1h40m</text>
+          <line x1="0" y1="104" x2="30" y2="104" stroke="var(--d5)" stroke-width="5" stroke-linecap="round"/><text x="40" y="109">D5 札幌 → 新千岁还车 · 50m</text>
+        </g>
+      </g>
+    </svg>
+  </div>
+  <ul class="daylist" id="ov-days"></ul>
+</section>
+
+<section id="flights">
+  <h2>✈ 航班（已出票）</h2>
+  <p class="lead">页面只写航班号与时间，确认号留在邮箱里。起降时间均为当地时间，北海道比上海快 1 小时。</p>
+  <div class="grid2" id="fl-list"></div>
+</section>
+
+<section id="days">
+  <h2>📅 每日行程</h2>
+  <p class="lead">时间为日本标准时间 JST（比北京时间快 1 小时）。🎫 = 需要提前订票或预约。<b>虚线下划线的地点可以点击，直接唤起 Google 地图导航</b>（含每晚住宿）；每天顶部还能展开当日路线地图，或一键打开全天多点导航。</p>
+  <div id="day-list"></div>
+</section>
+
+<section id="todo">
+  <h2>✅ 待办清单</h2>
+  <p class="lead">纯展示列表，不做成可勾选 —— 勾选状态只会存在各自的浏览器里，同行的人看到的会不一样。办完一项告诉我，我改页面，所有人的链接同时更新。</p>
+  <div id="todo-list"></div>
+</section>
+
+<section id="tips">
+  <h2>💡 实用贴士</h2>
+  <p class="lead">出发前扫一眼，路上遇到问题回来翻。</p>
+  <div class="tips" id="tip-list"></div>
+</section>
+
+<footer>
+  北海道秋色自驾 · 行程手册 · 单文件网页，离线可看（仅当日地图需要联网）。<br>
+  页面不含任何确认号、证件号与房间号 —— 链接是公开的。行程有变直接改页面，链接始终不变。
+</footer>
+
+</div>
+
+<script>
+/* =========================================================
+   数据 —— 所有时间均为带时区的 ISO 字符串，跨时区打开不会算错
+   ========================================================= */
+const TZ = "Asia/Tokyo";
+const G = "https://www.google.com/maps/dir/?api=1&destination=";
+const p = (q) => G + encodeURIComponent(q);
+
+const TRIP = {
+  emoji: "🍁",
+  title: "北海道秋色自驾",
+  sub: "2026.9.25（周五）—— 9.29（周二） · 4 人 · 新千岁进出 · 全程自驾约 780 公里 · 日本时间 JST（比北京快 1 小时）",
+  chips: [
+    { t: "✈ 往返机票已出票", s: "done" },
+    { t: "🚗 租车已订 · Toyota Noah 7 座", s: "done" },
+    { t: "🏨 酒店 4/4", s: "done" },
+    { t: "🦀 蟹本家已订 · 9/28 20:00", s: "done" },
+    { t: "🥃 余市蒸馏所见学待预约", s: "pending" },
+    { t: "🍲 くまげら 晚餐待致电", s: "pending" }
+  ],
+  lead: "从上海直飞新千岁，落地就提车一路向东北：先钻进富良野的花田与森林，第二天穿过美瑛的拼布丘陵上到大雪山脚下泡温泉看红叶，第三天横穿道央高速一路向西奔小樽，最后沿海去余市喝威士忌、回札幌看藻岩山夜景。在地图上是一个先向东北、再折向西南的大回环，五天正好绕回新千岁。"
+};
+
+const FLIGHTS = [
+  {
+    dir: "去程", date: "9/25 周五", carrier: "吉祥航空", no: "HO 1385",
+    from: { iata: "PVG", city: "上海浦东 T2", at: "2026-09-25T09:05:00+08:00", tz: "Asia/Shanghai" },
+    to:   { iata: "CTS", city: "新千岁 国际线", at: "2026-09-25T13:50:00+09:00", tz: TZ },
+    dur: "3h45m 直飞",
+    note: "落地后走国际线到达 → 1F 免费接驳巴士到租车营业所约 5 分钟。行李托运 23kg/人，随身 7kg。"
+  },
+  {
+    dir: "回程", date: "9/29 周二", carrier: "吉祥航空", no: "HO 1386",
+    from: { iata: "CTS", city: "新千岁 国际线", at: "2026-09-29T14:20:00+09:00", tz: TZ },
+    to:   { iata: "PVG", city: "上海浦东 T2", at: "2026-09-29T17:05:00+08:00", tz: "Asia/Shanghai" },
+    dur: "3h45m 直飞",
+    note: "国际线值机建议 11:30 前完成；还车与免税手续都要时间，别踩点。机场 2F 有退税柜台。"
+  }
+];
+
+const DAYS = [
+  {
+    n: 1, date: "2026-09-25", dd: "9.25", dw: "周五", color: "var(--d1)",
+    title: "落地北国，直奔富良野",
+    route: "CTS 新千岁 ✈ 落地 → 道东道南下 → 富良野 · 车程约 2 小时 10 分",
+    sum: "新千岁 → 富良野 · 约 2h10m · 158km",
+    map: "https://maps.google.com/maps?saddr=New+Chitose+Airport&daddr=Furano+Hokkaido&hl=zh-CN&z=8&output=embed",
+    nav: "https://www.google.com/maps/dir/?api=1&origin=" + encodeURIComponent("New Chitose Airport, Chitose, Hokkaido")
+       + "&destination=" + encodeURIComponent("New Furano Prince Hotel, Furano, Hokkaido")
+       + "&waypoints=" + encodeURIComponent("Michi-no-Eki Shizen Taikan Shimukappu|Ningle Terrace, Furano")
+       + "&travelmode=driving",
+    items: [
+      { at: "2026-09-25T06:35:00+08:00", tz: "Asia/Shanghai",
+        h: '浦东机场 T2 集合值机', n: "国际出发 D 岛吉祥航空柜台。起飞前 2.5 小时到，节假日前的浦东安检队伍很长。" },
+      { at: "2026-09-25T09:05:00+08:00", tz: "Asia/Shanghai",
+        h: "HO1385 从上海浦东起飞", n: "上海时间。落地后手表要拨快 1 小时，本页下面所有时间都已经是日本时间。" },
+      { at: "2026-09-25T13:50:00+09:00",
+        h: '抵达 <a class="place" target="_blank" rel="noopener" href="' + p("New Chitose Airport, Chitose, Hokkaido") + '">新千岁机场</a>，入境取行李',
+        mk: { t: "✓ 租车已订", c: "done" },
+        n: "旺季入境审查约 30–40 分钟。出关后到国际线 1F 乘租车公司免费接驳巴士。" },
+      { at: "2026-09-25T14:40:00+09:00",
+        h: '提车 <a class="place" target="_blank" rel="noopener" href="' + p("Toyota Rent a Car New Chitose Airport") + '">丰田租车 新千岁机场店</a>',
+        n: "Toyota Noah 7 座（4 人 + 4 个 24 寸箱刚好）· 免碰撞免责 + ETC 卡 + 中文 GPS。☎ 0123-46-0100。取车时确认油箱满格、拍一圈车身。" },
+      { at: "2026-09-25T15:15:00+09:00",
+        h: "出发，上道东道往占冠方向", n: "新千岁 IC 上高速 → 占冠 IC 下 → 国道 237 号，全程约 158km。ETC 通行费约 ¥2,600。" },
+      { at: "2026-09-25T16:20:00+09:00",
+        h: '中途休息 <a class="place" target="_blank" rel="noopener" href="' + p("Michi-no-Eki Shizen Taikan Shimukappu") + '">道の駅 自然体感しむかっぷ</a>',
+        mk: { t: "免费", c: "free" },
+        n: "占冠的道之驿，可以上厕所、买冷萃咖啡和当地牛奶。营业到 17:00。" },
+      { at: "2026-09-25T17:40:00+09:00",
+        h: '入住 <a class="place" target="_blank" rel="noopener" href="' + p("New Furano Prince Hotel") + '">新富良野王子大饭店</a>',
+        mk: { t: "夜1 · 已订", c: "stay" },
+        n: "北海道富良野市中御料 · ☎ 0167-22-1111 · 2 间双床房，含早。酒店自带森林区，晚上不用开车出门。" },
+      { at: "2026-09-25T18:40:00+09:00",
+        h: '晚餐 <a class="place" target="_blank" rel="noopener" href="' + p("Kumagera Restaurant, Furano") + '">くまげら（熊啄木鸟）</a>',
+        mk: { t: "🎫 待预约", c: "need" },
+        n: "富良野市日の出町 3-22 · ☎ 0167-39-2345 · 招牌是和牛山贼锅与鹿肉刺身，11:30–22:00。只收 4 人以内电话预约，务必提前一天打。" },
+      { at: "2026-09-25T20:00:00+09:00",
+        h: '散步 <a class="place" target="_blank" rel="noopener" href="' + p("Ningle Terrace, Furano") + '">森林精灵露台 ニングルテラス</a>',
+        mk: { t: "免费", c: "free" },
+        n: "就在酒店后面的林子里，12:00–20:45（最后入场 20:30）。15 间木屋手作店挂满暖灯，雨天照常开。九月晚上山里 8℃ 左右，带件外套。" }
+    ]
+  },
+  {
+    n: 2, date: "2026-09-26", dd: "9.26", dw: "周六", color: "var(--d2)",
+    title: "美瑛拼布之路 → 旭川 → 层云峡温泉",
+    route: "富良野 → 美瑛 → 旭川 → 层云峡 · 分段驾驶合计约 3 小时",
+    sum: "富良野 → 层云峡 · 分段共约 3h · 165km",
+    map: "https://maps.google.com/maps?saddr=Furano+Hokkaido&daddr=Biei+Hokkaido+to:Asahikawa+Hokkaido+to:Sounkyo+Onsen+Kamikawa&hl=zh-CN&z=9&output=embed",
+    nav: "https://www.google.com/maps/dir/?api=1&origin=" + encodeURIComponent("New Furano Prince Hotel, Furano")
+       + "&destination=" + encodeURIComponent("Sounkyo Choyotei, Kamikawa, Hokkaido")
+       + "&waypoints=" + encodeURIComponent("Shirogane Blue Pond, Biei|Shikisai-no-Oka, Biei|Asahiyama Zoo, Asahikawa")
+       + "&travelmode=driving",
+    items: [
+      { at: "2026-09-26T07:30:00+09:00", h: "酒店自助早餐", n: "餐厅 7:00 开，8:30 后人会明显变多。" },
+      { at: "2026-09-26T08:30:00+09:00",
+        h: '出发前往 <a class="place" target="_blank" rel="noopener" href="' + p("Shirogane Blue Pond, Biei") + '">白金 青池</a>',
+        n: "约 50 分钟（国道 237 → 道道 966）。停车场 ¥500/次，只收现金，备好硬币。" },
+      { at: "2026-09-26T09:25:00+09:00",
+        h: "青池 + 白须瀑布", mk: { t: "免费", c: "free" },
+        n: "青池全天开放，上午顺光最蓝。沿路再开 3 分钟就是白ひげの滝（白须瀑布），从桥上看地下水直接从崖壁涌出汇进蓝色的美瑛川。" },
+      { at: "2026-09-26T10:40:00+09:00",
+        h: '<a class="place" target="_blank" rel="noopener" href="' + p("Shikisai-no-Oka, Biei") + '">四季彩之丘</a>',
+        n: "9:00–17:00（9 月）· 入园维护费 ¥500/人。九月薰衣草已过季，但万寿菊、扫帚草红球与大波斯菊正好，背后就是十胜岳连峰。" },
+      { at: "2026-09-26T11:45:00+09:00",
+        h: '开车逛 <a class="place" target="_blank" rel="noopener" href="' + p("Ken and Mary Tree, Biei") + '">拼布之路 · 亲子之木 / Ken&Mary 之木</a>',
+        mk: { t: "免费", c: "free" },
+        n: "全是田间私有农地，只能在路边停车拍照，绝对不要下到田里 —— 当地为此立了很多中文警示牌。" },
+      { at: "2026-09-26T12:40:00+09:00",
+        h: '午餐 <a class="place" target="_blank" rel="noopener" href="' + p("Biei Senka") + '">美瑛選果</a>',
+        n: "美瑛町大町 2 丁目 · 现烤玉米面包配美瑛咖喱，旁边就是特产直卖所，可以顺手买薯片与玉米。" },
+      { at: "2026-09-26T14:00:00+09:00",
+        h: '<a class="place" target="_blank" rel="noopener" href="' + p("Asahiyama Zoo, Asahikawa") + '">旭山动物园</a>',
+        mk: { t: "🎫 电子票已购", c: "done" },
+        n: "9:30–17:15（最终入场 16:00）· 成人 ¥1,000。必看：企鹅馆水下隧道、北极熊馆、猛兽馆。停车场免费。周六人多，先冲最里面的北极熊再往回逛。" },
+      { at: "2026-09-26T16:20:00+09:00",
+        h: "出发前往层云峡", n: "道央道旭川纷内 IC → 上川层云峡 IC，约 1 小时 40 分。天黑后山路容易遇到鹿，限速开。" },
+      { at: "2026-09-26T18:10:00+09:00",
+        h: '入住 <a class="place" target="_blank" rel="noopener" href="' + p("Sounkyo Choyotei, Kamikawa, Hokkaido") + '">层云峡 朝阳亭</a>',
+        mk: { t: "夜2 · 已订", c: "stay" },
+        n: "上川郡上川町层云峡 · ☎ 01658-5-3241 · 一泊二食（自助晚餐 + 早餐）· 8 楼展望大浴场能一边泡一边看峡谷。晚餐时段 17:30–20:00，进房间先去泡再吃。" },
+      { at: "2026-09-26T21:00:00+09:00",
+        h: "峡谷夜空", mk: { t: "免费", c: "free" },
+        n: "层云峡几乎没有光污染，天晴时酒店门口就能看到银河。九月下旬夜里 5℃ 上下，穿够再出门。" }
+    ]
+  },
+  {
+    n: 3, date: "2026-09-27", dd: "9.27", dw: "周日", color: "var(--d3)",
+    title: "黑岳红叶，一路向西奔小樽",
+    route: "层云峡 → 旭川 → 道央道西行 → 小樽 · 驾驶合计约 4 小时 20 分",
+    sum: "层云峡 → 小樽 · 约 4h20m · 285km",
+    map: "https://maps.google.com/maps?saddr=Sounkyo+Onsen+Kamikawa&daddr=Asahikawa+Hokkaido+to:Otaru+Hokkaido&hl=zh-CN&z=8&output=embed",
+    nav: "https://www.google.com/maps/dir/?api=1&origin=" + encodeURIComponent("Sounkyo Choyotei, Kamikawa, Hokkaido")
+       + "&destination=" + encodeURIComponent("Art Hotel Otaru")
+       + "&waypoints=" + encodeURIComponent("Kurodake Ropeway, Sounkyo|Ryusei and Ginga Falls, Kamikawa|Asahikawa Ramen Village")
+       + "&travelmode=driving",
+    items: [
+      { at: "2026-09-27T06:30:00+09:00", h: "早餐 + 退房装车", n: "红叶季缆车 6:00 就开始运行，越早上山云海概率越高、队伍越短。" },
+      { at: "2026-09-27T07:30:00+09:00",
+        h: '<a class="place" target="_blank" rel="noopener" href="' + p("Kurodake Ropeway, Sounkyo") + '">黑岳缆车 + 升降椅</a>',
+        mk: { t: "现场购票", c: "free" },
+        n: "缆车到五合目约 7 分钟，再换双人升降椅上七合目。往返套票约 ¥2,600/人。九月下旬正是大雪山红叶前线最漂亮的一周 —— 全日本最早红的地方。七合目风大，手套帽子别嫌多余。" },
+      { at: "2026-09-27T10:00:00+09:00",
+        h: '<a class="place" target="_blank" rel="noopener" href="' + p("Ginga and Ryusei Falls, Kamikawa") + '">银河瀑布・流星瀑布</a>',
+        mk: { t: "免费", c: "free" },
+        n: "酒店往东开 5 分钟，两条瀑布并排挂在柱状节理峭壁上，被叫作「夫妇瀑」。停车场边爬 20 分钟到双瀑台可以一次看全两条，体力有余再上。" },
+      { at: "2026-09-27T11:10:00+09:00", h: "出发前往旭川", n: "国道 39 号 + 道央道，约 1 小时 30 分。" },
+      { at: "2026-09-27T12:45:00+09:00",
+        h: '午餐 <a class="place" target="_blank" rel="noopener" href="' + p("Asahikawa Ramen Village") + '">旭川拉面村</a>',
+        n: "旭川市永山 11 条 4 丁目 · 8 家名店开在同一栋，11:00–20:00。旭川酱油拉面是猪骨 + 海鲜双汤底，面上浮一层猪油锁温，冷天吃到最后还是烫的。" },
+      { at: "2026-09-27T14:00:00+09:00", h: "上道央道一路向西", n: "旭川鹰栖 IC → 小樽 IC，约 2 小时 50 分、230km，是全程最长的一段。" },
+      { at: "2026-09-27T15:40:00+09:00",
+        h: '中途 <a class="place" target="_blank" rel="noopener" href="' + p("Sunagawa Service Area, Hokkaido") + '">砂川 SA</a> 换手休息',
+        n: "北菓楼与 Lucky Pierrot 都在这儿设了店，上下行都有。加油也在这里解决，高速下来的市区油站周日关得早。" },
+      { at: "2026-09-27T17:30:00+09:00",
+        h: '入住 <a class="place" target="_blank" rel="noopener" href="' + p("Art Hotel Otaru") + '">Art Hotel 小樽</a>',
+        mk: { t: "夜3 · 已订", c: "stay" },
+        n: "小樽市稻穗 3-9-1 · ☎ 0134-21-3111 · JR 小樽站步行 3 分钟，酒店有自家停车场（约 ¥1,000/晚）。走去运河 10 分钟，今晚车可以彻底停下。" },
+      { at: "2026-09-27T18:30:00+09:00",
+        h: '<a class="place" target="_blank" rel="noopener" href="' + p("Otaru Canal") + '">小樽运河</a> + 堺町通',
+        mk: { t: "免费", c: "free" },
+        n: "日落后煤气街灯依次点亮，仓库群倒映在水里是小樽的经典画面。沿堺町通往回走，北一硝子三号馆与 LeTAO 本店都在路上（多数 18:00–19:00 打烊，先逛店再看运河更稳）。" },
+      { at: "2026-09-27T19:40:00+09:00",
+        h: '晚餐 <a class="place" target="_blank" rel="noopener" href="' + p("Masazushi Otaru") + '">政寿司 本店</a>',
+        mk: { t: "🎫 建议预约", c: "need" },
+        n: "小樽市花园 1-1-1「寿司屋通」· ☎ 0134-23-0011 · 1938 年开的老店，おまかせ 套餐约 ¥6,000 起。周日晚上散客位有限，落地后先打个电话。" }
+    ]
+  },
+  {
+    n: 4, date: "2026-09-28", dd: "9.28", dw: "周一", color: "var(--d4)",
+    title: "余市威士忌，回札幌看夜景",
+    route: "小樽 → 余市 → 札幌 · 驾驶合计约 1 小时 40 分",
+    sum: "小樽 → 余市 → 札幌 · 约 1h40m · 82km",
+    map: "https://maps.google.com/maps?saddr=Otaru+Hokkaido&daddr=Yoichi+Hokkaido+to:Sapporo+Hokkaido&hl=zh-CN&z=10&output=embed",
+    nav: "https://www.google.com/maps/dir/?api=1&origin=" + encodeURIComponent("Art Hotel Otaru")
+       + "&destination=" + encodeURIComponent("JR Tower Hotel Nikko Sapporo")
+       + "&waypoints=" + encodeURIComponent("Nikka Whisky Yoichi Distillery|Kakizaki Shoten, Yoichi|Mount Moiwa Ropeway")
+       + "&travelmode=driving",
+    items: [
+      { at: "2026-09-28T08:20:00+09:00",
+        h: '早餐 <a class="place" target="_blank" rel="noopener" href="' + p("Otaru Sankaku Market") + '">小樽三角市场</a>',
+        n: "JR 小樽站旁的小市场，7 家店 6:00–17:00 轮流开。招牌是现剥的海胆三色丼，可以指着水槽里的帝王蟹现煮。别把车停在市场门口的坡上，很容易被贴条。" },
+      { at: "2026-09-28T09:40:00+09:00", h: "出发前往余市", n: "国道 5 号沿海开约 30 分钟，右手边一路是日本海。" },
+      { at: "2026-09-28T10:15:00+09:00",
+        h: '<a class="place" target="_blank" rel="noopener" href="' + p("Nikka Whisky Yoichi Distillery") + '">NIKKA 威士忌 余市蒸馏所</a>',
+        mk: { t: "🎫 待预约", c: "need" },
+        n: "余市郡余市町黑川町 7-6 · ☎ 0135-23-3131 · 9:00–17:00，最终入场 15:30，周一照常营业（年末年初休）。导览见学免费但必须官网提前预约，自由参观也建议先约。厂区是唯一还在烧煤直火蒸馏的地方，煤味会挂在衣服上。开车的人不能试饮 —— 试饮室有苹果汁，回头在商店买酒带走。" },
+      { at: "2026-09-28T12:10:00+09:00",
+        h: '午餐 <a class="place" target="_blank" rel="noopener" href="' + p("Kakizaki Shoten, Yoichi") + '">柿崎商店 海鲜工房</a>',
+        n: "余市站对面的海产批发店，二楼是自家食堂。海鲜丼 ¥1,500 上下，性价比高到离谱，11:00 一开门就排队。只收现金。" },
+      { at: "2026-09-28T13:30:00+09:00", h: "出发前往札幌", n: "余市 IC 上后志道 → 札樽道，约 1 小时 10 分。" },
+      { at: "2026-09-28T15:00:00+09:00",
+        h: '入住 <a class="place" target="_blank" rel="noopener" href="' + p("JR Tower Hotel Nikko Sapporo") + '">札幌 JR 塔日航酒店</a>',
+        mk: { t: "夜4 · 已订", c: "stay" },
+        n: "札幌市中央区北 5 条西 2 丁目 5 · ☎ 011-251-2222 · JR 札幌站直结，塔楼客房能俯瞰市区。停车提前跟前台说，走 JR 塔停车场（约 ¥1,500/晚）。" },
+      { at: "2026-09-28T16:00:00+09:00",
+        h: '<a class="place" target="_blank" rel="noopener" href="' + p("Odori Park, Sapporo") + '">大通公园</a> → 狸小路',
+        mk: { t: "免费", c: "free" },
+        n: "从酒店走过去 10 分钟。公园里有现烤玉米摊（¥400 左右），电视塔展望台 ¥1,000 可上可不上。狸小路一丁目到七丁目全是带顶棚的商店街，唐吉诃德 24 小时营业，手信在这里买最便宜。" },
+      { at: "2026-09-28T17:50:00+09:00",
+        h: '<a class="place" target="_blank" rel="noopener" href="' + p("Mount Moiwa Ropeway") + '">藻岩山 缆车看夜景</a>',
+        mk: { t: "现场购票", c: "free" },
+        n: "山麓站 10:30–22:00（最终上行 21:30）· 缆车 + 迷你缆车往返 ¥2,100。九月下旬日落约 17:20，提前 30 分钟上山能同时拍到晚霞与开灯。山麓站有免费停车场，但周一晚上也会满，晚了就停市电「ロープウェイ入口」旁的收费场。" },
+      { at: "2026-09-28T20:00:00+09:00",
+        h: '晚餐 <a class="place" target="_blank" rel="noopener" href="' + p("Kani Honke Sapporo Ekimae") + '">蟹本家 札幌站前本店</a>',
+        mk: { t: "✓ 已预约", c: "done" },
+        n: "札幌市中央区北 3 条西 2 丁目 · ☎ 011-222-0018 · 已订 9/28 20:00 四人座。帝王蟹套餐人均 ¥8,000 上下，从刺身、烤蟹到蟹肉茶碗蒸一路上。吃完走回酒店 5 分钟。" }
+    ]
+  },
+  {
+    n: 5, date: "2026-09-29", dd: "9.29", dw: "周二", color: "var(--d5)",
+    title: "场外市场早饭，还车返程",
+    route: "札幌 → 新千岁机场还车 → CTS ✈ PVG · 车程约 50 分",
+    sum: "札幌 → 新千岁 · 约 50m · 57km",
+    map: "https://maps.google.com/maps?saddr=Sapporo+Hokkaido&daddr=New+Chitose+Airport&hl=zh-CN&z=10&output=embed",
+    nav: "https://www.google.com/maps/dir/?api=1&origin=" + encodeURIComponent("JR Tower Hotel Nikko Sapporo")
+       + "&destination=" + encodeURIComponent("Toyota Rent a Car New Chitose Airport")
+       + "&waypoints=" + encodeURIComponent("Sapporo Jogai Market|ENEOS Chitose")
+       + "&travelmode=driving",
+    items: [
+      { at: "2026-09-29T07:00:00+09:00",
+        h: '早餐 <a class="place" target="_blank" rel="noopener" href="' + p("Sapporo Jogai Market") + '">札幌场外市场</a>',
+        n: "札幌市中央区北 11 条西 21 丁目 · 6:00–17:00，开车 10 分钟。最后一顿海胆蟹肉丼，顺手把要冷链寄的海鲜在这里办掉。" },
+      { at: "2026-09-29T09:00:00+09:00", h: "退房，出发去机场", n: "札幌北 IC 上道央道 → 新千岁空港 IC，约 50 分钟。早高峰出城会慢一点，宽裕出发。" },
+      { at: "2026-09-29T10:20:00+09:00",
+        h: '<a class="place" target="_blank" rel="noopener" href="' + p("ENEOS Chitose Hokkaido") + '">千岁 ENEOS 加油</a>',
+        n: "还车前必须加满，不然按营业所油价补收（贵不少）。记得留好加油小票给柜台看。" },
+      { at: "2026-09-29T10:45:00+09:00",
+        h: '还车 <a class="place" target="_blank" rel="noopener" href="' + p("Toyota Rent a Car New Chitose Airport") + '">丰田租车 新千岁机场店</a>',
+        mk: { t: "✓ 含接驳", c: "done" },
+        n: "验车约 10 分钟，营业所有免费接驳巴士送回航站楼，5 分钟一班。四天累计里程约 780km。" },
+      { at: "2026-09-29T11:20:00+09:00", h: "国际线值机 + 退税", n: "HO1386 柜台 12:20 开，建议 11:30 前排上。免税品与退税柜台都在 2F，大件海鲜必须托运。" },
+      { at: "2026-09-29T12:15:00+09:00",
+        h: '手信时间 <a class="place" target="_blank" rel="noopener" href="' + p("New Chitose Airport Terminal Building") + '">新千岁国内线 2–3F</a>',
+        n: "国内线与国际线航站楼之间走廊连通，步行 5 分钟。六花亭、ROYCE'、白色恋人、北菓楼年轮蛋糕都在 2F 购物大道；3F 有拉面道场。留足 45 分钟，然后过关。" },
+      { at: "2026-09-29T14:20:00+09:00", h: "HO1386 从新千岁起飞", n: "日本时间。" },
+      { at: "2026-09-29T17:05:00+08:00", tz: "Asia/Shanghai",
+        h: "抵达上海浦东 T2", n: "上海时间。行程结束。" }
+    ]
+  }
+];
+
+const TODOS = [
+  {
+    g: "🎫 门票与预约", gn: "按截止风险从高到低排，越靠前越该今天办。",
+    items: [
+      { n: 1, s: "todo", t: "余市 NIKKA 蒸馏所 见学预约 ×4",
+        d: "9/28 周一 10:15 场次 · 导览见学本身免费，但必须在官网预约系统选时段，热门时段常常提前两周满。预约时留一个能收邮件的地址，当天出示二维码入场。开车的人不能试饮，记得提前分好谁开车。",
+        l: [{ t: "官网预约入口", u: "https://www.nikka.com/distilleries/yoichi/" }] },
+      { n: 2, s: "todo", t: "くまげら 晚餐电话预约 ×4",
+        d: "9/25 周五 18:40 · ☎ 0167-39-2345 · 只接电话预约，不走网络。落地新千岁连上网就打，说人数与时间即可，店里有会英文的店员。和牛山贼锅每天限量，预约时一起点掉更稳。",
+        l: [{ t: "店铺信息", u: "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent("Kumagera Restaurant Furano") }] },
+      { n: 3, s: "todo", t: "政寿司 小樽本店 座位确认",
+        d: "9/27 周日 19:40 · ☎ 0134-23-0011 · 周日晚散客位少，四人最好占一间小包。预算按 おまかせ ¥6,000/人 准备。",
+        l: [{ t: "店铺信息", u: "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent("Masazushi Otaru") }] },
+      { n: 4, s: "done", sy: "已购", t: "旭山动物园 电子票 ×4",
+        d: "9/26 周六 14:00 入园 · 成人 ¥1,000/人，共 ¥4,000。电子票不限时段，扫码直接进，停车免费。周六下午人最多，进门先往最里面的北极熊馆走再往回逛。",
+        l: [{ t: "园区地图与喂食时间", u: "https://www.city.asahikawa.hokkaido.jp/asahiyamazoo/" }] },
+      { n: 5, s: "done", sy: "已预约", t: "蟹本家 札幌站前本店 ×4",
+        d: "9/28 周一 20:00 · 四人座已确认，帝王蟹套餐人均约 ¥8,000。当天如果晚点到，提前打 ☎ 011-222-0018 说一声，超过 20 分钟不到会被放位。",
+        l: [] }
+    ]
+  },
+  {
+    g: "🏨 酒店 ×4 晚", gn: "四晚全部订完，页面只写名称、地址、电话与入住退房时间 —— 房间号和确认号不上公开页面。",
+    items: [
+      { n: 6, s: "done", sy: "已同步", t: "夜1 · 9/25 新富良野王子大饭店",
+        d: "北海道富良野市中御料 · ☎ 0167-22-1111 · 2 间双床房含早，人均约 ¥11,000/晚。入住 9/25 15:00 起 → 退房 9/26 11:00 前。自带停车场免费，森林精灵露台就在酒店后面，步行 5 分钟。", l: [] },
+      { n: 7, s: "done", sy: "已同步", t: "夜2 · 9/26 层云峡 朝阳亭",
+        d: "上川郡上川町层云峡 · ☎ 01658-5-3241 · 2 间和洋室，一泊二食，人均约 ¥14,000/晚。入住 9/26 15:00 起 → 退房 9/27 10:00 前（温泉旅馆退房比商务酒店早，别睡过头）。自助晚餐 17:30–20:00，8 楼展望大浴场 24 小时开。", l: [] },
+      { n: 8, s: "done", sy: "已同步", t: "夜3 · 9/27 Art Hotel 小樽",
+        d: "小樽市稻穗 3-9-1 · ☎ 0134-21-3111 · 2 间双床房含早，人均约 ¥9,000/晚。入住 9/27 15:00 起 → 退房 9/28 11:00 前。JR 小樽站步行 3 分钟，停车 ¥1,000/晚需现场登记。", l: [] },
+      { n: 9, s: "done", sy: "已同步", t: "夜4 · 9/28 札幌 JR 塔日航酒店",
+        d: "札幌市中央区北 5 条西 2 丁目 5 · ☎ 011-251-2222 · 2 间双床房，人均约 ¥13,000/晚。入住 9/28 14:00 起 → 退房 9/29 11:00 前。JR 札幌站直结，走去蟹本家 5 分钟。停车走 JR 塔停车场约 ¥1,500/晚。", l: [] }
+    ]
+  },
+  {
+    g: "🚗 用车与出发前", gn: "自驾的几件事，漏一件当天就走不了。",
+    items: [
+      { n: 10, s: "done", sy: "已同步", t: "租车 Toyota Noah 7 座 ×1",
+        d: "丰田租车 新千岁机场店 · ☎ 0123-46-0100 · 取车 9/25 14:40 → 还车 9/29 10:45，含免碰撞免责补偿、ETC 卡与中文导航，四天合计约 ¥46,000。取车先拍一圈车身留证，还车前加满油并留好小票。", l: [] },
+      { n: 11, s: "todo", t: "日本驾照翻译认证件 ×2（司机 2 人）",
+        d: "中国驾照在日本不能直接开，必须提前办 JAF 或指定机构的日文翻译认证件，办理约需 5 个工作日，邮寄回来的原件当天要带在身上。证件号一律不写进页面。",
+        l: [{ t: "JAF 翻译文件申请说明", u: "https://jaf.or.jp/common/global/zh-cn" }] },
+      { n: 12, s: "todo", t: "eSIM / 随身 WiFi ×4",
+        d: "山区（层云峡、美瑛拼布之路）信号弱，导航建议提前离线下载北海道地图。四个人至少两份网络，别全押在一台随身 WiFi 上。", l: [] },
+      { n: 13, s: "todo", t: "现金 ¥40,000 左右",
+        d: "青池停车场、柿崎商店、部分道之驿只收现金。高速 ETC 从租车公司的卡走，最后一起结算。", l: [] }
+    ]
+  },
+  {
+    g: "🍁 路上再确认", gn: "这几件事不影响出发，但到了当地要看一眼实况。",
+    items: [
+      { n: 14, s: "todo", t: "黑岳红叶实况确认",
+        d: "九月下旬是大雪山红叶前线最漂亮的一周，但每年早晚差一周左右。出发前一晚看层云峡观光协会的红叶速报，如果山顶已经落叶就把重点放到五合目一带。大风或结冰缆车会停运，早上出门前先刷一眼运行状况。",
+        l: [{ t: "层云峡观光协会", u: "https://sounkyo.net/" }] },
+      { n: 15, s: "todo", t: "手信清单（回程新千岁统一买）",
+        d: "六花亭草莓巧克力、ROYCE' 生巧（需冷链，最后买）、白色恋人、北菓楼年轮蛋糕、Calbee 薯条三兄弟。生鲜与冷链必须托运，别带上飞机。", l: [] }
+    ]
+  }
+];
+
+const TIPS = [
+  { h: "🕐 时差：日本比北京快 1 小时", b: "落地后手表拨快 1 小时。本页面所有时间点都已经按日本时间（JST）写好，顶部倒计时无论你在哪个时区打开都是按北海道当地时间算的，不会算错。" },
+  { h: "🌡 九月下旬的北海道已经是深秋", b: "平地白天 16–19℃、夜里 8℃ 上下；层云峡与黑岳七合目会掉到 0–5℃，山顶有风。按「薄羽绒 + 抓绒 + 冲锋衣」三层带，手套和帽子别省。九月末山区偶有初雪预警，出发前看一眼天气。" },
+  { h: "🚗 靠左行驶，最大的坑是右转", b: "方向盘在右、行车靠左，转弯时最容易下意识拐到右车道 —— 每次转弯默念一句「靠左」。雨刷和转向灯位置也和国内相反，起步前先在停车场试两下。" },
+  { h: "🦌 天黑后山路会遇到鹿", b: "富良野—层云峡、层云峡—旭川这两段夜里鹿很多，见到路边反光眼睛立刻减速，鹿通常成群，过去一只后面还有。撞到必须报警并通知租车公司，不能直接开走。" },
+  { h: "⛽ 加油站关门比你想得早", b: "北海道市区之外的加油站多数 18:00–19:00 就关，周日更早。油表到一半就加，别赌下一个镇。还车前必须加满并留好小票，否则按营业所油价补收。" },
+  { h: "🅿️ 停车与 ETC", b: "高速走租车公司的 ETC 卡，还车时统一结算。市区酒店停车普遍 ¥1,000–1,500/晚且车位有限，入住时先跟前台确认。青池、四季彩之丘等景区停车场只收现金。" },
+  { h: "💴 现金还是要带", b: "大店都能刷卡和用手机支付，但市场摊位、小食堂、景区停车场经常只收现金。人均备 ¥10,000 现金比较稳，7-11 的 ATM 支持银联取现。" },
+  { h: "📞 紧急电话与保险", b: "报警 110，火警与救护 119，均可说英语转接。租车公司 24 小时道路救援电话在合同首页，出发前拍照存手机。海外医疗险的保单号存在各自手机里，不写进本页面。" },
+  { h: "🎒 页面上没有的东西", b: "确认号、证件号、房间号一律不写在这里 —— 这是个公开链接，谁拿到都能打开。这些信息都在各自的邮箱和订单 App 里。" },
+  { h: "🔁 行程变了怎么办", b: "航班延误、店没订上、票改时间，直接说一声就行。页面会被改成最新的终稿，几十秒后所有人手机上刷新就是新版本，链接从头到尾不用换。" }
+];
+
+/* =========================================================
+   渲染
+   ========================================================= */
+const $ = (s) => document.querySelector(s);
+const fmtTime = (iso, tz) => new Intl.DateTimeFormat("zh-CN", {
+  timeZone: tz || TZ, hour: "2-digit", minute: "2-digit", hour12: false
+}).format(new Date(iso));
+
+/* 页头 */
+$("#h-title").textContent = TRIP.emoji + " " + TRIP.title;
+$("#h-sub").textContent = TRIP.sub;
+$("#h-chips").innerHTML = TRIP.chips
+  .map((c) => '<span class="chip ' + c.s + '">' + c.t + "</span>").join("");
+$("#ov-lead").textContent = TRIP.lead;
+
+/* 总览摘要 */
+$("#ov-days").innerHTML = DAYS.map((d) =>
+  '<li><i style="background:' + d.color + '"></i><b>D' + d.n + " · " + d.dd + " " + d.dw +
+  "</b><span>" + d.title + " —— " + d.sum + "</span></li>").join("");
+
+/* 航班 */
+$("#fl-list").innerHTML = FLIGHTS.map((f) =>
+  '<div class="card fl">' +
+    '<div class="fl-top"><span>' + f.dir + " · " + f.date + " · " + f.carrier + " " + f.no +
+      '</span><span class="tag-ok">已出票</span></div>' +
+    '<div class="fl-row">' +
+      '<div class="fl-pt"><div class="iata">' + f.from.iata + '</div><div class="tm">' +
+        fmtTime(f.from.at, f.from.tz) + '</div><div class="city">' + f.from.city + "</div></div>" +
+      '<div class="fl-mid">' + f.dur.split(" ")[0] + '<div class="ln"></div>' + (f.dur.split(" ")[1] || "") + "</div>" +
+      '<div class="fl-pt" style="text-align:right"><div class="iata">' + f.to.iata + '</div><div class="tm">' +
+        fmtTime(f.to.at, f.to.tz) + '</div><div class="city">' + f.to.city + "</div></div>" +
+    "</div>" +
+    '<div class="fl-note">' + f.note + "</div>" +
+  "</div>").join("");
+
+/* 每日行程 */
+const todayStr = new Intl.DateTimeFormat("en-CA", { timeZone: TZ }).format(new Date());
+$("#day-list").innerHTML = DAYS.map((d) => {
+  const isToday = d.date === todayStr;
+  return '<div class="card day' + (isToday ? " today" : "") + '" id="d' + d.n + '">' +
+    '<div class="day-hd">' +
+      '<div class="dbox" style="border-color:' + d.color + '"><div class="dd">' + d.dd +
+        '</div><div class="dw">' + d.dw + "</div></div>" +
+      "<div><h3>D" + d.n + " · " + d.title + (isToday ? '<span class="badge-today">今天</span>' : "") +
+        '</h3><div class="rt">' + d.route + "</div></div>" +
+    "</div>" +
+    '<div class="tools">' +
+      '<button class="btn" type="button" data-map="' + d.n + '" data-src="' + d.map + '">🗺 展开今日路线地图</button>' +
+      '<span class="sum">' + d.sum + "</span>" +
+      '<a class="navlink" target="_blank" rel="noopener" href="' + d.nav + '">Google 全天导航 ↗</a>' +
+    "</div>" +
+    '<div class="mapwrap" id="map' + d.n + '"></div>' +
+    '<ul class="tl">' + d.items.map((it) =>
+      "<li>" +
+        '<div class="t">' + fmtTime(it.at, it.tz) + "</div>" +
+        '<div class="c"><div class="h">' + it.h +
+          (it.mk ? '<span class="mk ' + it.mk.c + '">' + it.mk.t + "</span>" : "") + "</div>" +
+          (it.n ? '<div class="n">' + it.n + "</div>" : "") +
+        "</div>" +
+      "</li>").join("") +
+    "</ul></div>";
+}).join("");
+
+/* 地图展开（懒加载：展开时才设 src） */
+document.querySelectorAll("[data-map]").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const box = document.getElementById("map" + btn.dataset.map);
+    const open = box.classList.toggle("open");
+    if (open && !box.dataset.loaded) {
+      box.dataset.loaded = "1";
+      box.innerHTML =
+        '<span class="fallback">地图加载中…… 如果这里一直空白，说明当前网络打不开 Google 地图，' +
+        '用上面的「Google 全天导航」在手机上打开即可。</span>' +
+        '<iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="当日路线地图" src="' +
+        btn.dataset.src + '"></iframe>';
+    }
+    btn.textContent = open ? "× 收起地图" : "🗺 展开今日路线地图";
+  });
+});
+
+/* 待办清单（只读，不可勾选） */
+$("#todo-list").innerHTML = TODOS.map((g) =>
+  '<div class="card tgroup"><h4>' + g.g + '</h4><p class="gn">' + g.gn + "</p>" +
+  g.items.map((t) =>
+    '<div class="todo ' + (t.s === "done" ? "done" : "") + '" id="todo' + t.n + '">' +
+      '<div class="bx">✓</div><div class="bd">' +
+        '<div class="tt"><span class="num">' + t.n + ".</span><span>" + t.t + "</span>" +
+          (t.sy ? '<span class="sync">' + t.sy + "</span>" : "") + "</div>" +
+        '<div class="dt">' + t.d + "</div>" +
+        (t.l && t.l.length
+          ? '<div class="tlinks">' + t.l.map((x) =>
+              '<a target="_blank" rel="noopener" href="' + x.u + '">' + x.t + " ↗</a>").join("") + "</div>"
+          : "") +
+      "</div></div>").join("") +
+  "</div>").join("");
+
+/* 贴士 */
+$("#tip-list").innerHTML = TIPS.map((t) =>
+  '<div class="card tip"><h4>' + t.h + "</h4><p>" + t.b + "</p></div>").join("");
+
+/* =========================================================
+   此刻关注 —— 下一个未发生的事件 + 逐秒倒计时
+   ========================================================= */
+const EVENTS = [];
+DAYS.forEach((d) => d.items.forEach((it) => EVENTS.push({
+  t: new Date(it.at).getTime(),
+  title: it.h.replace(/<[^>]+>/g, ""),
+  note: it.n || "",
+  day: d
+})));
+EVENTS.sort((a, b) => a.t - b.t);
+
+const firstTodo = TODOS.flatMap((g) => g.items).find((t) => t.s === "todo");
+if (firstTodo) {
+  $("#n-todo").hidden = false;
+  $("#n-todo-text").textContent = firstTodo.n + ". " + firstTodo.t;
+  $("#n-todo").querySelector("a").href = "#todo" + firstTodo.n;
+}
+
+const pad = (v) => String(v).padStart(2, "0");
+function tick() {
+  const now = Date.now();
+  const next = EVENTS.find((e) => e.t > now);
+  if (!next) {
+    $("#n-title").textContent = "行程已结束 · 一路顺风";
+    $("#n-note").textContent = "感谢同行。照片记得发群里。";
+    $("#n-count").textContent = "旅程完成 🍁";
+    return;
+  }
+  $("#n-title").textContent = next.title;
+  const dayTag = "D" + next.day.n + " · " + next.day.dd + " " + next.day.dw + " · ";
+  $("#n-note").textContent = dayTag + (next.note || next.day.title);
+
+  let s = Math.floor((next.t - now) / 1000);
+  const dd = Math.floor(s / 86400); s -= dd * 86400;
+  const hh = Math.floor(s / 3600);  s -= hh * 3600;
+  const mm = Math.floor(s / 60);    s -= mm * 60;
+  $("#n-count").innerHTML =
+    (dd > 0 ? dd + "天 " : "") + pad(hh) + ":" + pad(mm) + ":" + pad(s) + "<small>后</small>";
+}
+tick();
+setInterval(tick, 1000);
+
+/* 平滑滚动 */
+document.querySelectorAll('nav a, .now-todo a').forEach((a) => {
+  a.addEventListener("click", (e) => {
+    const el = document.querySelector(a.getAttribute("href"));
+    if (el) { e.preventDefault(); el.scrollIntoView({ behavior: "smooth", block: "start" }); }
+  });
+});
+</script>
+</body>
+</html>

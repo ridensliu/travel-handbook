@@ -1,0 +1,16 @@
+{
+  // Worker 名 = workers.dev 网址前缀，上线后为 https://hokkaido.<你的账号子域>.workers.dev
+  // ⚠️ Dashboard 里 Worker 的名字才是真正决定网址的字段，导入仓库时默认会填成仓库名，
+  //    必须去 Workers & Pages → 该 Worker → Settings → Rename 改成与这里一致的 hokkaido。
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "hokkaido",
+  "compatibility_date": "2026-09-15",
+  "assets": {
+    // 静态资产模式：把行程目录整个当站点根伺服，hokkaido/index.html 自动成为首页
+    "directory": "./hokkaido",
+    "not_found_handling": "single-page-application"
+  },
+  "observability": {
+    "enabled": true
+  }
+}
