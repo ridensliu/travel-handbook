@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f4f0ea" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14110f" media="(prefers-color-scheme: dark)">
+<meta name="description" content="2026年意大利＋冰岛行程 · 行程手册">
+<title>🇮🇹🇮🇸 2026年意大利＋冰岛行程 · 行程手册</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E🇮🇹%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#fdf6ec; --bg2:#fffaf3; --card:#ffffff; --line:#e8ddcc; --line2:#f0e7d9;
+  --ink:#2f2a24; --ink2:#6b6154; --ink3:#9a9081;
+  --accent:#c0392b; --accent2:#e07a3f; --ok:#3f7d52; --warn:#b4762a;
+  --shadow:0 1px 2px rgba(60,45,25,.06),0 8px 24px rgba(60,45,25,.06);
+  --d1:#e07a3f; --d2:#2e7fa8; --d3:#8b5fbf; --d4:#3f8f5e; --d5:#c9548a;
+  --mapbg:#fbf3e4; --mapland:#f3e7d0; --mapink:#5d5443;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#14110f; --bg2:#1b1714; --card:#1f1a16; --line:#332b24; --line2:#292220;
+    --ink:#ece4d9; --ink2:#a89b8b; --ink3:#7b6f61;
+    --accent:#e8664f; --accent2:#f0955b; --ok:#6cc08a; --warn:#e0b05f;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);
+    --d1:#f0955b; --d2:#5fb4dd; --d3:#b98ae8; --d4:#6cc08a; --d5:#ef85b4;
+    --mapbg:#1a1512; --mapland:#241d18; --mapink:#c3b7a4;
+  }
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.65 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif;
+  padding:0 0 64px;
+}
+.wrap{max-width:960px;margin:0 auto;padding:0 16px}
+a{color:inherit}
+
+/* ---------- 页头 ---------- */
+header{padding:28px 0 6px}
+h1{font-size:clamp(23px,5.4vw,34px);line-height:1.25;margin:0 0 8px;letter-spacing:-.4px}
+.sub{color:var(--ink2);font-size:13.5px;line-height:1.7;margin:0 0 14px}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:6px}
+.chip{
+  display:inline-flex;align-items:center;gap:5px;font-size:12px;line-height:1;
+  padding:7px 11px;border-radius:999px;border:1px solid var(--line);
+  background:var(--bg2);color:var(--ink2);white-space:nowrap;
+}
+.chip.done{color:var(--ok);border-color:color-mix(in srgb,var(--ok) 35%,var(--line))}
+.chip.pending{color:var(--warn);border-color:color-mix(in srgb,var(--warn) 35%,var(--line))}
+
+/* ---------- NOW 卡片 ---------- */
+.now{
+  margin:16px 0 18px;border-radius:18px;padding:18px 18px 15px;color:#fff;
+  background:linear-gradient(145deg,#c0392b,#a8321f 55%,#8d2a1a);
+  box-shadow:0 10px 30px rgba(160,50,30,.28);position:relative;overflow:hidden;
+}
+@media (prefers-color-scheme:dark){.now{background:linear-gradient(145deg,#8f2c1f,#6f1f15 60%,#551610);box-shadow:0 10px 30px rgba(0,0,0,.5)}}
+.now::after{content:"";position:absolute;right:-60px;top:-60px;width:190px;height:190px;border-radius:50%;background:rgba(255,255,255,.07)}
+.now-label{display:flex;align-items:center;gap:7px;font-size:11.5px;letter-spacing:1.4px;opacity:.9;margin-bottom:9px}
+.dot{width:8px;height:8px;border-radius:50%;background:#fff;animation:pulse 1.6s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.72)}}
+.now-title{font-size:clamp(18px,4.6vw,23px);font-weight:700;margin:0 0 4px;position:relative}
+.now-note{font-size:12.5px;opacity:.86;margin:0 0 12px;position:relative;line-height:1.6}
+.count{
+  font:700 clamp(27px,7.4vw,42px)/1.1 ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+  letter-spacing:.5px;position:relative;font-variant-numeric:tabular-nums;
+}
+.count small{font-size:.44em;font-weight:600;opacity:.8;letter-spacing:0;margin-left:6px}
+.now-todo{
+  margin-top:13px;padding-top:11px;border-top:1px dashed rgba(255,255,255,.3);
+  display:flex;align-items:center;gap:9px;font-size:12.5px;position:relative;
+}
+.now-todo b{
+  background:rgba(255,255,255,.18);padding:3px 8px;border-radius:6px;
+  font-size:11px;font-weight:600;white-space:nowrap;
+}
+.now-todo span{flex:1;min-width:0;opacity:.94;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.now-todo a{color:#fff;text-decoration:none;opacity:.85;white-space:nowrap;font-size:12px}
+
+/* ---------- 章节导航 ---------- */
+nav{
+  position:sticky;top:0;z-index:30;margin:0 -16px;padding:9px 16px;
+  background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:saturate(1.6) blur(12px);-webkit-backdrop-filter:saturate(1.6) blur(12px);
+  border-bottom:1px solid var(--line2);
+  display:flex;gap:7px;overflow-x:auto;scrollbar-width:none;
+}
+nav::-webkit-scrollbar{display:none}
+nav a{
+  flex:0 0 auto;font-size:13px;padding:7px 13px;border-radius:999px;text-decoration:none;
+  background:var(--card);border:1px solid var(--line);color:var(--ink2);
+}
+nav a:hover{color:var(--ink);border-color:var(--ink3)}
+
+/* ---------- 通用 ---------- */
+section{padding-top:30px;scroll-margin-top:60px}
+h2{font-size:19px;margin:0 0 5px;letter-spacing:-.2px}
+.lead{color:var(--ink2);font-size:13px;line-height:1.75;margin:0 0 15px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:15px;box-shadow:var(--shadow)}
+
+/* ---------- 地图 ---------- */
+.mapbox{padding:8px;overflow:hidden}
+.mapbox svg{width:100%;height:auto;display:block;border-radius:9px;background:var(--mapbg)}
+.daylist{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:7px}
+.daylist li{
+  display:flex;gap:10px;align-items:baseline;font-size:13px;color:var(--ink2);
+  padding:9px 12px;border-radius:10px;background:var(--bg2);border:1px solid var(--line2);
+}
+.daylist b{color:var(--ink);font-weight:600;white-space:nowrap;font-size:12.5px}
+.daylist i{width:7px;height:7px;border-radius:50%;flex:0 0 auto;align-self:center}
+
+/* ---------- 航班 ---------- */
+.grid2{display:grid;gap:12px;grid-template-columns:1fr}
+@media(min-width:720px){.grid2{grid-template-columns:1fr 1fr}}
+.fl{padding:15px 16px}
+.fl-top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:13px;font-size:12.5px;color:var(--ink2)}
+.tag-ok{color:var(--ok);border:1px solid color-mix(in srgb,var(--ok) 35%,var(--line));padding:2px 8px;border-radius:999px;font-size:11px}
+.fl-row{display:flex;align-items:center;gap:10px}
+.fl-pt{flex:1;min-width:0}
+.fl-pt .iata{font-size:21px;font-weight:700;letter-spacing:.5px}
+.fl-pt .tm{font:600 15px/1.3 ui-monospace,Menlo,monospace;margin-top:1px}
+.fl-pt .city{font-size:11.5px;color:var(--ink3);margin-top:2px}
+.fl-mid{text-align:center;color:var(--ink3);font-size:11px;flex:0 0 auto}
+.fl-mid .ln{height:1px;background:var(--line);margin:5px 0;width:56px;position:relative}
+.fl-mid .ln::after{content:"✈";position:absolute;right:-4px;top:-9px;font-size:11px}
+.fl-note{margin-top:12px;padding-top:11px;border-top:1px solid var(--line2);font-size:12px;color:var(--ink2);line-height:1.65}
+
+/* ---------- 每日行程 ---------- */
+.day{margin-bottom:14px;overflow:hidden}
+.day.today{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 14%,transparent),var(--shadow)}
+.day-hd{display:flex;gap:13px;padding:15px 16px 13px;align-items:flex-start}
+.dbox{
+  flex:0 0 auto;width:52px;text-align:center;border-radius:11px;padding:7px 0;
+  background:var(--bg2);border:1px solid var(--line2);
+}
+.dbox .dd{font:700 16px/1.15 ui-monospace,Menlo,monospace}
+.dbox .dw{font-size:10.5px;color:var(--ink3);margin-top:2px}
+.day-hd h3{margin:0 0 3px;font-size:16px;letter-spacing:-.2px}
+.day-hd .rt{font-size:12.5px;color:var(--ink2);line-height:1.6}
+.badge-today{
+  display:inline-block;margin-left:7px;vertical-align:2px;font-size:10.5px;font-weight:600;
+  color:#fff;background:var(--accent);padding:2px 7px;border-radius:999px;
+}
+.tools{
+  display:flex;flex-wrap:wrap;align-items:center;gap:9px;padding:10px 16px;
+  border-top:1px solid var(--line2);border-bottom:1px solid var(--line2);background:var(--bg2);
+}
+.btn{
+  font:inherit;font-size:12.5px;cursor:pointer;border:1px solid var(--line);background:var(--card);
+  color:var(--ink);padding:7px 12px;border-radius:9px;line-height:1.3;
+}
+.btn:hover{border-color:var(--ink3)}
+.tools .sum{font-size:12px;color:var(--ink3);flex:1;min-width:110px}
+.navlink{font-size:12.5px;text-decoration:none;color:var(--accent);font-weight:600;white-space:nowrap}
+.mapwrap{display:none;padding:0;background:#000;line-height:0}
+.mapwrap.open{display:block}
+.mapwrap iframe{width:100%;height:290px;border:0;display:block}
+.mapwrap .fallback{
+  display:block;padding:14px 16px;font-size:12px;line-height:1.7;color:var(--ink3);
+  background:var(--bg2);
+}
+
+/* 时间轴 */
+.tl{list-style:none;margin:0;padding:6px 16px 16px}
+.tl li{display:flex;gap:13px;padding:11px 0;border-bottom:1px dashed var(--line2)}
+.tl li:last-child{border-bottom:0;padding-bottom:2px}
+.tl .t{
+  flex:0 0 52px;font:600 13.5px/1.5 ui-monospace,Menlo,monospace;color:var(--accent);
+  font-variant-numeric:tabular-nums;padding-top:1px;
+}
+.tl .c{flex:1;min-width:0}
+.tl .c .h{font-size:14.5px;line-height:1.55;font-weight:500}
+.tl .c .n{font-size:12.5px;color:var(--ink2);line-height:1.7;margin-top:3px}
+.place{
+  text-decoration:underline dotted;text-underline-offset:3px;text-decoration-thickness:1px;
+  color:inherit;font-weight:600;
+}
+.place::after{content:"↗";font-size:.72em;vertical-align:1px;margin-left:2px;color:var(--ink3);text-decoration:none}
+.mk{
+  display:inline-block;font-size:10.5px;line-height:1;padding:3px 7px;border-radius:5px;
+  margin-left:6px;vertical-align:2px;white-space:nowrap;font-weight:600;
+}
+.mk.need{color:var(--warn);background:color-mix(in srgb,var(--warn) 13%,transparent)}
+.mk.done{color:var(--ok);background:color-mix(in srgb,var(--ok) 13%,transparent)}
+.mk.free{color:var(--ink2);background:var(--bg2);border:1px solid var(--line2)}
+.mk.stay{color:var(--d3);background:color-mix(in srgb,var(--d3) 13%,transparent)}
+
+/* ---------- 待办 ---------- */
+.tgroup{margin-bottom:13px;padding:14px 16px}
+.tgroup h4{margin:0 0 4px;font-size:14px}
+.tgroup .gn{font-size:12px;color:var(--ink3);margin:0 0 11px;line-height:1.6}
+.todo{display:flex;gap:11px;padding:11px 0;border-top:1px dashed var(--line2)}
+.todo .bx{
+  flex:0 0 auto;width:17px;height:17px;border-radius:5px;margin-top:3px;
+  border:1.5px solid var(--ink3);display:flex;align-items:center;justify-content:center;
+  font-size:11px;color:transparent;
+}
+.todo.done .bx{background:var(--ok);border-color:var(--ok);color:#fff}
+.todo .bd{flex:1;min-width:0}
+.todo .tt{font-size:14px;font-weight:600;line-height:1.55;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.todo .tt .num{color:var(--ink3);font:600 13px/1 ui-monospace,Menlo,monospace}
+.todo.done .tt{color:var(--ink2)}
+.sync{font-size:10.5px;font-weight:600;color:var(--ok);background:color-mix(in srgb,var(--ok) 13%,transparent);padding:3px 7px;border-radius:5px}
+.todo .dt{font-size:12.5px;color:var(--ink2);line-height:1.75;margin-top:4px}
+.tlinks{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.tlinks a{
+  font-size:12px;text-decoration:none;color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 30%,var(--line));
+  padding:5px 10px;border-radius:8px;
+}
+.tlinks a:hover{background:color-mix(in srgb,var(--accent) 8%,transparent)}
+
+/* ---------- 贴士 ---------- */
+.tips{display:grid;gap:11px;grid-template-columns:1fr}
+@media(min-width:720px){.tips{grid-template-columns:1fr 1fr}}
+.tip{padding:14px 16px}
+.tip h4{margin:0 0 5px;font-size:14px}
+.tip p{margin:0;font-size:12.5px;color:var(--ink2);line-height:1.75}
+footer{margin-top:34px;padding-top:18px;border-top:1px solid var(--line2);font-size:11.5px;color:var(--ink3);line-height:1.8}
+</style>
+.pack .bx {border:none;color:var(--ink3);font-weight:700;font-size:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1 id="h-title"></h1>
+  <p class="sub" id="h-sub"></p>
+  <div class="chips" id="h-chips"><span class="chip done">✈ 机票已出票</span><span class="chip done">🏨 部分酒店已预订</span><span class="chip pending">🏨 冰河湖周边酒店待确认</span><span class="chip done">🚐 冰岛南岸包车已确认</span><span class="chip pending">🎫 部分景点需提前预约</span></div>
+</header>
+<div class="now">
+  <div class="now-label"><span class="dot"></span>此刻关注 · NOW</div>
+  <p class="now-title" id="n-title">正在计算…</p>
+  <p class="now-note" id="n-note"></p>
+  <div class="count" id="n-count">--</div>
+</div>
+<nav>
+  <a href="#overview">🗺 总览</a>
+  <a href="#flights">✈ 航班</a>
+  <a href="#days">📅 每日行程</a>
+  <a href="#review">📋 复核说明</a>
+  <a href="#pack">🎒 行李清单</a>
+</nav>
+<section id="overview">
+  <h2>🗺 行程总览</h2>
+  <p class="lead" id="ov-lead"></p>
+  <div class="card mapbox">
+    <svg viewBox="0 0 900 420" role="img" aria-label="意大利与冰岛路线概览">
+      <defs><style>.ol{fill:var(--mapland);stroke:var(--mapink);stroke-width:2}.rt{fill:none;stroke-width:4;stroke-linecap:round}.lbl{fill:var(--mapink);font:600 14px sans-serif}</style></defs>
+      <rect width="900" height="420" fill="var(--mapbg)" rx="12"/>
+      <path class="ol" d="M80 280 Q180 120 320 180 T520 160 T680 200 L720 260 L640 320 L420 340 L200 320 Z"/>
+      <text x="90" y="300" class="lbl">意大利</text>
+      <path class="rt" stroke="var(--d1)" d="M140 260 L260 220 L380 200 L480 190"/>
+      <path class="rt" stroke="var(--d2)" d="M480 190 L560 170 L620 185"/>
+      <path class="rt" stroke="var(--d3)" stroke-dasharray="8 6" d="M650 195 Q780 120 820 80"/>
+      <ellipse class="ol" cx="820" cy="95" rx="55" ry="35"/>
+      <text x="790" y="100" class="lbl">冰岛</text>
+      <path class="rt" stroke="var(--d4)" d="M805 110 L780 130 L760 150"/>
+      <text x="120" y="240" class="lbl">佛罗伦萨</text>
+      <text x="360" y="185" class="lbl">多洛米蒂</text>
+      <text x="560" y="175" class="lbl">威尼斯 VCE</text>
+      <text x="780" y="155" class="lbl">雷克雅未克</text>
+      <text x="760" y="175" class="lbl" style="font-size:12px;opacity:.8">南岸 · 冰河湖</text>
+    </svg>
+  </div>
+  <ul class="daylist" id="ov-days"><li><i style="background:var(--d1)"></i><b>D1 · 9.25 周五</b><span>佛罗伦萨 —— 9.25 周五 · 8 项 · 佛罗伦萨</span></li><li><i style="background:var(--d2)"></i><b>D2 · 9.26 周六</b><span>佛罗伦萨 —— 9.26 周六 · 7 项 · 佛罗伦萨</span></li><li><i style="background:var(--d3)"></i><b>D3 · 9.27 周日</b><span>佛罗伦萨 —— 9.27 周日 · 8 项 · 佛罗伦萨</span></li><li><i style="background:var(--d4)"></i><b>D4 · 9.28 周一</b><span>佛罗伦萨 —— 9.28 周一 · 7 项 · 佛罗伦萨→博尔扎诺 · 博尔扎诺 · 博尔扎诺→富内斯 · 富内斯山谷</span></li><li><i style="background:var(--d5)"></i><b>D5 · 9.29 周二</b><span>富内斯山谷 —— 9.29 周二 · 8 项 · 富内斯山谷 · 富内斯→Ortisei · Seceda · Seceda→Ortisei</span></li><li><i style="background:var(--d1)"></i><b>D6 · 9.30 周三</b><span>富内斯→休斯高原 —— 9.30 周三 · 7 项 · 富内斯→休斯高原 · 休斯高原 · 休斯高原→富内斯</span></li><li><i style="background:var(--d2)"></i><b>D7 · 10.1 周四</b><span>富内斯山谷 —— 10.1 周四 · 7 项 · 富内斯山谷 · 富内斯→三峰山 · 三峰山 · 三峰山→Dobbiaco</span></li><li><i style="background:var(--d3)"></i><b>D8 · 10.2 周五</b><span>Dobbiaco —— 10.2 周五 · 16 项 · Dobbiaco · Dobbiaco→Braies · Lago di Braies · Braies→威尼斯机场</span></li><li><i style="background:var(--d4)"></i><b>D9 · 10.3 周六</b><span>雷克雅未克 —— 10.3 周六 · 8 项 · 雷克雅未克</span></li><li><i style="background:var(--d5)"></i><b>D10 · 10.4 周日</b><span>雷克雅未克 —— 10.4 周日 · 5 项 · 雷克雅未克 · Snæfellsnes半岛</span></li><li><i style="background:var(--d1)"></i><b>D11 · 10.5 周一</b><span>雷克雅未克 —— 10.5 周一 · 8 项 · 雷克雅未克 · 雷克雅未克→冰河湖 · 冰河湖 · Vatnajökull冰川</span></li><li><i style="background:var(--d2)"></i><b>D12 · 10.6 周二</b><span>冰河湖周边 —— 10.6 周二 · 14 项 · 冰河湖周边 · 冰河湖周边→Jökulsárlón · Jökulsárlón · 冰河湖→Reynisfjara</span></li><li><i style="background:var(--d3)"></i><b>D13 · 10.7 周三</b><span>雷克雅未克 —— 10.7 周三 · 8 项 · 雷克雅未克 · 雷克雅未克→KEF · 凯夫拉维克机场 · KEF→伦敦希思罗</span></li></ul>
+</section>
+<section id="flights">
+  <h2>✈ 航班（已出票）</h2>
+  <p class="lead">仅列出 Excel 行程表中的国际航段；时间为各机场当地时间。</p>
+  <div class="grid2" id="fl-list"><div class="card fl">
+    <div class="fl-top"><span>意大利 → 冰岛 · 10/2 周五 · VCE→KEF 直飞</span><span class="tag-ok">机票已出票</span></div>
+    <div class="fl-row">
+      <div class="fl-pt"><div class="iata">VCE</div><div class="tm">15:55</div><div class="city">威尼斯马可·波罗</div></div>
+      <div class="fl-mid">约 4h35m<div class="ln"></div></div>
+      <div class="fl-pt" style="text-align:right"><div class="iata">KEF</div><div class="tm">18:30</div><div class="city">凯夫拉维克</div></div>
+    </div>
+    <div class="fl-note">VCE → KEF · 交通：飞机 · 交通约 275 分钟 · 活动约 0 分钟 · 当前航线时刻表显示15:55起飞，直飞约4小时35分；到达时间为冰岛当地时间。</div>
+  </div><div class="card fl">
+    <div class="fl-top"><span>冰岛 → 伦敦 · 10/7 周三 · FI454</span><span class="tag-ok">机票已出票</span></div>
+    <div class="fl-row">
+      <div class="fl-pt"><div class="iata">KEF</div><div class="tm">16:10</div><div class="city">凯夫拉维克</div></div>
+      <div class="fl-mid">约 3h10m<div class="ln"></div></div>
+      <div class="fl-pt" style="text-align:right"><div class="iata">LHR</div><div class="tm">20:20</div><div class="city">伦敦希思罗 T2</div></div>
+    </div>
+    <div class="fl-note">KEF → LHR T2 · 交通：飞机 · 交通约 190 分钟 · 活动约 0 分钟 · 当前时刻表显示16:10起飞、20:20抵达T2，飞行约3小时10分。</div>
+  </div><div class="card fl">
+    <div class="fl-top"><span>伦敦 → 海口 · 10/7 周三 · HU7912</span><span class="tag-ok">机票已出票</span></div>
+    <div class="fl-row">
+      <div class="fl-pt"><div class="iata">LHR</div><div class="tm">22:00</div><div class="city">伦敦希思罗 T3</div></div>
+      <div class="fl-mid">约 18h30m<div class="ln"></div></div>
+      <div class="fl-pt" style="text-align:right"><div class="iata">HAK</div><div class="tm">16:30</div><div class="city">海口 T2</div></div>
+    </div>
+    <div class="fl-note">LHR T2 → LHR T3 · 交通：机场转机 · 交通约 0 分钟 · 活动约 100 分钟 · 只有1小时40分钟</div>
+  </div></div>
+</section>
+<section id="days">
+  <h2>📅 每日行程</h2>
+  <p class="lead">时间来自 Excel《详细行程》表；9/25–10/2 为意大利时间（CEST），10/2 晚起为冰岛时间，返程段按各机场当地时间标注。</p>
+  <div id="day-list"><div class="card day" id="d1">
+  <div class="day-hd">
+    <div class="dbox" style="border-color:var(--d1)"><div class="dd">9.25</div><div class="dw">周五</div></div>
+    <div><h3>D1 · 佛罗伦萨</h3><div class="rt">佛罗伦萨</div></div>
+  </div>
+  <div class="tools"><span class="sum">9.25 周五 · 8 项 · 佛罗伦萨</span></div>
+  <ul class="tl"><li><div class="t">12:00</div><div class="c"><div class="h">抵达佛罗伦萨、前往<a class="place" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=市中心酒店">市中心酒店</a>寄存行李<span class="mk free">无需预约</span></div><div class="n">机场/车站 → 市中心酒店 · 交通：出租车/电车/步行 · 交通约 35 分钟 · 活动约 35 分钟 · 若从FLR机场抵达，电车至SMN约20分钟；本表按13:10前进入市中心估算。</div></div></li><li><div class="t">13:10</div><div class="c"><div class="h">午餐＋办理入住<span class="mk free">无需预约</span></div><div class="n">市中心酒店 → 圣洛伦佐教堂周边 · 交通：步行 · 交通约 10 分钟 · 活动约 45 分钟 · 建议酒店选Duomo或SMN附近，方便三天全程步行。</div></div></li><li><div class="t">14:10</div><div class="c"><div class="h">圣洛伦佐教堂<span class="mk free">现场购票</span></div><div class="n">酒店/午餐地点 → 圣洛伦佐教堂 · 交通：步行 · 交通约 10 分钟 · 活动约 60 分钟 · 教堂周一至周六开放；建议最晚15:15前进入，给后续预约留缓冲。</div></div></li><li><div class="t">15:10</div><div class="c"><div class="h">前往<a class="place" target="_blank" rel="noopener" href="https://www.galleriaaccademiafirenze.it/en/tickets/">学院美术馆</a><span class="mk done">已预约时段优先</span></div><div class="n">圣洛伦佐教堂 → 学院美术馆 · 交通：步行 · 交通约 10 分钟 · 活动约 5 分钟 · 建议预约15:30或15:45，避免抵达日航班延误造成损失。</div></div></li><li><div class="t">15:30</div><div class="c"><div class="h">学院美术馆：重点参观《大卫》<span class="mk need">强烈建议提前预约</span></div><div class="n">学院美术馆入口 → 学院美术馆出口 · 交通：馆内步行 · 交通约 0 分钟 · 活动约 90 分钟 · 参观结束后直接向阿诺河方向步行。</div></div></li><li><div class="t">17:00</div><div class="c"><div class="h">途经圣母百花教堂外观、共和国广场前往<a class="place" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=老桥">老桥</a><span class="mk free">无需预约</span></div><div class="n">学院美术馆 → 老桥 · 交通：步行 · 交通约 25 分钟 · 活动约 0 分钟 · 这段同时完成老城街景游览。</div></div></li><li><div class="t">17:25</div><div class="c"><div class="h">老桥逛饰品店，包括HUMILIS<span class="mk free">无需预约</span></div><div class="n">老桥北端 → HUMILIS（Ponte Vecchio 51/R） · 交通：步行 · 交通约 5 分钟 · 活动约 50 分钟 · 建议提前确认店铺当日营业时间。</div></div></li><li><div class="t">18:20</div><div class="c"><div class="h">阿诺河散步＋圣三一桥晚霞，远观老桥和圣母百花<span class="mk free">无需预约</span></div><div class="n">老桥 → 圣三一桥及阿诺河岸 · 交通：步行 · 交通约 10 分钟 · 活动约 60 分钟 · 9月25日日落约19:07，建议18:35前抵达桥上选机位。</div></div></li></ul>
+</div><div class="card day" id="d2">
+  <div class="day-hd">
+    <div class="dbox" style="border-color:var(--d2)"><div class="dd">9.26</div><div class="dw">周六</div></div>
+    <div><h3>D2 · 佛罗伦萨</h3><div class="rt"></div></div>
+  </div>
+  <div class="tools"><span class="sum">9.26 周六 · 7 项 · 佛罗伦萨</span></div>
+  <ul class="tl"><li><div class="t">08:15</div><div class="c"><div class="h">碧提宫：帕拉蒂娜画廊等核心展区<span class="mk need">建议提前购联票</span></div><div class="n">碧提宫入口 → 碧提宫/波波里花园通道 · 交通：馆内步行 · 交通约 0 分钟 · 活动约 120 分钟 · 碧提宫官方开放时间为8:15；两小时看帕拉蒂娜画廊等核心展区即可。</div></div></li><li><div class="t">10:15</div><div class="c"><div class="h">波波里花园：圆形剧场、海神喷泉、柏树林大道等<span class="mk need">建议提前购联票</span></div><div class="n">碧提宫 → 波波里花园出口 · 交通：步行 · 交通约 5 分钟 · 活动约 125 分钟 · 花园坡路较多；9月闭园18:30。按约2小时安排，12:25前离园衔接午餐。</div></div></li><li><div class="t">12:30</div><div class="c"><div class="h">午饭</div></div></li><li><div class="t">13:30</div><div class="c"><div class="h">视天气而定，午休或citywalk</div></div></li><li><div class="t">15:00</div><div class="c"><div class="h">乌菲兹美术馆<span class="mk need">必须提前预约</span></div><div class="n">乌菲兹入口 → 乌菲兹出口 · 交通：馆内步行 · 交通约 0 分钟 · 活动约 120 分钟 · 15:00至17:00共2小时，重点看波提切利、达·芬奇、拉斐尔、提香、卡拉瓦乔。</div></div></li><li><div class="t">17:20</div><div class="c"><div class="h">前往<a class="place" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=米开朗琪罗广场">米开朗琪罗广场</a><span class="mk free">无需预约</span></div><div class="n">乌菲兹 → 米开朗琪罗广场 · 交通：步行 · 交通约 30 分钟 · 活动约 10 分钟 · 优先从靠近Forte di Belvedere方向离开；若出口临时调整，直接打车。</div></div></li><li><div class="t">18:00</div><div class="c"><div class="h"><a class="place" target="_blank" rel="noopener" href="https://www.timeanddate.com/sun/italy/firenze?month=9">米开朗琪罗广场</a>看日落和蓝调<span class="mk free">无需预约</span></div><div class="n">米开朗琪罗广场 → 米开朗琪罗广场 · 交通：步行 · 交通约 0 分钟 · 活动约 95 分钟 · 9月26日日落约19:05，至少提前45分钟占位。</div></div></li></ul>
+</div><div class="card day" id="d3">
+  <div class="day-hd">
+    <div class="dbox" style="border-color:var(--d3)"><div class="dd">9.27</div><div class="dw">周日</div></div>
+    <div><h3>D3 · 佛罗伦萨</h3><div class="rt"></div></div>
+  </div>
+  <div class="tools"><span class="sum">9.27 周日 · 8 项 · 佛罗伦萨</span></div>
+  <ul class="tl"><li><div class="t">07:55</div><div class="c"><div class="h">前往<a class="place" target="_blank" rel="noopener" href="https://tickets.duomo.firenze.it/en/product/tickets/brunelleschi-pass/3006/13344">乔托钟楼</a><span class="mk free">持Brunelleschi Pass</span></div><div class="n">市中心酒店 → 乔托钟楼 · 交通：步行 · 交通约 15 分钟 · 活动约 5 分钟 · 早场体力和人流最好。</div></div></li><li><div class="t">08:15</div><div class="c"><div class="h">乔托钟楼登顶<span class="mk free">提前购买通票</span></div><div class="n">乔托钟楼入口 → 乔托钟楼出口 · 交通：步行登塔 · 交通约 0 分钟 · 活动约 65 分钟 · 约414级台阶；与下午穹顶登顶之间留足恢复时间。</div></div></li><li><div class="t">09:25</div><div class="c"><div class="h">主教座堂博物馆＋洗礼堂<span class="mk free">持Brunelleschi Pass</span></div><div class="n">乔托钟楼 → 大教堂建筑群 · 交通：步行 · 交通约 5 分钟 · 活动约 100 分钟 · 周日教堂内部因礼拜不对普通游客开放；博物馆和洗礼堂可参观。</div></div></li><li><div class="t">11:10</div><div class="c"><div class="h">午餐＋休息<span class="mk free">无需预约</span></div><div class="n">大教堂建筑群 → 穹顶入口附近 · 交通：步行 · 交通约 5 分钟 · 活动约 75 分钟 · 避免吃得过饱，穹顶通道狭窄且台阶密集。</div></div></li><li><div class="t">12:45</div><div class="c"><div class="h">圣母百花教堂穹顶登顶<span class="mk need">必须提前锁定12:45时段</span></div><div class="n">穹顶入口 → 穹顶出口 · 交通：步行登顶 · 交通约 0 分钟 · 活动约 80 分钟 · 周日穹顶从12:45开放；通票姓名与证件信息需一致。</div></div></li><li><div class="t">14:05</div><div class="c"><div class="h">前往<a class="place" target="_blank" rel="noopener" href="https://www.santacroceopera.it/en/organise-your-visit/">圣十字圣殿</a><span class="mk free">无需线上预约</span></div><div class="n">圣母百花教堂 → 圣十字圣殿 · 交通：步行 · 交通约 15 分钟 · 活动约 5 分钟 · 2026年欧洲文化遗产日为9月26日至27日；圣十字圣殿周日14:00开放，现场取免费票。</div></div></li><li><div class="t">14:25</div><div class="c"><div class="h">圣十字圣殿<span class="mk free">现场取票</span></div><div class="n">圣十字圣殿入口 → 圣十字圣殿出口 · 交通：馆内步行 · 交通约 0 分钟 · 活动约 105 分钟 · 周日正常开放14:00至17:30；欧洲文化遗产日期间免费，仅圣殿主体开放的可能性较高。</div></div></li><li><div class="t">16:10</div><div class="c"><div class="h">咖啡、自由活动、整理行李<span class="mk free">无需预约</span></div><div class="n">圣十字圣殿 → 酒店 · 交通：步行 · 交通约 20 分钟 · 活动约 120 分钟 · 为次日早班火车和山区自驾留体力。</div></div></li></ul>
+</div><div class="card day" id="d4">
+  <div class="day-hd">
+    <div class="dbox" style="border-color:var(--d4)"><div class="dd">9.28</div><div class="dw">周一</div></div>
+    <div><h3>D4 · 佛罗伦萨</h3><div class="rt">佛罗伦萨→博尔扎诺 · 博尔扎诺 · 博尔扎诺→富内斯 · 富内斯山谷</div></div>
+  </div>
+  <div class="tools"><span class="sum">9.28 周一 · 7 项 · 佛罗伦萨→博尔扎诺 · 博尔扎诺 · 博尔扎诺→富内斯 · 富内斯山谷</span></div>
+  <ul class="tl"><li><div class="t">06:45</div><div class="c"><div class="h">退房、前往Firenze S. M. Novella车站<span class="mk need">火车需提前购票</span></div><div class="n">酒店 → Firenze SMN · 交通：步行/出租车 · 交通约 15 分钟 · 活动约 20 分钟 · 建议选择7:20至8:00之间发车、0至1次换乘的班次。</div></div></li><li><div class="t">07:30</div><div class="c"><div class="h">火车前往<a class="place" target="_blank" rel="noopener" href="https://www.trenitalia.com/en.html">Bolzano/Bozen</a><span class="mk free">提前购票并选座</span></div><div class="n">Firenze SMN → Bolzano/Bozen · 交通：高速列车 · 交通约 225 分钟 · 活动约 0 分钟 · 常见耗时约3小时30分至4小时，最终以出票时刻表为准。</div></div></li><li><div class="t">11:15</div><div class="c"><div class="h">取租车＋简单午餐<span class="mk need">租车需提前预订</span></div><div class="n">Bolzano车站 → 租车门店 · 交通：步行/接驳 · 交通约 15 分钟 · 活动约 50 分钟 · 建议自动挡、小型SUV或旅行车；确认异地还车至VCE。</div></div></li><li><div class="t">12:20</div><div class="c"><div class="h">自驾前往Hotel Tyrol<span class="mk done">酒店已预订</span></div><div class="n">Bolzano → Hotel Tyrol, St. Magdalena · 交通：自驾 · 交通约 55 分钟 · 活动约 0 分钟 · 山路弯道多，预留停车和找路时间。</div></div></li><li><div class="t">13:15</div><div class="c"><div class="h">寄存行李、午休、准备徒步<span class="mk free">无需预约</span></div><div class="n">Hotel Tyrol → Hotel Tyrol · 交通：步行 · 交通约 0 分钟 · 活动约 75 分钟 · Hotel Tyrol位于Santa Maddalena，可直接开始村庄徒步。</div></div></li><li><div class="t">14:30</div><div class="c"><div class="h">富内斯徒步：Santa Maddalena教堂＋村庄全景步道＋St. Johann in Ranui周边<span class="mk free">无需预约</span></div><div class="n">Hotel Tyrol → 富内斯经典观景区域 · 交通：步行徒步 · 交通约 10 分钟 · 活动约 160 分钟 · 建议6至8公里轻徒步；不要进入私人草地。</div></div></li><li><div class="t">17:20</div><div class="c"><div class="h">Santa Maddalena经典机位等候日落<span class="mk free">无需预约</span></div><div class="n">徒步终点 → Santa Maddalena观景点 · 交通：步行 · 交通约 15 分钟 · 活动约 105 分钟 · 提前与酒店确认晚餐时间，必要时申请延迟用餐。</div></div></li></ul>
+</div><div class="card day" id="d5">
+  <div class="day-hd">
+    <div class="dbox" style="border-color:var(--d5)"><div class="dd">9.29</div><div class="dw">周二</div></div>
+    <div><h3>D5 · 富内斯山谷</h3><div class="rt">富内斯山谷 · 富内斯→Ortisei · Seceda · Seceda→Ortisei</div></div>
+  </div>
+  <div class="tools"><span class="sum">9.29 周二 · 8 项 · 富内斯山谷 · 富内斯→Ortisei · Seceda · Seceda→Ortisei</span></div>
+  <ul class="tl"><li><div class="t">07:15</div><div class="c"><div class="h">早餐、检查山顶天气与缆车状态<span class="mk free">临近确认</span></div><div class="n">Hotel Tyrol → Hotel Tyrol · 交通：步行 · 交通约 0 分钟 · 活动约 45 分钟 · 当前官网显示Ortisei–Furnes及Furnes–Seceda两段缆车在9月29日运营，时间8:30至17:30；Fermeda座椅缆车已于9月20日结束夏季运营。</div></div></li><li><div class="t">08:00</div><div class="c"><div class="h">自驾至Seceda缆车谷站并停车<span class="mk free">停车现场处理</span></div><div class="n">Hotel Tyrol → Seceda Ortisei谷站 · 交通：自驾 · 交通约 45 分钟 · 活动约 0 分钟 · 山路与小镇交通存在波动，建议8:00前出发。</div></div></li><li><div class="t">08:45</div><div class="c"><div class="h">购票/检票＋两段缆车上山<span class="mk free">可提前线上购票</span></div><div class="n">Ortisei谷站 → Seceda山顶 · 交通：缆车 · 交通约 20 分钟 · 活动约 15 分钟 · 两段主缆车均运营；按本表09:20到山顶、15:10开始下山，距离17:30末班仍有充足缓冲。</div></div></li><li><div class="t">09:20</div><div class="c"><div class="h">刀锋山经典山脊打卡<span class="mk free">无需预约</span></div><div class="n">Seceda山顶站 → 经典山脊观景位 · 交通：步行 · 交通约 15 分钟 · 活动约 40 分钟 · 上午通常更容易获得清晰能见度。</div></div></li><li><div class="t">10:15</div><div class="c"><div class="h">轻徒步：山脊—Pieralongia双石—山屋—返回山顶站<span class="mk free">无需预约</span></div><div class="n">经典观景位 → Seceda山顶站 · 交通：徒步 · 交通约 0 分钟 · 活动约 240 分钟 · 约6至8公里，按天气缩短；Fermeda座椅缆车此时已结束夏季运营，不纳入路线。</div></div></li><li><div class="t">14:15</div><div class="c"><div class="h">山屋午餐/咖啡＋补拍<span class="mk free">山屋不一定接受预约</span></div><div class="n">Seceda山顶站附近 → Seceda山顶站 · 交通：步行 · 交通约 0 分钟 · 活动约 55 分钟 · 山区餐厅可能提前结束营业，随身准备能量食品。</div></div></li><li><div class="t">15:10</div><div class="c"><div class="h">缆车下山＋<a class="place" target="_blank" rel="noopener" href="https://www.seceda.it/en/summer">Ortisei</a>小镇短暂停留<span class="mk free">注意末班时间</span></div><div class="n">Seceda山顶 → Ortisei · 交通：缆车＋步行 · 交通约 25 分钟 · 活动约 40 分钟 · 不要把返程拖到末班前；留出天气停运缓冲。</div></div></li><li><div class="t">16:15</div><div class="c"><div class="h">返回<a class="place" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Hotel Tyrol">Hotel Tyrol</a><span class="mk free">无需预约</span></div><div class="n">Ortisei → Hotel Tyrol · 交通：自驾 · 交通约 45 分钟 · 活动约 0 分钟 · 晚上安排酒店晚餐和SPA。</div></div></li></ul>
+</div><div class="card day" id="d6">
+  <div class="day-hd">
+    <div class="dbox" style="border-color:var(--d1)"><div class="dd">9.30</div><div class="dw">周三</div></div>
+    <div><h3>D6 · 富内斯→休斯高原</h3><div class="rt">富内斯→休斯高原 · 休斯高原 · 休斯高原→富内斯</div></div>
+  </div>
+  <div class="tools"><span class="sum">9.30 周三 · 7 项 · 富内斯→休斯高原 · 休斯高原 · 休斯高原→富内斯</span></div>
+  <ul class="tl"><li><div class="t">07:30</div><div class="c"><div class="h">早餐后自驾至Siusi–Alpe di <a class="place" target="_blank" rel="noopener" href="https://www.alpedisiusi.bz.it/how-to-get-here.asp">Siusi缆车谷站</a><span class="mk free">临近确认</span></div><div class="n">Hotel Tyrol → Siusi缆车谷站 · 交通：自驾 · 交通约 55 分钟 · 活动约 0 分钟 · 使用缆车上山，避开高原道路9:00至17:00私家车限制。</div></div></li><li><div class="t">08:20</div><div class="c"><div class="h">停车、购票、乘缆车至<a class="place" target="_blank" rel="noopener" href="https://www.alpedisiusi.bz.it/lifts.asp">Compatsch</a><span class="mk free">可现场购票</span></div><div class="n">Siusi谷站 → Compatsch · 交通：缆车 · 交通约 15 分钟 · 活动约 25 分钟 · 秋季缆车运行至18:00，仍建议17:00前下山。</div></div></li><li><div class="t">09:00</div><div class="c"><div class="h">租电助力自行车；不骑车则直接开始徒步<span class="mk need">E-bike建议提前预订</span></div><div class="n">Compatsch → Compatsch · 交通：步行 · 交通约 0 分钟 · 活动约 30 分钟 · 骑行方案需确认车辆尺码、头盔和电量。</div></div></li><li><div class="t">09:30</div><div class="c"><div class="h">二选一：E-bike环线约25至30公里；或Compatsch—Panorama—Sanon草甸徒步约8至10公里<span class="mk free">骑车需预约租赁</span></div><div class="n">Compatsch → Compatsch/Saltria区域 · 交通：电助力自行车/徒步 · 交通约 0 分钟 · 活动约 270 分钟 · 山区天气突变时优先选徒步短线；不得依赖已季末停运的小型座椅缆车。</div></div></li><li><div class="t">14:00</div><div class="c"><div class="h">山屋午餐＋归还自行车<span class="mk free">无需预约</span></div><div class="n">高原路线终点 → Compatsch · 交通：骑行/步行 · 交通约 15 分钟 · 活动约 55 分钟 · 旺季尾声部分山屋营业不稳定，提前查当日开放。</div></div></li><li><div class="t">15:10</div><div class="c"><div class="h">缆车下山<span class="mk free">无需预约</span></div><div class="n">Compatsch → Siusi谷站 · 交通：缆车 · 交通约 15 分钟 · 活动约 35 分钟 · 留足缆车排队及停车场取车时间。</div></div></li><li><div class="t">16:00</div><div class="c"><div class="h">返回<a class="place" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Hotel Tyrol">Hotel Tyrol</a>，整理次日转场行李<span class="mk free">无需预约</span></div><div class="n">Siusi谷站 → Hotel Tyrol · 交通：自驾 · 交通约 60 分钟 · 活动约 0 分钟 · 次日出发早，今晚加满油或确认沿途加油站。</div></div></li></ul>
+</div><div class="card day" id="d7">
+  <div class="day-hd">
+    <div class="dbox" style="border-color:var(--d2)"><div class="dd">10.1</div><div class="dw">周四</div></div>
+    <div><h3>D7 · 富内斯山谷</h3><div class="rt">富内斯山谷 · 富内斯→三峰山 · 三峰山 · 三峰山→Dobbiaco</div></div>
+  </div>
+  <div class="tools"><span class="sum">10.1 周四 · 7 项 · 富内斯山谷 · 富内斯→三峰山 · 三峰山 · 三峰山→Dobbiaco</span></div>
+  <ul class="tl"><li><div class="t">06:15</div><div class="c"><div class="h">早餐、退房、装车<span class="mk stay">酒店确认早早餐</span></div><div class="n">Hotel Tyrol → Hotel Tyrol停车场 · 交通：步行 · 交通约 0 分钟 · 活动约 45 分钟 · 建议提前申请早餐盒，避免等正常开餐时间。</div></div></li><li><div class="t">07:00</div><div class="c"><div class="h">自驾至<a class="place" target="_blank" rel="noopener" href="https://auronzo.info/en/parking-tre-cime-di-lavaredo/">Rifugio Auronzo停车场</a><span class="mk need">必须预约停车时段</span></div><div class="n">Hotel Tyrol → Rifugio Auronzo停车场 · 交通：自驾 · 交通约 155 分钟 · 活动约 0 分钟 · 山路和收费道路预留2小时35分钟；预约入口建议9:30左右。</div></div></li><li><div class="t">09:35</div><div class="c"><div class="h">停车、整备、确认天气<span class="mk done">停车预约已完成</span></div><div class="n">Rifugio Auronzo停车场 → 徒步起点 · 交通：步行 · 交通约 5 分钟 · 活动约 15 分钟 · 停车预约需车牌；租车车牌可在前一天23:59前补录。</div></div></li><li><div class="t">09:55</div><div class="c"><div class="h"><a class="place" target="_blank" rel="noopener" href="https://www.dreizinnen.com/en/region/highlights/three-peaks">三峰山</a>经典环线：Auronzo—Lavaredo—Locatelli方向—返回<span class="mk free">无需徒步预约</span></div><div class="n">Rifugio Auronzo → Rifugio Auronzo · 交通：徒步 · 交通约 0 分钟 · 活动约 275 分钟 · 官方经典环线约8.8公里、活动时间约4小时；本表加拍照和短休息。</div></div></li><li><div class="t">14:30</div><div class="c"><div class="h">简单午餐/补给<span class="mk free">无需预约</span></div><div class="n">Rifugio Auronzo → 停车场 · 交通：步行 · 交通约 0 分钟 · 活动约 35 分钟 · 控制用餐时间，下午还需开车至Dobbiaco。</div></div></li><li><div class="t">15:05</div><div class="c"><div class="h">自驾前往<a class="place" target="_blank" rel="noopener" href="https://www.hotel-patris.it/en/">Hotel Patris</a><span class="mk done">酒店已预订</span></div><div class="n">Rifugio Auronzo → Hotel Patris · 交通：自驾 · 交通约 60 分钟 · 活动约 0 分钟 · 若徒步因天气延误，最晚应在16:00前离开停车场。</div></div></li><li><div class="t">16:05</div><div class="c"><div class="h">入住<a class="place" target="_blank" rel="noopener" href="https://www.hotel-patris.it/en/">Hotel Patris</a>、休息<span class="mk done">酒店已预订</span></div><div class="n">Hotel Patris前台 → Hotel Patris · 交通：步行 · 交通约 0 分钟 · 活动约 145 分钟 · Hotel Patris地址：Via Sandmühle 12, Dobbiaco。</div></div></li></ul>
+</div><div class="card day" id="d8">
+  <div class="day-hd">
+    <div class="dbox" style="border-color:var(--d3)"><div class="dd">10.2</div><div class="dw">周五</div></div>
+    <div><h3>D8 · Dobbiaco</h3><div class="rt">Dobbiaco · Dobbiaco→Braies · Lago di Braies · Braies→威尼斯机场</div></div>
+  </div>
+  <div class="tools"><span class="sum">10.2 周五 · 16 项 · Dobbiaco · Dobbiaco→Braies · Lago di Braies · Braies→威尼斯机场</span></div>
+  <ul class="tl"><li><div class="t">07:30</div><div class="c"><div class="h">早餐、退房、装车<span class="mk free">无需预约</span></div><div class="n">Hotel Patris → Hotel Patris停车场 · 交通：步行 · 交通约 0 分钟 · 活动约 50 分钟 · 提前一晚结清账单可节省时间。</div></div></li><li><div class="t">08:20</div><div class="c"><div class="h">自驾至<a class="place" target="_blank" rel="noopener" href="https://www.prags.bz/en">Lago di Braies</a>停车场<span class="mk free">10月无需交通限行预约</span></div><div class="n">Hotel Patris → Lago di Braies · 交通：自驾 · 交通约 35 分钟 · 活动约 0 分钟 · 停车场收费；10月2日不属于7月1日至9月15日限行期。</div></div></li><li><div class="t">08:55</div><div class="c"><div class="h">湖边拍照＋短距离散步<span class="mk free">无需预约</span></div><div class="n">停车场 → 船屋 · 交通：步行 · 交通约 5 分钟 · 活动约 35 分钟 · 先拍照，09:35前到船屋排队，争取第一批10:00出船。</div></div></li><li><div class="t">09:35</div><div class="c"><div class="h"><a class="place" target="_blank" rel="noopener" href="https://www.la-palafitta.com/en">船屋</a>排队、购票、准备登船<span class="mk free">无法提前预约</span></div><div class="n">船屋 → 船屋 · 交通：步行 · 交通约 0 分钟 · 活动约 25 分钟 · 9月28日至10月30日首船10:00，普通划船不接受线上预约。</div></div></li><li><div class="t">10:00</div><div class="c"><div class="h">木船划船体验<span class="mk free">现场先到先得</span></div><div class="n">船屋 → 船屋 · 交通：划船 · 交通约 0 分钟 · 活动约 45 分钟 · 若10:00无法登船或现场排队明显超过计划，应优先保证下午航班。</div></div></li><li><div class="t">10:45</div><div class="c"><div class="h">快速返回<a class="place" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=停车场">停车场</a>并出发<span class="mk free">无需预约</span></div><div class="n">船屋 → 停车场 · 交通：步行 · 交通约 10 分钟 · 活动约 0 分钟 · 不再安排环湖，直接前往VCE。</div></div></li><li><div class="t">10:55</div><div class="c"><div class="h">自驾前往Venice Marco Polo Airport<span class="mk done">航班需已出票</span></div><div class="n">Lago di Braies → VCE机场租车还车区 · 交通：自驾 · 交通约 160 分钟 · 活动约 0 分钟 · 常规纯驾驶约2小时24分钟，本表按2小时40分钟计入道路缓冲。</div></div></li><li><div class="t">13:35</div><div class="c"><div class="h">机场附近加油、还车、步行至航站楼<span class="mk free">需预留还车时间</span></div><div class="n">租车还车区 → VCE航站楼 · 交通：自驾＋步行 · 交通约 15 分钟 · 活动约 20 分钟 · 前一晚确认还车点和加油站，尽量避免现场找路。</div></div></li><li><div class="t">14:10</div><div class="c"><div class="h">值机、托运行李、安检<span class="mk done">机票需已出票</span></div><div class="n">VCE航站楼 → 登机口 · 交通：步行 · 交通约 0 分钟 · 活动约 70 分钟 · 当前直飞时刻显示15:55起飞；若有托运行李，抵达航站楼后直接办理。</div></div></li><li><div class="t">15:20</div><div class="c"><div class="h">登机及起飞前准备<span class="mk free">按登机牌执行</span></div><div class="n">登机口 → 航班座位 · 交通：步行 · 交通约 0 分钟 · 活动约 35 分钟 · 不要把机场购物安排在这一段。</div></div></li><li><div class="t">15:55</div><div class="c"><div class="h">VCE→<a class="place" target="_blank" rel="noopener" href="https://www.flightconnections.com/flights-from-vce-to-kef">KEF</a>直飞<span class="mk done">机票已出票</span></div><div class="n">VCE → KEF · 交通：飞机 · 交通约 275 分钟 · 活动约 0 分钟 · 当前航线时刻表显示15:55起飞，直飞约4小时35分；到达时间为冰岛当地时间。</div></div></li><li><div class="t">18:30</div><div class="c"><div class="h">入境、取行李<span class="mk free">无需预约</span></div><div class="n">KEF到达区 → KEF公共区域 · 交通：步行 · 交通约 0 分钟 · 活动约 50 分钟 · 预留约50分钟，实际按入境与行李速度调整。</div></div></li><li><div class="t">19:20</div><div class="c"><div class="h">机场休息、用餐，等待同行人落地<span class="mk free">无需预约</span></div><div class="n">KEF公共区域 → KEF到达区 · 交通：步行 · 交通约 0 分钟 · 活动约 250 分钟 · 同行人若航班有延误，及时同步接送司机或酒店。</div></div></li><li><div class="t">23:30</div><div class="c"><div class="h">等待同行人入境、取行李<span class="mk free">无需预约</span></div><div class="n">到达口 → 机场出口 · 交通：步行 · 交通约 0 分钟 · 活动约 50 分钟 · 按同行人实际落地时间顺延。</div></div></li><li><div class="t">00:20</div><div class="c"><div class="h">前往<a class="place" target="_blank" rel="noopener" href="https://www.centerhotels.com/en/hotel-midgardur-reykjavik">Midgardur by Center Hotels</a><span class="mk need">建议提前预约接送</span></div><div class="n">KEF → Midgardur by Center Hotels · 交通：出租车/包车 · 交通约 50 分钟 · 活动约 0 分钟 · 深夜抵达，优先预订固定接送并把航班号发给司机。</div></div></li><li><div class="t">01:10</div><div class="c"><div class="h">办理入住、休息<span class="mk done">酒店已预订</span></div><div class="n">酒店前台 → 客房 · 交通：步行 · 交通约 0 分钟 · 活动约 20 分钟 · 提前告知酒店深夜入住。</div></div></li></ul>
+</div><div class="card day" id="d9">
+  <div class="day-hd">
+    <div class="dbox" style="border-color:var(--d4)"><div class="dd">10.3</div><div class="dw">周六</div></div>
+    <div><h3>D9 · 雷克雅未克</h3><div class="rt">雷克雅未克</div></div>
+  </div>
+  <div class="tools"><span class="sum">10.3 周六 · 8 项 · 雷克雅未克</span></div>
+  <ul class="tl"><li><div class="t">10:00</div><div class="c"><div class="h">晚起、早餐或咖啡<span class="mk free">无需预约</span></div><div class="n">Midgardur by Center Hotels → 市中心 · 交通：步行 · 交通约 10 分钟 · 活动约 20 分钟 · 前一晚约01:30休息，当天按轻松节奏开始。</div></div></li><li><div class="t">10:30</div><div class="c"><div class="h">哈尔格林姆斯教堂外观＋彩虹街<span class="mk free">无需预约</span></div><div class="n">市中心 → Skólavörðustígur · 交通：步行 · 交通约 10 分钟 · 活动约 50 分钟 · 是否登塔可根据现场排队和天气决定。</div></div></li><li><div class="t">11:30</div><div class="c"><div class="h"><a class="place" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Laugavegur">Laugavegur</a>主街慢逛、购物<span class="mk free">无需预约</span></div><div class="n">彩虹街 → Laugavegur · 交通：步行 · 交通约 10 分钟 · 活动约 50 分钟 · 和次日集合点位置一起熟悉。</div></div></li><li><div class="t">12:30</div><div class="c"><div class="h">午餐<span class="mk free">热门餐厅建议预约</span></div><div class="n">Laugavegur → 市中心餐厅 · 交通：步行 · 交通约 10 分钟 · 活动约 80 分钟 · 留足用餐时间，不赶行程。</div></div></li><li><div class="t">14:00</div><div class="c"><div class="h">太阳航海者＋海滨散步<span class="mk free">无需预约</span></div><div class="n">市中心 → Sun Voyager · 交通：步行 · 交通约 15 分钟 · 活动约 25 分钟 · 海边风大，注意防风防水。</div></div></li><li><div class="t">14:40</div><div class="c"><div class="h">Harpa音乐厅＋港口周边<span class="mk free">无需预约</span></div><div class="n">Sun Voyager → Harpa/旧港 · 交通：步行 · 交通约 10 分钟 · 活动约 40 分钟 · 以建筑、海景和室内休息为主。</div></div></li><li><div class="t">15:30</div><div class="c"><div class="h">旧港、<a class="place" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=市中心">市中心</a>自由活动、咖啡<span class="mk free">无需预约</span></div><div class="n">Harpa/旧港 → 市中心 · 交通：步行 · 交通约 20 分钟 · 活动约 100 分钟 · 天气不好可缩短户外段，把时间留给咖啡馆和商店。</div></div></li><li><div class="t">18:30</div><div class="c"><div class="h">晚餐<span class="mk need">建议提前订位</span></div><div class="n">酒店/市中心 → 餐厅 · 交通：步行 · 交通约 15 分钟 · 活动约 105 分钟 · 10月周末热门餐厅建议提前订位。</div></div></li></ul>
+</div><div class="card day" id="d10">
+  <div class="day-hd">
+    <div class="dbox" style="border-color:var(--d5)"><div class="dd">10.4</div><div class="dw">周日</div></div>
+    <div><h3>D10 · 雷克雅未克</h3><div class="rt">雷克雅未克 · Snæfellsnes半岛</div></div>
+  </div>
+  <div class="tools"><span class="sum">10.4 周日 · 5 项 · 雷克雅未克 · Snæfellsnes半岛</span></div>
+  <ul class="tl"><li><div class="t">07:30</div><div class="c"><div class="h">早餐、整理一日游装备<span class="mk free">无需预约</span></div><div class="n">Midgardur by Center Hotels → 酒店 · 交通：步行 · 交通约 0 分钟 · 活动约 45 分钟 · 带防水外层、保暖层和防水徒步鞋。</div></div></li><li><div class="t">08:15</div><div class="c"><div class="h">前往指定接客点<span class="mk free">以订单为准</span></div><div class="n">酒店 → Nice Travel接客点 · 交通：步行 · 交通约 15 分钟 · 活动约 0 分钟 · Midgardur附近常用Bus Stop 13，但必须以订单确认的接客点为准。</div></div></li><li><div class="t">08:30</div><div class="c"><div class="h">Nice Travel接客窗口<span class="mk done">必须已预订</span></div><div class="n">接客点 → 旅游巴士 · 交通：步行 · 交通约 0 分钟 · 活动约 30 分钟 · 官网要求08:30起在接客点等候，接客窗口08:30至09:00。</div></div></li><li><div class="t">09:00</div><div class="c"><div class="h">斯奈山半岛一日游：Ytri-Tunga、Búðakirkja、Arnarstapi、Lóndrangar、Djúpalónssandur、Kirkjufell等<span class="mk done">已预订</span></div><div class="n">雷克雅未克 → Snæfellsnes→雷克雅未克 · 交通：小巴 · 交通约 0 分钟 · 活动约 660 分钟 · 官网标注总时长约11小时，预计19:45至20:15返回，顺序可能因天气调整。</div></div></li><li><div class="t">20:00</div><div class="c"><div class="h">下车、回酒店、简餐<span class="mk free">无需预约</span></div><div class="n">下车点 → Midgardur by Center Hotels · 交通：步行 · 交通约 15 分钟 · 活动约 30 分钟 · 若返回较晚，晚餐优先选择酒店附近或提前准备。</div></div></li></ul>
+</div><div class="card day" id="d11">
+  <div class="day-hd">
+    <div class="dbox" style="border-color:var(--d1)"><div class="dd">10.5</div><div class="dw">周一</div></div>
+    <div><h3>D11 · 雷克雅未克</h3><div class="rt">雷克雅未克 · 雷克雅未克→冰河湖 · 冰河湖 · Vatnajökull冰川</div></div>
+  </div>
+  <div class="tools"><span class="sum">10.5 周一 · 8 项 · 雷克雅未克 · 雷克雅未克→冰河湖 · 冰河湖 · Vatnajökull冰川</span></div>
+  <ul class="tl"><li><div class="t">06:30</div><div class="c"><div class="h">早餐、退房、装行李<span class="mk done">包车已确认</span></div><div class="n">Midgardur by Center Hotels → 酒店门口 · 交通：步行 · 交通约 0 分钟 · 活动约 30 分钟 · 当天车程很长，建议提前准备水和车上食物。</div></div></li><li><div class="t">07:00</div><div class="c"><div class="h">包车前往Jökulsárlón，途中安排一次短休息<span class="mk done">包车已确认</span></div><div class="n">雷克雅未克 → Jökulsárlón Glacier Lagoon · 交通：包车 · 交通约 310 分钟 · 活动约 0 分钟 · 纯驾驶约4小时50分钟，本表另含约20分钟卫生间/咖啡缓冲。</div></div></li><li><div class="t">12:10</div><div class="c"><div class="h">轻午餐、补水<span class="mk free">无需预约</span></div><div class="n">Jökulsárlón → 冰河湖集合区 · 交通：步行 · 交通约 0 分钟 · 活动约 40 分钟 · 避免过饱，给冰川徒步留体力。</div></div></li><li><div class="t">12:50</div><div class="c"><div class="h"><a class="place" target="_blank" rel="noopener" href="https://blueiceland.is/tours/ice-cave-discovery/">冰河湖</a>短停、核对集合点和订单信息<span class="mk need">必须核对订单</span></div><div class="n">冰河湖 → Blue Iceland集合点 · 交通：步行 · 交通约 10 分钟 · 活动约 30 分钟 · 重点确认你的订单是否确为14:00出发。</div></div></li><li><div class="t">13:30</div><div class="c"><div class="h">提前到场、签到、装备准备<span class="mk need">必须提前到场</span></div><div class="n">Blue Iceland集合点 → 活动车辆/集合区 · 交通：步行 · 交通约 0 分钟 · 活动约 30 分钟 · 当前官网公开页面显示Discovery为09:30出发，14:00安排只能以你的订单确认函为准。</div></div></li><li><div class="t">14:00</div><div class="c"><div class="h">Blue Iceland Ice Cave Discovery，按订单暂记6小时</div><div class="n">Jökulsárlón → Jökulsárlón · 交通：超级吉普＋冰川徒步 · 交通约 0 分钟 · 活动约 360 分钟</div></div></li><li><div class="t">20:00</div><div class="c"><div class="h">活动结束、换装、前往附近酒店<span class="mk need">酒店待确认</span></div><div class="n">Jökulsárlón → 冰河湖周边酒店（待定） · 交通：包车 · 交通约 20 分钟 · 活动约 10 分钟 · 10月5日日落约18:42，结束后已入夜，酒店尽量选冰河湖附近。</div></div></li><li><div class="t">20:30</div><div class="c"><div class="h">办理入住、晚餐/简餐<span class="mk need">酒店待确认</span></div><div class="n">酒店前台 → 客房 · 交通：步行 · 交通约 0 分钟 · 活动约 30 分钟 · 提前确认酒店晚餐结束时间，必要时自备冷食。</div></div></li></ul>
+</div><div class="card day" id="d12">
+  <div class="day-hd">
+    <div class="dbox" style="border-color:var(--d2)"><div class="dd">10.6</div><div class="dw">周二</div></div>
+    <div><h3>D12 · 冰河湖周边</h3><div class="rt">冰河湖周边 · 冰河湖周边→Jökulsárlón · Jökulsárlón · 冰河湖→Reynisfjara</div></div>
+  </div>
+  <div class="tools"><span class="sum">10.6 周二 · 14 项 · 冰河湖周边 · 冰河湖周边→Jökulsárlón · Jökulsárlón · 冰河湖→Reynisfjara</span></div>
+  <ul class="tl"><li><div class="t">07:15</div><div class="c"><div class="h">早餐、退房、装行李<span class="mk free">无需预约</span></div><div class="n">冰河湖周边酒店 → 酒店门口 · 交通：步行 · 交通约 0 分钟 · 活动约 40 分钟 · 根据最终酒店与冰河湖距离微调出发时间。</div></div></li><li><div class="t">07:55</div><div class="c"><div class="h">包车前往冲锋艇集合点<span class="mk stay">以酒店位置为准</span></div><div class="n">酒店 → Jökulsárlón · 交通：包车 · 交通约 25 分钟 · 活动约 0 分钟 · 如果酒店更远，需要相应提前。</div></div></li><li><div class="t">08:20</div><div class="c"><div class="h">签到、穿装备、听安全说明<span class="mk done">已预订08:45场次</span></div><div class="n">活动基地 → 活动基地 · 交通：步行 · 交通约 0 分钟 · 活动约 25 分钟 · 建议至少提前25分钟到。</div></div></li><li><div class="t">08:45</div><div class="c"><div class="h">冰河湖Zodiac冲锋艇活动全流程<span class="mk done">已预订</span></div><div class="n">活动基地 → 活动基地 · 交通：冲锋艇 · 交通约 0 分钟 · 活动约 120 分钟 · 官网标注船上约75分钟，全流程含装备、接驳和安全说明最多约2小时。</div></div></li><li><div class="t">10:45</div><div class="c"><div class="h">换装、取行李、出发<span class="mk free">无需预约</span></div><div class="n">活动基地 → 包车 · 交通：步行 · 交通约 0 分钟 · 活动约 15 分钟 · 11:00左右正式开始西返。</div></div></li><li><div class="t">11:00</div><div class="c"><div class="h">沿1号公路前往黑沙滩<span class="mk free">无需预约</span></div><div class="n">Jökulsárlón → Reynisfjara · 交通：包车 · 交通约 155 分钟 · 活动约 0 分钟 · 常规驾驶约2小时35分钟，途中如遇大风、降雨或路况应顺延。</div></div></li><li><div class="t">13:35</div><div class="c"><div class="h">黑沙滩、玄武岩柱<span class="mk free">无需预约</span></div><div class="n">停车场 → Reynisfjara · 交通：步行 · 交通约 5 分钟 · 活动约 40 分钟 · 严格遵守现场海浪警示灯，远离水线，不背对海浪。</div></div></li><li><div class="t">14:20</div><div class="c"><div class="h">包车前往斯科加瀑布<span class="mk free">无需预约</span></div><div class="n">Reynisfjara → Skógafoss · 交通：包车 · 交通约 30 分钟 · 活动约 0 分钟 · 常规驾驶约28分钟。</div></div></li><li><div class="t">14:50</div><div class="c"><div class="h">斯科加瀑布<span class="mk free">无需预约</span></div><div class="n">停车场 → Skógafoss · 交通：步行 · 交通约 5 分钟 · 活动约 35 分钟 · 时间紧时只看下方主瀑布，不爬完整阶梯。</div></div></li><li><div class="t">15:30</div><div class="c"><div class="h">包车前往塞里雅兰瀑布<span class="mk free">无需预约</span></div><div class="n">Skógafoss → Seljalandsfoss · 交通：包车 · 交通约 25 分钟 · 活动约 0 分钟 · 常规驾驶约24分钟。</div></div></li><li><div class="t">15:55</div><div class="c"><div class="h">塞里雅兰瀑布<span class="mk free">无需预约</span></div><div class="n">停车场 → Seljalandsfoss · 交通：步行 · 交通约 5 分钟 · 活动约 35 分钟 · 步道湿滑；若风雨大或步道关闭，按现场限制游览。</div></div></li><li><div class="t">16:35</div><div class="c"><div class="h">包车返回雷克雅未克，含道路与短暂停靠缓冲<span class="mk done">包车已确认</span></div><div class="n">Seljalandsfoss → Canopy by Hilton Reykjavik City Centre · 交通：包车 · 交通约 120 分钟 · 活动约 0 分钟 · 常规驾驶约1小时40分钟，本表加20分钟缓冲；10月6日日落约18:39。</div></div></li><li><div class="t">18:35</div><div class="c"><div class="h">入住Canopy by Hilton Reykjavik City Centre<span class="mk done">酒店已预订</span></div><div class="n">酒店门口 → 客房 · 交通：步行 · 交通约 0 分钟 · 活动约 25 分钟 · 如路况延误，直接顺延晚餐。</div></div></li><li><div class="t">19:30</div><div class="c"><div class="h">晚餐、休息<span class="mk need">建议提前订位</span></div><div class="n">Canopy by Hilton Reykjavik City Centre → 市中心餐厅 · 交通：步行 · 交通约 15 分钟 · 活动约 75 分钟 · 当天车程长，晚餐安排在酒店附近。</div></div></li></ul>
+</div><div class="card day" id="d13">
+  <div class="day-hd">
+    <div class="dbox" style="border-color:var(--d3)"><div class="dd">10.7</div><div class="dw">周三</div></div>
+    <div><h3>D13 · 雷克雅未克</h3><div class="rt">雷克雅未克 · 雷克雅未克→KEF · 凯夫拉维克机场 · KEF→伦敦希思罗</div></div>
+  </div>
+  <div class="tools"><span class="sum">10.7 周三 · 8 项 · 雷克雅未克 · 雷克雅未克→KEF · 凯夫拉维克机场 · KEF→伦敦希思罗</span></div>
+  <ul class="tl"><li><div class="t">09:30</div><div class="c"><div class="h">早餐/早午餐＋最后散步<span class="mk free">无需预约</span></div><div class="n">Canopy by Hilton Reykjavik City Centre → 市中心 · 交通：步行 · 交通约 15 分钟 · 活动约 75 分钟 · 保持轻松节奏，为长途返程留体力。</div></div></li><li><div class="t">11:00</div><div class="c"><div class="h">回酒店整理行李、退房<span class="mk stay">按酒店退房时间</span></div><div class="n">市中心 → Canopy by Hilton Reykjavik City Centre · 交通：步行 · 交通约 15 分钟 · 活动约 65 分钟 · 提前约好机场送机车辆。</div></div></li><li><div class="t">12:20</div><div class="c"><div class="h">前往凯夫拉维克机场<span class="mk need">建议提前预约</span></div><div class="n">Canopy by Hilton Reykjavik City Centre → KEF · 交通：出租车/包车 · 交通约 50 分钟 · 活动约 0 分钟 · 计划提前约3小时抵达机场。</div></div></li><li><div class="t">13:10</div><div class="c"><div class="h">值机、托运、安检、候机<span class="mk done">机票已出票</span></div><div class="n">KEF航站楼 → 登机口 · 交通：步行 · 交通约 0 分钟 · 活动约 135 分钟 · 为国际航班留足手续时间。</div></div></li><li><div class="t">15:25</div><div class="c"><div class="h">登机<span class="mk free">按登机牌执行</span></div><div class="n">登机口 → 航班座位 · 交通：步行 · 交通约 0 分钟 · 活动约 45 分钟 · 16:10起飞。</div></div></li><li><div class="t">16:10</div><div class="c"><div class="h">FI454，抵达<a class="place" target="_blank" rel="noopener" href="https://www.flight.info/FI454">LHR T2</a><span class="mk done">机票已出票</span></div><div class="n">KEF → LHR T2 · 交通：飞机 · 交通约 190 分钟 · 活动约 0 分钟 · 当前时刻表显示16:10起飞、20:20抵达T2，飞行约3小时10分。</div></div></li><li><div class="t">20:20</div><div class="c"><div class="h">T2转T3，衔接HU7912</div><div class="n">LHR T2 → LHR T3 · 交通：机场转机 · 交通约 0 分钟 · 活动约 100 分钟 · 只有1小时40分钟</div></div></li><li><div class="t">22:00</div><div class="c"><div class="h">HU7912，LHR T3→<a class="place" target="_blank" rel="noopener" href="https://www.flight.info/HU7912">HAK T2</a><span class="mk done">机票已出票</span></div><div class="n">LHR T3 → HAK T2 · 交通：飞机 · 交通约 690 分钟 · 活动约 0 分钟 · 当前时刻表显示每周三22:00起飞，次日16:30抵达海口T2。</div></div></li></ul>
+</div></div>
+</section>
+<section id="review">
+  <h2>📋 行程复核说明</h2>
+  <p class="lead">来自 Excel《核对说明》表（2026年9月15日复核）。</p>
+  <div class="tips"><div class="card tip">
+  <h4>已调整 · 9/26 · 碧提宫＋波波里花园</h4>
+  <p><strong>结论：</strong>碧提宫08:15开放；原表08:00开始不准确。乌菲兹15:00至17:00实际为120分钟。</p>
+  <p><strong>建议：</strong>已将碧提宫改为08:15开始，波波里花园拆出明确时段，并将乌菲兹活动时间改为120分钟。</p>
+  <p><a href="https://www.uffizi.it/en/pitti-palace" target="_blank" rel="noopener">来源 ↗</a></p>
+</div><div class="card tip">
+  <h4>确认 · 9/27 · 圣十字圣殿</h4>
+  <p><strong>结论：</strong>2026年欧洲文化遗产日为9月26日至27日。圣十字圣殿官网明确这两天免费，周日常规开放14:00至17:30。</p>
+  <p><strong>建议：</strong>原计划14:25入场可行，现场免费票可能排队。</p>
+  <p><a href="https://www.santacroceopera.it/en/organise-your-visit/" target="_blank" rel="noopener">来源 ↗</a></p>
+</div><div class="card tip">
+  <h4>确认 · 9/29 · Seceda</h4>
+  <p><strong>结论：</strong>当前官网显示两段主缆车9月29日仍运营，08:30至17:30；Fermeda座椅缆车9月20日结束。</p>
+  <p><strong>建议：</strong>原路线已避开Fermeda，15:10开始下山，缓冲充足。</p>
+  <p><a href="https://www.seceda.it/en/summer" target="_blank" rel="noopener">来源 ↗</a></p>
+</div><div class="card tip">
+  <h4>确认 · 9/30 · 休斯高原</h4>
+  <p><strong>结论：</strong>Siusi–Alpe di Siusi缆车2026年9月7日至11月2日运营08:00至18:00。</p>
+  <p><strong>建议：</strong>原计划08:20上山、15:10下山可行。</p>
+  <p><a href="https://www.seiseralm.it/en/active/winter/ropeway-systems-in-winter.html" target="_blank" rel="noopener">来源 ↗</a></p>
+</div><div class="card tip">
+  <h4>注意天气 · 10/1 · 三峰山停车与上山道路</h4>
+  <p><strong>结论：</strong>2026年自驾上山需在线预约车位；道路通常运营至10月下旬，但完全取决于高山天气和道路状态。</p>
+  <p><strong>建议：</strong>保留10月1日方案，同时在9月30日晚再次查道路和天气；租车车牌最晚前一晚录入。</p>
+  <p><a href="https://auronzo.info/en/parking-tre-cime-di-lavaredo/" target="_blank" rel="noopener">来源 ↗</a></p>
+</div><div class="card tip">
+  <h4>较紧 · 10/2 · 布拉耶斯湖划船＋VCE航班</h4>
+  <p><strong>结论：</strong>船屋10:00首船，普通划船无法预约。VCE直飞KEF当前时刻为15:55起飞。</p>
+  <p><strong>建议：</strong>已增加09:35排队并把离湖时间锁在10:55。若无法第一批登船或路况异常，应优先放弃划船保证航班。</p>
+  <p><a href="https://www.la-palafitta.com/en" target="_blank" rel="noopener">来源 ↗</a></p>
+</div><div class="card tip">
+  <h4>确认 · 10/2 · VCE→KEF</h4>
+  <p><strong>结论：</strong>当前航线时刻表显示15:55起飞，直飞约4小时35分钟，约18:30冰岛当地时间抵达。</p>
+  <p><strong>建议：</strong>已补齐还车、值机、登机、入境、等待同行人和深夜进城时间。</p>
+  <p><a href="https://www.flightconnections.com/flights-from-vce-to-kef" target="_blank" rel="noopener">来源 ↗</a></p>
+</div><div class="card tip">
+  <h4>确认 · 10/4 · Snæfellsnes一日游</h4>
+  <p><strong>结论：</strong>Nice Travel官网标注11小时；雷市接客08:30至09:00，预计19:45至20:15返回。</p>
+  <p><strong>建议：</strong>已按08:30开始候车、20:00左右回城编排。</p>
+  <p><a href="https://nicetravel.is/iceland-tours/snaefellsnes-day-trip/" target="_blank" rel="noopener">来源 ↗</a></p>
+</div><div class="card tip">
+  <h4>必须确认 · 10/5 · Blue Iceland Ice Cave Discovery</h4>
+  <p><strong>结论：</strong>你提供的链接当前公开页面显示09:30从Jökulsárlón出发，时长5至7小时，与计划中的14:00、6小时不一致。</p>
+  <p><strong>建议：</strong>表内暂按你提供的14:00订单时间保留。请以订单确认函为准；若确认函没有14:00，10月5日需要整体重排。</p>
+  <p><a href="https://blueiceland.is/tours/ice-cave-discovery/" target="_blank" rel="noopener">来源 ↗</a></p>
+</div><div class="card tip">
+  <h4>确认 · 10/6 · Jökulsárlón Zodiac</h4>
+  <p><strong>结论：</strong>官网写明船上约75分钟，全流程含装备、接驳和安全说明最多约2小时。</p>
+  <p><strong>建议：</strong>08:45场次按10:45结束编排合理。</p>
+  <p><a href="https://www.icelagoon.com/adventure-tour/" target="_blank" rel="noopener">来源 ↗</a></p>
+</div><div class="card tip">
+  <h4>可行 · 10/6 · 南岸返程看黑沙滩＋两瀑布</h4>
+  <p><strong>结论：</strong>Jökulsárlón至Reynisfjara约2小时35分；Reynisfjara至Skógafoss约28分；Skógafoss至Seljalandsfoss约24分；Seljalandsfoss至雷市约1小时40分。10月6日雷市日落约18:39。</p>
+  <p><strong>建议：</strong>按黑沙滩→Skógafoss→Seljalandsfoss顺序可在日落前完成主要户外景点，预计18:35左右抵达雷市。</p>
+  <p><a href="https://www.timeanddate.com/sun/iceland/reykjavik?month=10" target="_blank" rel="noopener">来源 ↗</a></p>
+</div><div class="card tip">
+  <h4>高风险 · 10/7 · LHR T2→T3转机</h4>
+  <p><strong>结论：</strong>KEF→LHR 16:10至20:20，HU7912 22:00从T3起飞，仅1小时40分钟。希思罗明确：分开出票需入境、取行李、重新值机、再次安检。</p>
+  <p><strong>建议：</strong>若两段是分开出票，强烈建议改成更早抵达伦敦的航班。若为同一联程且行李直挂，也要确认航司认可该衔接。</p>
+  <p><a href="https://www.heathrow.com/heathrow-blog/a-guide-to-connections" target="_blank" rel="noopener">来源 ↗</a></p>
+</div></div>
+</section>
+<section id="pack" class="pack">
+  <h2>🎒 行李物品清单</h2>
+  <p class="lead">只读展示，不可勾选 —— 内容仅来自《行李物品清单》Excel，按分类列出。</p>
+  <div id="pack-list"><div class="card tgroup"><h4>包</h4><div class="todo" id="pack1">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>行李箱 ×2</span></div></div></div><div class="todo" id="pack2">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>双肩包 ×2</span></div></div></div><div class="todo" id="pack3">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>胸包 ×2</span></div></div></div></div><div class="card tgroup"><h4>证件</h4><div class="todo" id="pack1">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>护照 ×2</span></div></div></div><div class="todo" id="pack2">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>护照复印件 ×2</span></div></div></div><div class="todo" id="pack3">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>机票、火车票纸质版 ×2</span></div></div></div><div class="todo" id="pack4">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>现金 ×400</span></div></div></div><div class="todo" id="pack5">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>电话卡？ ×1</span></div></div></div><div class="todo" id="pack6">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>银行卡 ×2</span></div></div></div><div class="todo" id="pack7">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>笔 ×1</span></div></div></div></div><div class="card tgroup"><h4>飞机用品</h4><div class="todo" id="pack1">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>颈枕 ×2</span></div></div></div><div class="todo" id="pack2">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>充气腰靠 ×1</span></div></div></div><div class="todo" id="pack3">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>蒸汽眼罩 ×4</span></div></div></div><div class="todo" id="pack4">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>拖鞋 ×2</span></div></div></div><div class="todo" id="pack5">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>压力袜 ×1</span></div></div></div><div class="todo" id="pack6">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>面膜 ×2</span></div></div></div></div><div class="card tgroup"><h4>衣服</h4><div class="todo" id="pack1">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>衬衫 ×2</span></div><div class="dt">9.25穿走 · 皮衣 · 外衣 · 登山鞋</div></div></div><div class="todo" id="pack2">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>半袖 ×2</span></div><div class="dt">牛仔裤 · 牛仔裤</div></div></div><div class="todo" id="pack3">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>速干长袖 ×4</span></div><div class="dt">长袖 · 长袖</div></div></div><div class="todo" id="pack4">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>加绒衫 ×2</span></div><div class="dt">9.25-9.28 · 薄裙子 · 半袖 · 鬼冢虎</div></div></div><div class="todo" id="pack5">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>羽绒内胆 ×2</span></div><div class="dt">衬衫 · 睡衣</div></div></div><div class="todo" id="pack6">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>冲锋衣 ×2</span></div><div class="dt">睡衣 · 衬衫</div></div></div><div class="todo" id="pack7">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>打底裤 ×2</span></div><div class="dt">半袖、背心</div></div></div><div class="todo" id="pack8">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>冲锋裤子 ×4</span></div><div class="dt">9.28穿走 · 同9.25 · 登山鞋</div></div></div><div class="todo" id="pack9">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>裙子 ×1</span></div><div class="dt">9.29-10.2 · 冲锋衣 · 冲锋衣</div></div></div><div class="todo" id="pack10">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>牛仔裤 ×2</span></div><div class="dt">加绒衣 · 加绒衣</div></div></div><div class="todo" id="pack11">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>一次性内裤 ×16</span></div><div class="dt">速干长袖 · 羊毛长袖</div></div></div><div class="todo" id="pack12">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>一次性袜子 ×10</span></div><div class="dt">瑜伽裤 · 秋裤</div></div></div><div class="todo" id="pack13">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>袜子 ×10</span></div><div class="dt">冲锋裤子1 · 冲锋裤子1</div></div></div><div class="todo" id="pack14">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>登山鞋 ×2</span></div><div class="dt">厚裙子 · 帽子</div></div></div><div class="todo" id="pack15">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>鬼冢虎 ×2</span></div><div class="dt">帽子 · 手套</div></div></div><div class="todo" id="pack16">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>墨镜 ×2</span></div><div class="dt">手套</div></div></div><div class="todo" id="pack17">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>毛线帽 ×2</span></div></div></div><div class="todo" id="pack18">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>贝雷帽 ×1</span></div><div class="dt">10.3-10.7 · 羽绒内胆 · 羽绒内胆</div></div></div><div class="todo" id="pack19">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>伞 ×1</span></div><div class="dt">冲锋裤子2 · 冲锋裤子2</div></div></div><div class="todo" id="pack20">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>髌骨带 ×2</span></div></div></div><div class="todo" id="pack21">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>手套 ×2</span></div></div></div><div class="todo" id="pack22">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>围巾 ×2</span></div></div></div></div><div class="card tgroup"><h4>洗护</h4><div class="todo" id="pack1">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>牙刷 ×2</span></div></div></div><div class="todo" id="pack2">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>牙膏 ×1</span></div></div></div><div class="todo" id="pack3">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>洗面奶 ×1</span></div></div></div><div class="todo" id="pack4">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>洗发水 ×1</span></div></div></div><div class="todo" id="pack5">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>护发素 ×1</span></div></div></div><div class="todo" id="pack6">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>洗衣液 ×1</span></div></div></div><div class="todo" id="pack7">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>沐浴露 ×1</span></div></div></div><div class="todo" id="pack8">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>防晒 ×1</span></div></div></div><div class="todo" id="pack9">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>擦脸的 ×1</span></div></div></div></div><div class="card tgroup"><h4>日用</h4><div class="todo" id="pack1">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>纸巾 ×1</span></div></div></div><div class="todo" id="pack2">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>酒精湿巾 ×1</span></div></div></div><div class="todo" id="pack3">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>酒精喷雾 ×2</span></div></div></div><div class="todo" id="pack4">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>擦脸巾 ×1</span></div></div></div><div class="todo" id="pack5">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>一次性床单 ×6</span></div></div></div><div class="todo" id="pack6">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>一次性毛巾 ×1</span></div></div></div><div class="todo" id="pack7">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>速干浴巾 ×1</span></div></div></div><div class="todo" id="pack8">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>马桶垫 ×8</span></div></div></div><div class="todo" id="pack9">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>指甲刀 ×1</span></div></div></div><div class="todo" id="pack10">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>梳子 ×1</span></div></div></div><div class="todo" id="pack11">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>头绳 ×4</span></div></div></div><div class="todo" id="pack12">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>卡片雨衣 ×2</span></div></div></div><div class="todo" id="pack13">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>折叠衣架 ×2</span></div></div></div><div class="todo" id="pack14">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>驱虫喷雾 ×2</span></div></div></div><div class="todo" id="pack15">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>电热水杯 ×1</span></div></div></div></div><div class="card tgroup"><h4>电子产品</h4><div class="todo" id="pack1">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>充电宝 ×2</span></div></div></div><div class="todo" id="pack2">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>充电线 ×4</span></div></div></div><div class="todo" id="pack3">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>转换插头 ×1</span></div></div></div><div class="todo" id="pack4">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>耳机 ×2</span></div></div></div><div class="todo" id="pack5">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>大疆action ×1</span></div></div></div><div class="todo" id="pack6">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>相机 ×1</span></div></div></div><div class="todo" id="pack7">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>插排 ×1</span></div></div></div><div class="todo" id="pack8">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>直发夹 ×1</span></div></div></div></div><div class="card tgroup"><h4>药品</h4><div class="todo" id="pack1">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>退烧药 ×4</span></div></div></div><div class="todo" id="pack2">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>胃药</span></div></div></div><div class="todo" id="pack3">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>拉肚子药</span></div></div></div><div class="todo" id="pack4">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>藿香正气</span></div></div></div><div class="todo" id="pack5">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>无比滴</span></div></div></div><div class="todo" id="pack6">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>创口贴</span></div></div></div><div class="todo" id="pack7">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>扶他林</span></div></div></div><div class="todo" id="pack8">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>卫生巾 ×4</span></div></div></div><div class="todo" id="pack9">
+  <div class="bx">·</div><div class="bd"><div class="tt"><span>脱敏药 ×3</span></div></div></div></div></div>
+</section>
+<footer>
+  2026年意大利＋冰岛行程 · 行程手册 · 单文件网页，离线可看。<br>
+  页面不含确认号、证件号与房间号；内容仅来自上传的两份 Excel。
+</footer>
+</div>
+<script>
+
+const TZ = "Europe/Rome";
+const TRIP = {"emoji": "🇮🇹🇮🇸", "title": "2026年意大利＋冰岛行程", "sub": "行程假设：9月25日中午抵达佛罗伦萨；9月28日火车至博尔扎诺并取车；10月2日从威尼斯马可·波罗机场飞往凯夫拉维克；10月5日至6日冰岛南岸包车。山区及冰岛户外项目均需在出发前24小时复核天气、道路和运营状态。", "chips": [{"t": "✈ 机票已出票", "s": "done"}, {"t": "🏨 部分酒店已预订", "s": "done"}, {"t": "🏨 冰河湖周边酒店待确认", "s": "pending"}, {"t": "🚐 冰岛南岸包车已确认", "s": "done"}, {"t": "🎫 部分景点需提前预约", "s": "pending"}], "lead": "行程假设：9月25日中午抵达佛罗伦萨；9月28日火车至博尔扎诺并取车；10月2日从威尼斯马可·波罗机场飞往凯夫拉维克；10月5日至6日冰岛南岸包车。山区及冰岛户外项目均需在出发前24小时复核天气、道路和运营状态。"};
+const DAYS = [{"n": 1, "date": "2026-09-25", "dd": "9.25", "dw": "周五", "color": "var(--d1)", "title": "佛罗伦萨", "route": "佛罗伦萨", "regions": ["佛罗伦萨"], "items": [{"at": "2026-09-25T12:00:00+02:00", "tz": "Europe/Rome", "h": "抵达佛罗伦萨、前往<a class=\"place\" target=\"_blank\" rel=\"noopener\" href=\"https://www.google.com/maps/search/?api=1&amp;query=市中心酒店\">市中心酒店</a>寄存行李", "n": "机场/车站 → 市中心酒店 · 交通：出租车/电车/步行 · 交通约 35 分钟 · 活动约 35 分钟 · 若从FLR机场抵达，电车至SMN约20分钟；本表按13:10前进入市中心估算。", "mk": {"t": "无需预约", "c": "free"}}, {"at": "2026-09-25T13:10:00+02:00", "tz": "Europe/Rome", "h": "午餐＋办理入住", "n": "市中心酒店 → 圣洛伦佐教堂周边 · 交通：步行 · 交通约 10 分钟 · 活动约 45 分钟 · 建议酒店选Duomo或SMN附近，方便三天全程步行。", "mk": {"t": "无需预约", "c": "free"}}, {"at": "2026-09-25T14:10:00+02:00", "tz": "Europe/Rome", "h": "圣洛伦佐教堂", "n": "酒店/午餐地点 → 圣洛伦佐教堂 · 交通：步行 · 交通约 10 分钟 · 活动约 60 分钟 · 教堂周一至周六开放；建议最晚15:15前进入，给后续预约留缓冲。", "mk": {"t": "现场购票", "c": "free"}, "l": "https://sanlorenzofirenze.it/info-visite/"}, {"at": "2026-09-25T15:10:00+02:00", "tz": "Europe/Rome", "h": "前往<a class=\"place\" target=\"_blank\" rel=\"noopener\" href=\"https://www.galleriaaccademiafirenze.it/en/tickets/\">学院美术馆</a>", "n": "圣洛伦佐教堂 → 学院美术馆 · 交通：步行 · 交通约 10 分钟 · 活动约 5 分钟 · 建议预约15:30或15:45，避免抵达日航班延误造成损失。", "mk": {"t": "已预约时段优先", "c": "done"}, "l": "https://www.galleriaaccademiafirenze.it/en/tickets/"}, {"at": "2026-09-25T15:30:00+02:00", "tz": "Europe/Rome", "h": "学院美术馆：重点参观《大卫》", "n": "学院美术馆入口 → 学院美术馆出口 · 交通：馆内步行 · 交通约 0 分钟 · 活动约 90 分钟 · 参观结束后直接向阿诺河方向步行。", "mk": {"t": "强烈建议提前预约", "c": "need"}, "l": "https://www.galleriaaccademiafirenze.it/en/tickets/"}, {"at": "2026-09-25T17:00:00+02:00", "tz": "Europe/Rome", "h": "途经圣母百花教堂外观、共和国广场前往<a class=\"place\" target=\"_blank\" rel=\"noopener\" href=\"https://www.google.com/maps/search/?api=1&amp;query=老桥\">老桥</a>", "n": "学院美术馆 → 老桥 · 交通：步行 · 交通约 25 分钟 · 活动约 0 分钟 · 这段同时完成老城街景游览。", "mk": {"t": "无需预约", "c": "free"}}, {"at": "2026-09-25T17:25:00+02:00", "tz": "Europe/Rome", "h": "老桥逛饰品店，包括HUMILIS", "n": "老桥北端 → HUMILIS（Ponte Vecchio 51/R） · 交通：步行 · 交通约 5 分钟 · 活动约 50 分钟 · 建议提前确认店铺当日营业时间。", "mk": {"t": "无需预约", "c": "free"}, "l": "https://www.humilis.it/en/page/boutiques_21"}, {"at": "2026-09-25T18:20:00+02:00", "tz": "Europe/Rome", "h": "阿诺河散步＋圣三一桥晚霞，远观老桥和圣母百花", "n": "老桥 → 圣三一桥及阿诺河岸 · 交通：步行 · 交通约 10 分钟 · 活动约 60 分钟 · 9月25日日落约19:07，建议18:35前抵达桥上选机位。", "mk": {"t": "无需预约", "c": "free"}, "l": "https://www.timeanddate.com/sun/italy/firenze?month=9"}], "sum": "9.25 周五 · 8 项 · 佛罗伦萨"}, {"n": 2, "date": "2026-09-26", "dd": "9.26", "dw": "周六", "color": "var(--d2)", "title": "佛罗伦萨", "route": "", "regions": [], "items": [{"at": "2026-09-26T08:15:00+02:00", "tz": "Europe/Rome", "h": "碧提宫：帕拉蒂娜画廊等核心展区", "n": "碧提宫入口 → 碧提宫/波波里花园通道 · 交通：馆内步行 · 交通约 0 分钟 · 活动约 120 分钟 · 碧提宫官方开放时间为8:15；两小时看帕拉蒂娜画廊等核心展区即可。", "mk": {"t": "建议提前购联票", "c": "need"}, "l": "https://www.uffizi.it/en/pitti-palace"}, {"at": "2026-09-26T10:15:00+02:00", "tz": "Europe/Rome", "h": "波波里花园：圆形剧场、海神喷泉、柏树林大道等", "n": "碧提宫 → 波波里花园出口 · 交通：步行 · 交通约 5 分钟 · 活动约 125 分钟 · 花园坡路较多；9月闭园18:30。按约2小时安排，12:25前离园衔接午餐。", "mk": {"t": "建议提前购联票", "c": "need"}, "l": "https://www.uffizi.it/en/boboli-garden"}, {"at": "2026-09-26T12:30:00+02:00", "tz": "Europe/Rome", "h": "午饭", "n": "", "mk": null}, {"at": "2026-09-26T13:30:00+02:00", "tz": "Europe/Rome", "h": "视天气而定，午休或citywalk", "n": "", "mk": null}, {"at": "2026-09-26T15:00:00+02:00", "tz": "Europe/Rome", "h": "乌菲兹美术馆", "n": "乌菲兹入口 → 乌菲兹出口 · 交通：馆内步行 · 交通约 0 分钟 · 活动约 120 分钟 · 15:00至17:00共2小时，重点看波提切利、达·芬奇、拉斐尔、提香、卡拉瓦乔。", "mk": {"t": "必须提前预约", "c": "need"}, "l": "https://www.uffizi.it/en/the-uffizi"}, {"at": "2026-09-26T17:20:00+02:00", "tz": "Europe/Rome", "h": "前往<a class=\"place\" target=\"_blank\" rel=\"noopener\" href=\"https://www.google.com/maps/search/?api=1&amp;query=米开朗琪罗广场\">米开朗琪罗广场</a>", "n": "乌菲兹 → 米开朗琪罗广场 · 交通：步行 · 交通约 30 分钟 · 活动约 10 分钟 · 优先从靠近Forte di Belvedere方向离开；若出口临时调整，直接打车。", "mk": {"t": "无需预约", "c": "free"}}, {"at": "2026-09-26T18:00:00+02:00", "tz": "Europe/Rome", "h": "<a class=\"place\" target=\"_blank\" rel=\"noopener\" href=\"https://www.timeanddate.com/sun/italy/firenze?month=9\">米开朗琪罗广场</a>看日落和蓝调", "n": "米开朗琪罗广场 → 米开朗琪罗广场 · 交通：步行 · 交通约 0 分钟 · 活动约 95 分钟 · 9月26日日落约19:05，至少提前45分钟占位。", "mk": {"t": "无需预约", "c": "free"}, "l": "https://www.timeanddate.com/sun/italy/firenze?month=9"}], "sum": "9.26 周六 · 7 项 · 佛罗伦萨"}, {"n": 3, "date": "2026-09-27", "dd": "9.27", "dw": "周日", "color": "var(--d3)", "title": "佛罗伦萨", "route": "", "regions": [], "items": [{"at": "2026-09-27T07:55:00+02:00", "tz": "Europe/Rome", "h": "前往<a class=\"place\" target=\"_blank\" rel=\"noopener\" href=\"https://tickets.duomo.firenze.it/en/product/tickets/brunelleschi-pass/3006/13344\">乔托钟楼</a>", "n": "市中心酒店 → 乔托钟楼 · 交通：步行 · 交通约 15 分钟 · 活动约 5 分钟 · 早场体力和人流最好。", "mk": {"t": "持Brunelleschi Pass", "c": "free"}, "l": "https://tickets.duomo.firenze.it/en/product/tickets/brunelleschi-pass/3006/13344"}, {"at": "2026-09-27T08:15:00+02:00", "tz": "Europe/Rome", "h": "乔托钟楼登顶", "n": "乔托钟楼入口 → 乔托钟楼出口 · 交通：步行登塔 · 交通约 0 分钟 · 活动约 65 分钟 · 约414级台阶；与下午穹顶登顶之间留足恢复时间。", "mk": {"t": "提前购买通票", "c": "free"}, "l": "https://tickets.duomo.firenze.it/en/support/faq"}, {"at": "2026-09-27T09:25:00+02:00", "tz": "Europe/Rome", "h": "主教座堂博物馆＋洗礼堂", "n": "乔托钟楼 → 大教堂建筑群 · 交通：步行 · 交通约 5 分钟 · 活动约 100 分钟 · 周日教堂内部因礼拜不对普通游客开放；博物馆和洗礼堂可参观。", "mk": {"t": "持Brunelleschi Pass", "c": "free"}, "l": "https://tickets.duomo.firenze.it/en/support/faq"}, {"at": "2026-09-27T11:10:00+02:00", "tz": "Europe/Rome", "h": "午餐＋休息", "n": "大教堂建筑群 → 穹顶入口附近 · 交通：步行 · 交通约 5 分钟 · 活动约 75 分钟 · 避免吃得过饱，穹顶通道狭窄且台阶密集。", "mk": {"t": "无需预约", "c": "free"}}, {"at": "2026-09-27T12:45:00+02:00", "tz": "Europe/Rome", "h": "圣母百花教堂穹顶登顶", "n": "穹顶入口 → 穹顶出口 · 交通：步行登顶 · 交通约 0 分钟 · 活动约 80 分钟 · 周日穹顶从12:45开放；通票姓名与证件信息需一致。", "mk": {"t": "必须提前锁定12:45时段", "c": "need"}, "l": "https://tickets.duomo.firenze.it/en/support/service"}, {"at": "2026-09-27T14:05:00+02:00", "tz": "Europe/Rome", "h": "前往<a class=\"place\" target=\"_blank\" rel=\"noopener\" href=\"https://www.santacroceopera.it/en/organise-your-visit/\">圣十字圣殿</a>", "n": "圣母百花教堂 → 圣十字圣殿 · 交通：步行 · 交通约 15 分钟 · 活动约 5 分钟 · 2026年欧洲文化遗产日为9月26日至27日；圣十字圣殿周日14:00开放，现场取免费票。", "mk": {"t": "无需线上预约", "c": "free"}, "l": "https://www.santacroceopera.it/en/organise-your-visit/"}, {"at": "2026-09-27T14:25:00+02:00", "tz": "Europe/Rome", "h": "圣十字圣殿", "n": "圣十字圣殿入口 → 圣十字圣殿出口 · 交通：馆内步行 · 交通约 0 分钟 · 活动约 105 分钟 · 周日正常开放14:00至17:30；欧洲文化遗产日期间免费，仅圣殿主体开放的可能性较高。", "mk": {"t": "现场取票", "c": "free"}, "l": "https://www.santacroceopera.it/en/organise-your-visit/"}, {"at": "2026-09-27T16:10:00+02:00", "tz": "Europe/Rome", "h": "咖啡、自由活动、整理行李", "n": "圣十字圣殿 → 酒店 · 交通：步行 · 交通约 20 分钟 · 活动约 120 分钟 · 为次日早班火车和山区自驾留体力。", "mk": {"t": "无需预约", "c": "free"}}], "sum": "9.27 周日 · 8 项 · 佛罗伦萨"}, {"n": 4, "date": "2026-09-28", "dd": "9.28", "dw": "周一", "color": "var(--d4)", "title": "佛罗伦萨", "route": "佛罗伦萨→博尔扎诺 · 博尔扎诺 · 博尔扎诺→富内斯 · 富内斯山谷", "regions": ["佛罗伦萨→博尔扎诺", "博尔扎诺", "博尔扎诺→富内斯", "富内斯山谷"], "items": [{"at": "2026-09-28T06:45:00+02:00", "tz": "Europe/Rome", "h": "退房、前往Firenze S. M. Novella车站", "n": "酒店 → Firenze SMN · 交通：步行/出租车 · 交通约 15 分钟 · 活动约 20 分钟 · 建议选择7:20至8:00之间发车、0至1次换乘的班次。", "mk": {"t": "火车需提前购票", "c": "need"}, "l": "https://www.trenitalia.com/en.html"}, {"at": "2026-09-28T07:30:00+02:00", "tz": "Europe/Rome", "h": "火车前往<a class=\"place\" target=\"_blank\" rel=\"noopener\" href=\"https://www.trenitalia.com/en.html\">Bolzano/Bozen</a>", "n": "Firenze SMN → Bolzano/Bozen · 交通：高速列车 · 交通约 225 分钟 · 活动约 0 分钟 · 常见耗时约3小时30分至4小时，最终以出票时刻表为准。", "mk": {"t": "提前购票并选座", "c": "free"}, "l": "https://www.trenitalia.com/en.html"}, {"at": "2026-09-28T11:15:00+02:00", "tz": "Europe/Rome", "h": "取租车＋简单午餐", "n": "Bolzano车站 → 租车门店 · 交通：步行/接驳 · 交通约 15 分钟 · 活动约 50 分钟 · 建议自动挡、小型SUV或旅行车；确认异地还车至VCE。", "mk": {"t": "租车需提前预订", "c": "need"}}, {"at": "2026-09-28T12:20:00+02:00", "tz": "Europe/Rome", "h": "自驾前往Hotel Tyrol", "n": "Bolzano → Hotel Tyrol, St. Magdalena · 交通：自驾 · 交通约 55 分钟 · 活动约 0 分钟 · 山路弯道多，预留停车和找路时间。", "mk": {"t": "酒店已预订", "c": "done"}, "l": "https://www.tyrol-hotel.eu/en/hotel-tyrol-1.html"}, {"at": "2026-09-28T13:15:00+02:00", "tz": "Europe/Rome", "h": "寄存行李、午休、准备徒步", "n": "Hotel Tyrol → Hotel Tyrol · 交通：步行 · 交通约 0 分钟 · 活动约 75 分钟 · Hotel Tyrol位于Santa Maddalena，可直接开始村庄徒步。", "mk": {"t": "无需预约", "c": "free"}, "l": "https://www.tyrol-hotel.eu/en/hotel-tyrol-1.html"}, {"at": "2026-09-28T14:30:00+02:00", "tz": "Europe/Rome", "h": "富内斯徒步：Santa Maddalena教堂＋村庄全景步道＋St. Johann in Ranui周边", "n": "Hotel Tyrol → 富内斯经典观景区域 · 交通：步行徒步 · 交通约 10 分钟 · 活动约 160 分钟 · 建议6至8公里轻徒步；不要进入私人草地。", "mk": {"t": "无需预约", "c": "free"}, "l": "https://www.villnoess.com/en/"}, {"at": "2026-09-28T17:20:00+02:00", "tz": "Europe/Rome", "h": "Santa Maddalena经典机位等候日落", "n": "徒步终点 → Santa Maddalena观景点 · 交通：步行 · 交通约 15 分钟 · 活动约 105 分钟 · 提前与酒店确认晚餐时间，必要时申请延迟用餐。", "mk": {"t": "无需预约", "c": "free"}, "l": "https://www.villnoess.com/en/"}], "sum": "9.28 周一 · 7 项 · 佛罗伦萨→博尔扎诺 · 博尔扎诺 · 博尔扎诺→富内斯 · 富内斯山谷"}, {"n": 5, "date": "2026-09-29", "dd": "9.29", "dw": "周二", "color": "var(--d5)", "title": "富内斯山谷", "route": "富内斯山谷 · 富内斯→Ortisei · Seceda · Seceda→Ortisei", "regions": ["富内斯山谷", "富内斯→Ortisei", "Seceda", "Seceda→Ortisei", "Ortisei→富内斯"], "items": [{"at": "2026-09-29T07:15:00+02:00", "tz": "Europe/Rome", "h": "早餐、检查山顶天气与缆车状态", "n": "Hotel Tyrol → Hotel Tyrol · 交通：步行 · 交通约 0 分钟 · 活动约 45 分钟 · 当前官网显示Ortisei–Furnes及Furnes–Seceda两段缆车在9月29日运营，时间8:30至17:30；Fermeda座椅缆车已于9月20日结束夏季运营。", "mk": {"t": "临近确认", "c": "free"}, "l": "https://www.seceda.it/en/summer"}, {"at": "2026-09-29T08:00:00+02:00", "tz": "Europe/Rome", "h": "自驾至Seceda缆车谷站并停车", "n": "Hotel Tyrol → Seceda Ortisei谷站 · 交通：自驾 · 交通约 45 分钟 · 活动约 0 分钟 · 山路与小镇交通存在波动，建议8:00前出发。", "mk": {"t": "停车现场处理", "c": "free"}, "l": "https://www.seceda.it/en/summer"}, {"at": "2026-09-29T08:45:00+02:00", "tz": "Europe/Rome", "h": "购票/检票＋两段缆车上山", "n": "Ortisei谷站 → Seceda山顶 · 交通：缆车 · 交通约 20 分钟 · 活动约 15 分钟 · 两段主缆车均运营；按本表09:20到山顶、15:10开始下山，距离17:30末班仍有充足缓冲。", "mk": {"t": "可提前线上购票", "c": "free"}, "l": "https://www.seceda.it/en/summer"}, {"at": "2026-09-29T09:20:00+02:00", "tz": "Europe/Rome", "h": "刀锋山经典山脊打卡", "n": "Seceda山顶站 → 经典山脊观景位 · 交通：步行 · 交通约 15 分钟 · 活动约 40 分钟 · 上午通常更容易获得清晰能见度。", "mk": {"t": "无需预约", "c": "free"}}, {"at": "2026-09-29T10:15:00+02:00", "tz": "Europe/Rome", "h": "轻徒步：山脊—Pieralongia双石—山屋—返回山顶站", "n": "经典观景位 → Seceda山顶站 · 交通：徒步 · 交通约 0 分钟 · 活动约 240 分钟 · 约6至8公里，按天气缩短；Fermeda座椅缆车此时已结束夏季运营，不纳入路线。", "mk": {"t": "无需预约", "c": "free"}, "l": "https://www.seceda.it/en/summer"}, {"at": "2026-09-29T14:15:00+02:00", "tz": "Europe/Rome", "h": "山屋午餐/咖啡＋补拍", "n": "Seceda山顶站附近 → Seceda山顶站 · 交通：步行 · 交通约 0 分钟 · 活动约 55 分钟 · 山区餐厅可能提前结束营业，随身准备能量食品。", "mk": {"t": "山屋不一定接受预约", "c": "free"}}, {"at": "2026-09-29T15:10:00+02:00", "tz": "Europe/Rome", "h": "缆车下山＋<a class=\"place\" target=\"_blank\" rel=\"noopener\" href=\"https://www.seceda.it/en/summer\">Ortisei</a>小镇短暂停留", "n": "Seceda山顶 → Ortisei · 交通：缆车＋步行 · 交通约 25 分钟 · 活动约 40 分钟 · 不要把返程拖到末班前；留出天气停运缓冲。", "mk": {"t": "注意末班时间", "c": "free"}, "l": "https://www.seceda.it/en/summer"}, {"at": "2026-09-29T16:15:00+02:00", "tz": "Europe/Rome", "h": "返回<a class=\"place\" target=\"_blank\" rel=\"noopener\" href=\"https://www.google.com/maps/search/?api=1&amp;query=Hotel Tyrol\">Hotel Tyrol</a>", "n": "Ortisei → Hotel Tyrol · 交通：自驾 · 交通约 45 分钟 · 活动约 0 分钟 · 晚上安排酒店晚餐和SPA。", "mk": {"t": "无需预约", "c": "free"}}], "sum": "9.29 周二 · 8 项 · 富内斯山谷 · 富内斯→Ortisei · Seceda · Seceda→Ortisei"}, {"n": 6, "date": "2026-09-30", "dd": "9.30", "dw": "周三", "color": "var(--d1)", "title": "富内斯→休斯高原", "route": "富内斯→休斯高原 · 休斯高原 · 休斯高原→富内斯", "regions": ["富内斯→休斯高原", "休斯高原", "休斯高原→富内斯"], "items": [{"at": "2026-09-30T07:30:00+02:00", "tz": "Europe/Rome", "h": "早餐后自驾至Siusi–Alpe di <a class=\"place\" target=\"_blank\" rel=\"noopener\" href=\"https://www.alpedisiusi.bz.it/how-to-get-here.asp\">Siusi缆车谷站</a>", "n": "Hotel Tyrol → Siusi缆车谷站 · 交通：自驾 · 交通约 55 分钟 · 活动约 0 分钟 · 使用缆车上山，避开高原道路9:00至17:00私家车限制。", "mk": {"t": "临近确认", "c": "free"}, "l": "https://www.alpedisiusi.bz.it/how-to-get-here.asp"}, {"at": "2026-09-30T08:20:00+02:00", "tz": "Europe/Rome", "h": "停车、购票、乘缆车至<a class=\"place\" target=\"_blank\" rel=\"noopener\" href=\"https://www.alpedisiusi.bz.it/lifts.asp\">Compatsch</a>", "n": "Siusi谷站 → Compatsch · 交通：缆车 · 交通约 15 分钟 · 活动约 25 分钟 · 秋季缆车运行至18:00，仍建议17:00前下山。", "mk": {"t": "可现场购票", "c": "free"}, "l": "https://www.alpedisiusi.bz.it/lifts.asp"}, {"at": "2026-09-30T09:00:00+02:00", "tz": "Europe/Rome", "h": "租电助力自行车；不骑车则直接开始徒步", "n": "Compatsch → Compatsch · 交通：步行 · 交通约 0 分钟 · 活动约 30 分钟 · 骑行方案需确认车辆尺码、头盔和电量。", "mk": {"t": "E-bike建议提前预订", "c": "need"}}, {"at": "2026-09-30T09:30:00+02:00", "tz": "Europe/Rome", "h": "二选一：E-bike环线约25至30公里；或Compatsch—Panorama—Sanon草甸徒步约8至10公里", "n": "Compatsch → Compatsch/Saltria区域 · 交通：电助力自行车/徒步 · 交通约 0 分钟 · 活动约 270 分钟 · 山区天气突变时优先选徒步短线；不得依赖已季末停运的小型座椅缆车。", "mk": {"t": "骑车需预约租赁", "c": "free"}, "l": "https://www.alpedisiusi.bz.it/lifts.asp"}, {"at": "2026-09-30T14:00:00+02:00", "tz": "Europe/Rome", "h": "山屋午餐＋归还自行车", "n": "高原路线终点 → Compatsch · 交通：骑行/步行 · 交通约 15 分钟 · 活动约 55 分钟 · 旺季尾声部分山屋营业不稳定，提前查当日开放。", "mk": {"t": "无需预约", "c": "free"}}, {"at": "2026-09-30T15:10:00+02:00", "tz": "Europe/Rome", "h": "缆车下山", "n": "Compatsch → Siusi谷站 · 交通：缆车 · 交通约 15 分钟 · 活动约 35 分钟 · 留足缆车排队及停车场取车时间。", "mk": {"t": "无需预约", "c": "free"}, "l": "https://www.alpedisiusi.bz.it/lifts.asp"}, {"at": "2026-09-30T16:00:00+02:00", "tz": "Europe/Rome", "h": "返回<a class=\"place\" target=\"_blank\" rel=\"noopener\" href=\"https://www.google.com/maps/search/?api=1&amp;query=Hotel Tyrol\">Hotel Tyrol</a>，整理次日转场行李", "n": "Siusi谷站 → Hotel Tyrol · 交通：自驾 · 交通约 60 分钟 · 活动约 0 分钟 · 次日出发早，今晚加满油或确认沿途加油站。", "mk": {"t": "无需预约", "c": "free"}}], "sum": "9.30 周三 · 7 项 · 富内斯→休斯高原 · 休斯高原 · 休斯高原→富内斯"}, {"n": 7, "date": "2026-10-01", "dd": "10.1", "dw": "周四", "color": "var(--d2)", "title": "富内斯山谷", "route": "富内斯山谷 · 富内斯→三峰山 · 三峰山 · 三峰山→Dobbiaco", "regions": ["富内斯山谷", "富内斯→三峰山", "三峰山", "三峰山→Dobbiaco", "Dobbiaco"], "items": [{"at": "2026-10-01T06:15:00+02:00", "tz": "Europe/Rome", "h": "早餐、退房、装车", "n": "Hotel Tyrol → Hotel Tyrol停车场 · 交通：步行 · 交通约 0 分钟 · 活动约 45 分钟 · 建议提前申请早餐盒，避免等正常开餐时间。", "mk": {"t": "酒店确认早早餐", "c": "stay"}}, {"at": "2026-10-01T07:00:00+02:00", "tz": "Europe/Rome", "h": "自驾至<a class=\"place\" target=\"_blank\" rel=\"noopener\" href=\"https://auronzo.info/en/parking-tre-cime-di-lavaredo/\">Rifugio Auronzo停车场</a>", "n": "Hotel Tyrol → Rifugio Auronzo停车场 · 交通：自驾 · 交通约 155 分钟 · 活动约 0 分钟 · 山路和收费道路预留2小时35分钟；预约入口建议9:30左右。", "mk": {"t": "必须预约停车时段", "c": "need"}, "l": "https://auronzo.info/en/parking-tre-cime-di-lavaredo/"}, {"at": "2026-10-01T09:35:00+02:00", "tz": "Europe/Rome", "h": "停车、整备、确认天气", "n": "Rifugio Auronzo停车场 → 徒步起点 · 交通：步行 · 交通约 5 分钟 · 活动约 15 分钟 · 停车预约需车牌；租车车牌可在前一天23:59前补录。", "mk": {"t": "停车预约已完成", "c": "done"}, "l": "https://auronzo.info/en/parking-tre-cime-di-lavaredo/"}, {"at": "2026-10-01T09:55:00+02:00", "tz": "Europe/Rome", "h": "<a class=\"place\" target=\"_blank\" rel=\"noopener\" href=\"https://www.dreizinnen.com/en/region/highlights/three-peaks\">三峰山</a>经典环线：Auronzo—Lavaredo—Locatelli方向—返回", "n": "Rifugio Auronzo → Rifugio Auronzo · 交通：徒步 · 交通约 0 分钟 · 活动约 275 分钟 · 官方经典环线约8.8公里、活动时间约4小时；本表加拍照和短休息。", "mk": {"t": "无需徒步预约", "c": "free"}, "l": "https://www.dreizinnen.com/en/region/highlights/three-peaks"}, {"at": "2026-10-01T14:30:00+02:00", "tz": "Europe/Rome", "h": "简单午餐/补给", "n": "Rifugio Auronzo → 停车场 · 交通：步行 · 交通约 0 分钟 · 活动约 35 分钟 · 控制用餐时间，下午还需开车至Dobbiaco。", "mk": {"t": "无需预约", "c": "free"}}, {"at": "2026-10-01T15:05:00+02:00", "tz": "Europe/Rome", "h": "自驾前往<a class=\"place\" target=\"_blank\" rel=\"noopener\" href=\"https://www.hotel-patris.it/en/\">Hotel Patris</a>", "n": "Rifugio Auronzo → Hotel Patris · 交通：自驾 · 交通约 60 分钟 · 活动约 0 分钟 · 若徒步因天气延误，最晚应在16:00前离开停车场。", "mk": {"t": "酒店已预订", "c": "done"}, "l": "https://www.hotel-patris.it/en/"}, {"at": "2026-10-01T16:05:00+02:00", "tz": "Europe/Rome", "h": "入住<a class=\"place\" target=\"_blank\" rel=\"noopener\" href=\"https://www.hotel-patris.it/en/\">Hotel Patris</a>、休息", "n": "Hotel Patris前台 → Hotel Patris · 交通：步行 · 交通约 0 分钟 · 活动约 145 分钟 · Hotel Patris地址：Via Sandmühle 12, Dobbiaco。", "mk": {"t": "酒店已预订", "c": "done"}, "l": "https://www.hotel-patris.it/en/"}], "sum": "10.1 周四 · 7 项 · 富内斯山谷 · 富内斯→三峰山 · 三峰山 · 三峰山→Dobbiaco"}, {"n": 8, "date": "2026-10-02", "dd": "10.2", "dw": "周五", "color": "var(--d3)", "title": "Dobbiaco", "route": "Dobbiaco · Dobbiaco→Braies · Lago di Braies · Braies→威尼斯机场", "regions": ["Dobbiaco", "Dobbiaco→Braies", "Lago di Braies", "Braies→威尼斯机场", "威尼斯机场", "威尼斯→凯夫拉维克", "凯夫拉维克机场", "凯夫拉维克→雷克雅未克", "雷克雅未克"], "items": [{"at": "2026-10-02T07:30:00+02:00", "tz": "Europe/Rome", "h": "早餐、退房、装车", "n": "Hotel Patris → Hotel Patris停车场 · 交通：步行 · 交通约 0 分钟 · 活动约 50 分钟 · 提前一晚结清账单可节省时间。", "mk": {"t": "无需预约", "c": "free"}}, {"at": "2026-10-02T08:20:00+02:00", "tz": "Europe/Rome", "h": "自驾至<a class=\"place\" target=\"_blank\" rel=\"noopener\" href=\"https://www.prags.bz/en\">Lago di Braies</a>停车场", "n": "Hotel Patris → Lago di Braies · 交通：自驾 · 交通约 35 分钟 · 活动约 0 分钟 · 停车场收费；10月2日不属于7月1日至9月15日限行期。", "mk": {"t": "10月无需交通限行预约", "c": "free"}, "l": "https://www.prags.bz/en"}, {"at": "2026-10-02T08:55:00+02:00", "tz": "Europe/Rome", "h": "湖边拍照＋短距离散步", "n": "停车场 → 船屋 · 交通：步行 · 交通约 5 分钟 · 活动约 35 分钟 · 先拍照，09:35前到船屋排队，争取第一批10:00出船。", "mk": {"t": "无需预约", "c": "free"}, "l": "https://www.la-palafitta.com/en"}, {"at": "2026-10-02T09:35:00+02:00", "tz": "Europe/Rome", "h": "<a class=\"place\" target=\"_blank\" rel=\"noopener\" href=\"https://www.la-palafitta.com/en\">船屋</a>排队、购票、准备登船", "n": "船屋 → 船屋 · 交通：步行 · 交通约 0 分钟 · 活动约 25 分钟 · 9月28日至10月30日首船10:00，普通划船不接受线上预约。", "mk": {"t": "无法提前预约", "c": "free"}, "l": "https://www.la-palafitta.com/en"}, {"at": "2026-10-02T10:00:00+02:00", "tz": "Europe/Rome", "h": "木船划船体验", "n": "船屋 → 船屋 · 交通：划船 · 交通约 0 分钟 · 活动约 45 分钟 · 若10:00无法登船或现场排队明显超过计划，应优先保证下午航班。", "mk": {"t": "现场先到先得", "c": "free"}, "l": "https://www.la-palafitta.com/en"}, {"at": "2026-10-02T10:45:00+02:00", "tz": "Europe/Rome", "h": "快速返回<a class=\"place\" target=\"_blank\" rel=\"noopener\" href=\"https://www.google.com/maps/search/?api=1&amp;query=停车场\">停车场</a>并出发", "n": "船屋 → 停车场 · 交通：步行 · 交通约 10 分钟 · 活动约 0 分钟 · 不再安排环湖，直接前往VCE。", "mk": {"t": "无需预约", "c": "free"}}, {"at": "2026-10-02T10:55:00+02:00", "tz": "Europe/Rome", "h": "自驾前往Venice Marco Polo Airport", "n": "Lago di Braies → VCE机场租车还车区 · 交通：自驾 · 交通约 160 分钟 · 活动约 0 分钟 · 常规纯驾驶约2小时24分钟，本表按2小时40分钟计入道路缓冲。", "mk": {"t": "航班需已出票", "c": "done"}, "l": "https://www.rome2rio.com/s/Lago-di-Br%C3%A0ies/Venice-Airport-VCE"}, {"at": "2026-10-02T13:35:00+02:00", "tz": "Europe/Rome", "h": "机场附近加油、还车、步行至航站楼", "n": "租车还车区 → VCE航站楼 · 交通：自驾＋步行 · 交通约 15 分钟 · 活动约 20 分钟 · 前一晚确认还车点和加油站，尽量避免现场找路。", "mk": {"t": "需预留还车时间", "c": "free"}}, {"at": "2026-10-02T14:10:00+02:00", "tz": "Europe/Rome", "h": "值机、托运行李、安检", "n": "VCE航站楼 → 登机口 · 交通：步行 · 交通约 0 分钟 · 活动约 70 分钟 · 当前直飞时刻显示15:55起飞；若有托运行李，抵达航站楼后直接办理。", "mk": {"t": "机票需已出票", "c": "done"}, "l": "https://www.icelandair.com/it-it/voli/voli-da-venezia-a-reykjavik"}, {"at": "2026-10-02T15:20:00+02:00", "tz": "Europe/Rome", "h": "登机及起飞前准备", "n": "登机口 → 航班座位 · 交通：步行 · 交通约 0 分钟 · 活动约 35 分钟 · 不要把机场购物安排在这一段。", "mk": {"t": "按登机牌执行", "c": "free"}}, {"at": "2026-10-02T15:55:00+02:00", "tz": "Europe/Rome", "h": "VCE→<a class=\"place\" target=\"_blank\" rel=\"noopener\" href=\"https://www.flightconnections.com/flights-from-vce-to-kef\">KEF</a>直飞", "n": "VCE → KEF · 交通：飞机 · 交通约 275 分钟 · 活动约 0 分钟 · 当前航线时刻表显示15:55起飞，直飞约4小时35分；到达时间为冰岛当地时间。", "mk": {"t": "机票已出票", "c": "done"}, "l": "https://www.flightconnections.com/flights-from-vce-to-kef"}, {"at": "2026-10-02T18:30:00+00:00", "tz": "Atlantic/Reykjavik", "h": "入境、取行李", "n": "KEF到达区 → KEF公共区域 · 交通：步行 · 交通约 0 分钟 · 活动约 50 分钟 · 预留约50分钟，实际按入境与行李速度调整。", "mk": {"t": "无需预约", "c": "free"}}, {"at": "2026-10-02T19:20:00+00:00", "tz": "Atlantic/Reykjavik", "h": "机场休息、用餐，等待同行人落地", "n": "KEF公共区域 → KEF到达区 · 交通：步行 · 交通约 0 分钟 · 活动约 250 分钟 · 同行人若航班有延误，及时同步接送司机或酒店。", "mk": {"t": "无需预约", "c": "free"}}, {"at": "2026-10-02T23:30:00+00:00", "tz": "Atlantic/Reykjavik", "h": "等待同行人入境、取行李", "n": "到达口 → 机场出口 · 交通：步行 · 交通约 0 分钟 · 活动约 50 分钟 · 按同行人实际落地时间顺延。", "mk": {"t": "无需预约", "c": "free"}}, {"at": "2026-10-02T00:20:00+02:00", "tz": "Europe/Rome", "h": "前往<a class=\"place\" target=\"_blank\" rel=\"noopener\" href=\"https://www.centerhotels.com/en/hotel-midgardur-reykjavik\">Midgardur by Center Hotels</a>", "n": "KEF → Midgardur by Center Hotels · 交通：出租车/包车 · 交通约 50 分钟 · 活动约 0 分钟 · 深夜抵达，优先预订固定接送并把航班号发给司机。", "mk": {"t": "建议提前预约接送", "c": "need"}, "l": "https://www.centerhotels.com/en/hotel-midgardur-reykjavik"}, {"at": "2026-10-02T01:10:00+02:00", "tz": "Europe/Rome", "h": "办理入住、休息", "n": "酒店前台 → 客房 · 交通：步行 · 交通约 0 分钟 · 活动约 20 分钟 · 提前告知酒店深夜入住。", "mk": {"t": "酒店已预订", "c": "done"}, "l": "https://www.centerhotels.com/en/hotel-midgardur-reykjavik"}], "sum": "10.2 周五 · 16 项 · Dobbiaco · Dobbiaco→Braies · Lago di Braies · Braies→威尼斯机场"}, {"n": 9, "date": "2026-10-03", "dd": "10.3", "dw": "周六", "color": "var(--d4)", "title": "雷克雅未克", "route": "雷克雅未克", "regions": ["雷克雅未克"], "items": [{"at": "2026-10-03T10:00:00+00:00", "tz": "Atlantic/Reykjavik", "h": "晚起、早餐或咖啡", "n": "Midgardur by Center Hotels → 市中心 · 交通：步行 · 交通约 10 分钟 · 活动约 20 分钟 · 前一晚约01:30休息，当天按轻松节奏开始。", "mk": {"t": "无需预约", "c": "free"}}, {"at": "2026-10-03T10:30:00+00:00", "tz": "Atlantic/Reykjavik", "h": "哈尔格林姆斯教堂外观＋彩虹街", "n": "市中心 → Skólavörðustígur · 交通：步行 · 交通约 10 分钟 · 活动约 50 分钟 · 是否登塔可根据现场排队和天气决定。", "mk": {"t": "无需预约", "c": "free"}}, {"at": "2026-10-03T11:30:00+00:00", "tz": "Atlantic/Reykjavik", "h": "<a class=\"place\" target=\"_blank\" rel=\"noopener\" href=\"https://www.google.com/maps/search/?api=1&amp;query=Laugavegur\">Laugavegur</a>主街慢逛、购物", "n": "彩虹街 → Laugavegur · 交通：步行 · 交通约 10 分钟 · 活动约 50 分钟 · 和次日集合点位置一起熟悉。", "mk": {"t": "无需预约", "c": "free"}}, {"at": "2026-10-03T12:30:00+00:00", "tz": "Atlantic/Reykjavik", "h": "午餐", "n": "Laugavegur → 市中心餐厅 · 交通：步行 · 交通约 10 分钟 · 活动约 80 分钟 · 留足用餐时间，不赶行程。", "mk": {"t": "热门餐厅建议预约", "c": "free"}}, {"at": "2026-10-03T14:00:00+00:00", "tz": "Atlantic/Reykjavik", "h": "太阳航海者＋海滨散步", "n": "市中心 → Sun Voyager · 交通：步行 · 交通约 15 分钟 · 活动约 25 分钟 · 海边风大，注意防风防水。", "mk": {"t": "无需预约", "c": "free"}}, {"at": "2026-10-03T14:40:00+00:00", "tz": "Atlantic/Reykjavik", "h": "Harpa音乐厅＋港口周边", "n": "Sun Voyager → Harpa/旧港 · 交通：步行 · 交通约 10 分钟 · 活动约 40 分钟 · 以建筑、海景和室内休息为主。", "mk": {"t": "无需预约", "c": "free"}}, {"at": "2026-10-03T15:30:00+00:00", "tz": "Atlantic/Reykjavik", "h": "旧港、<a class=\"place\" target=\"_blank\" rel=\"noopener\" href=\"https://www.google.com/maps/search/?api=1&amp;query=市中心\">市中心</a>自由活动、咖啡", "n": "Harpa/旧港 → 市中心 · 交通：步行 · 交通约 20 分钟 · 活动约 100 分钟 · 天气不好可缩短户外段，把时间留给咖啡馆和商店。", "mk": {"t": "无需预约", "c": "free"}}, {"at": "2026-10-03T18:30:00+00:00", "tz": "Atlantic/Reykjavik", "h": "晚餐", "n": "酒店/市中心 → 餐厅 · 交通：步行 · 交通约 15 分钟 · 活动约 105 分钟 · 10月周末热门餐厅建议提前订位。", "mk": {"t": "建议提前订位", "c": "need"}}], "sum": "10.3 周六 · 8 项 · 雷克雅未克"}, {"n": 10, "date": "2026-10-04", "dd": "10.4", "dw": "周日", "color": "var(--d5)", "title": "雷克雅未克", "route": "雷克雅未克 · Snæfellsnes半岛", "regions": ["雷克雅未克", "Snæfellsnes半岛"], "items": [{"at": "2026-10-04T07:30:00+00:00", "tz": "Atlantic/Reykjavik", "h": "早餐、整理一日游装备", "n": "Midgardur by Center Hotels → 酒店 · 交通：步行 · 交通约 0 分钟 · 活动约 45 分钟 · 带防水外层、保暖层和防水徒步鞋。", "mk": {"t": "无需预约", "c": "free"}}, {"at": "2026-10-04T08:15:00+00:00", "tz": "Atlantic/Reykjavik", "h": "前往指定接客点", "n": "酒店 → Nice Travel接客点 · 交通：步行 · 交通约 15 分钟 · 活动约 0 分钟 · Midgardur附近常用Bus Stop 13，但必须以订单确认的接客点为准。", "mk": {"t": "以订单为准", "c": "free"}, "l": "https://nicetravel.is/iceland-tours/snaefellsnes-day-trip/"}, {"at": "2026-10-04T08:30:00+00:00", "tz": "Atlantic/Reykjavik", "h": "Nice Travel接客窗口", "n": "接客点 → 旅游巴士 · 交通：步行 · 交通约 0 分钟 · 活动约 30 分钟 · 官网要求08:30起在接客点等候，接客窗口08:30至09:00。", "mk": {"t": "必须已预订", "c": "done"}, "l": "https://nicetravel.is/iceland-tours/snaefellsnes-day-trip/"}, {"at": "2026-10-04T09:00:00+00:00", "tz": "Atlantic/Reykjavik", "h": "斯奈山半岛一日游：Ytri-Tunga、Búðakirkja、Arnarstapi、Lóndrangar、Djúpalónssandur、Kirkjufell等", "n": "雷克雅未克 → Snæfellsnes→雷克雅未克 · 交通：小巴 · 交通约 0 分钟 · 活动约 660 分钟 · 官网标注总时长约11小时，预计19:45至20:15返回，顺序可能因天气调整。", "mk": {"t": "已预订", "c": "done"}, "l": "https://nicetravel.is/iceland-tours/snaefellsnes-day-trip/"}, {"at": "2026-10-04T20:00:00+00:00", "tz": "Atlantic/Reykjavik", "h": "下车、回酒店、简餐", "n": "下车点 → Midgardur by Center Hotels · 交通：步行 · 交通约 15 分钟 · 活动约 30 分钟 · 若返回较晚，晚餐优先选择酒店附近或提前准备。", "mk": {"t": "无需预约", "c": "free"}}], "sum": "10.4 周日 · 5 项 · 雷克雅未克 · Snæfellsnes半岛"}, {"n": 11, "date": "2026-10-05", "dd": "10.5", "dw": "周一", "color": "var(--d1)", "title": "雷克雅未克", "route": "雷克雅未克 · 雷克雅未克→冰河湖 · 冰河湖 · Vatnajökull冰川", "regions": ["雷克雅未克", "雷克雅未克→冰河湖", "冰河湖", "Vatnajökull冰川", "冰河湖周边"], "items": [{"at": "2026-10-05T06:30:00+00:00", "tz": "Atlantic/Reykjavik", "h": "早餐、退房、装行李", "n": "Midgardur by Center Hotels → 酒店门口 · 交通：步行 · 交通约 0 分钟 · 活动约 30 分钟 · 当天车程很长，建议提前准备水和车上食物。", "mk": {"t": "包车已确认", "c": "done"}}, {"at": "2026-10-05T07:00:00+00:00", "tz": "Atlantic/Reykjavik", "h": "包车前往Jökulsárlón，途中安排一次短休息", "n": "雷克雅未克 → Jökulsárlón Glacier Lagoon · 交通：包车 · 交通约 310 分钟 · 活动约 0 分钟 · 纯驾驶约4小时50分钟，本表另含约20分钟卫生间/咖啡缓冲。", "mk": {"t": "包车已确认", "c": "done"}, "l": "https://blueiceland.is/tours/ice-cave-discovery/"}, {"at": "2026-10-05T12:10:00+00:00", "tz": "Atlantic/Reykjavik", "h": "轻午餐、补水", "n": "Jökulsárlón → 冰河湖集合区 · 交通：步行 · 交通约 0 分钟 · 活动约 40 分钟 · 避免过饱，给冰川徒步留体力。", "mk": {"t": "无需预约", "c": "free"}}, {"at": "2026-10-05T12:50:00+00:00", "tz": "Atlantic/Reykjavik", "h": "<a class=\"place\" target=\"_blank\" rel=\"noopener\" href=\"https://blueiceland.is/tours/ice-cave-discovery/\">冰河湖</a>短停、核对集合点和订单信息", "n": "冰河湖 → Blue Iceland集合点 · 交通：步行 · 交通约 10 分钟 · 活动约 30 分钟 · 重点确认你的订单是否确为14:00出发。", "mk": {"t": "必须核对订单", "c": "need"}, "l": "https://blueiceland.is/tours/ice-cave-discovery/"}, {"at": "2026-10-05T13:30:00+00:00", "tz": "Atlantic/Reykjavik", "h": "提前到场、签到、装备准备", "n": "Blue Iceland集合点 → 活动车辆/集合区 · 交通：步行 · 交通约 0 分钟 · 活动约 30 分钟 · 当前官网公开页面显示Discovery为09:30出发，14:00安排只能以你的订单确认函为准。", "mk": {"t": "必须提前到场", "c": "need"}, "l": "https://blueiceland.is/tours/ice-cave-discovery/"}, {"at": "2026-10-05T14:00:00+00:00", "tz": "Atlantic/Reykjavik", "h": "Blue Iceland Ice Cave Discovery，按订单暂记6小时", "n": "Jökulsárlón → Jökulsárlón · 交通：超级吉普＋冰川徒步 · 交通约 0 分钟 · 活动约 360 分钟", "mk": null, "l": "https://blueiceland.is/tours/ice-cave-discovery/"}, {"at": "2026-10-05T20:00:00+00:00", "tz": "Atlantic/Reykjavik", "h": "活动结束、换装、前往附近酒店", "n": "Jökulsárlón → 冰河湖周边酒店（待定） · 交通：包车 · 交通约 20 分钟 · 活动约 10 分钟 · 10月5日日落约18:42，结束后已入夜，酒店尽量选冰河湖附近。", "mk": {"t": "酒店待确认", "c": "need"}}, {"at": "2026-10-05T20:30:00+00:00", "tz": "Atlantic/Reykjavik", "h": "办理入住、晚餐/简餐", "n": "酒店前台 → 客房 · 交通：步行 · 交通约 0 分钟 · 活动约 30 分钟 · 提前确认酒店晚餐结束时间，必要时自备冷食。", "mk": {"t": "酒店待确认", "c": "need"}}], "sum": "10.5 周一 · 8 项 · 雷克雅未克 · 雷克雅未克→冰河湖 · 冰河湖 · Vatnajökull冰川"}, {"n": 12, "date": "2026-10-06", "dd": "10.6", "dw": "周二", "color": "var(--d2)", "title": "冰河湖周边", "route": "冰河湖周边 · 冰河湖周边→Jökulsárlón · Jökulsárlón · 冰河湖→Reynisfjara", "regions": ["冰河湖周边", "冰河湖周边→Jökulsárlón", "Jökulsárlón", "冰河湖→Reynisfjara", "Reynisfjara", "Reynisfjara→Skógafoss", "Skógafoss", "Skógafoss→Seljalandsfoss", "Seljalandsfoss", "南岸→雷克雅未克", "雷克雅未克"], "items": [{"at": "2026-10-06T07:15:00+00:00", "tz": "Atlantic/Reykjavik", "h": "早餐、退房、装行李", "n": "冰河湖周边酒店 → 酒店门口 · 交通：步行 · 交通约 0 分钟 · 活动约 40 分钟 · 根据最终酒店与冰河湖距离微调出发时间。", "mk": {"t": "无需预约", "c": "free"}}, {"at": "2026-10-06T07:55:00+00:00", "tz": "Atlantic/Reykjavik", "h": "包车前往冲锋艇集合点", "n": "酒店 → Jökulsárlón · 交通：包车 · 交通约 25 分钟 · 活动约 0 分钟 · 如果酒店更远，需要相应提前。", "mk": {"t": "以酒店位置为准", "c": "stay"}, "l": "https://www.icelagoon.com/adventure-tour/"}, {"at": "2026-10-06T08:20:00+00:00", "tz": "Atlantic/Reykjavik", "h": "签到、穿装备、听安全说明", "n": "活动基地 → 活动基地 · 交通：步行 · 交通约 0 分钟 · 活动约 25 分钟 · 建议至少提前25分钟到。", "mk": {"t": "已预订08:45场次", "c": "done"}, "l": "https://www.icelagoon.com/adventure-tour/"}, {"at": "2026-10-06T08:45:00+00:00", "tz": "Atlantic/Reykjavik", "h": "冰河湖Zodiac冲锋艇活动全流程", "n": "活动基地 → 活动基地 · 交通：冲锋艇 · 交通约 0 分钟 · 活动约 120 分钟 · 官网标注船上约75分钟，全流程含装备、接驳和安全说明最多约2小时。", "mk": {"t": "已预订", "c": "done"}, "l": "https://www.icelagoon.com/adventure-tour/"}, {"at": "2026-10-06T10:45:00+00:00", "tz": "Atlantic/Reykjavik", "h": "换装、取行李、出发", "n": "活动基地 → 包车 · 交通：步行 · 交通约 0 分钟 · 活动约 15 分钟 · 11:00左右正式开始西返。", "mk": {"t": "无需预约", "c": "free"}}, {"at": "2026-10-06T11:00:00+00:00", "tz": "Atlantic/Reykjavik", "h": "沿1号公路前往黑沙滩", "n": "Jökulsárlón → Reynisfjara · 交通：包车 · 交通约 155 分钟 · 活动约 0 分钟 · 常规驾驶约2小时35分钟，途中如遇大风、降雨或路况应顺延。", "mk": {"t": "无需预约", "c": "free"}, "l": "https://www.rome2rio.com/s/J%C3%B6kuls%C3%A1rl%C3%B3n/Reynisfjara-Columnes"}, {"at": "2026-10-06T13:35:00+00:00", "tz": "Atlantic/Reykjavik", "h": "黑沙滩、玄武岩柱", "n": "停车场 → Reynisfjara · 交通：步行 · 交通约 5 分钟 · 活动约 40 分钟 · 严格遵守现场海浪警示灯，远离水线，不背对海浪。", "mk": {"t": "无需预约", "c": "free"}}, {"at": "2026-10-06T14:20:00+00:00", "tz": "Atlantic/Reykjavik", "h": "包车前往斯科加瀑布", "n": "Reynisfjara → Skógafoss · 交通：包车 · 交通约 30 分钟 · 活动约 0 分钟 · 常规驾驶约28分钟。", "mk": {"t": "无需预约", "c": "free"}, "l": "https://www.rome2rio.com/s/Reynisfjara-Columnes/Sk%C3%B3gafoss"}, {"at": "2026-10-06T14:50:00+00:00", "tz": "Atlantic/Reykjavik", "h": "斯科加瀑布", "n": "停车场 → Skógafoss · 交通：步行 · 交通约 5 分钟 · 活动约 35 分钟 · 时间紧时只看下方主瀑布，不爬完整阶梯。", "mk": {"t": "无需预约", "c": "free"}}, {"at": "2026-10-06T15:30:00+00:00", "tz": "Atlantic/Reykjavik", "h": "包车前往塞里雅兰瀑布", "n": "Skógafoss → Seljalandsfoss · 交通：包车 · 交通约 25 分钟 · 活动约 0 分钟 · 常规驾驶约24分钟。", "mk": {"t": "无需预约", "c": "free"}, "l": "https://www.rome2rio.com/s/Sk%C3%B3gafoss/Seljalandsfoss"}, {"at": "2026-10-06T15:55:00+00:00", "tz": "Atlantic/Reykjavik", "h": "塞里雅兰瀑布", "n": "停车场 → Seljalandsfoss · 交通：步行 · 交通约 5 分钟 · 活动约 35 分钟 · 步道湿滑；若风雨大或步道关闭，按现场限制游览。", "mk": {"t": "无需预约", "c": "free"}}, {"at": "2026-10-06T16:35:00+00:00", "tz": "Atlantic/Reykjavik", "h": "包车返回雷克雅未克，含道路与短暂停靠缓冲", "n": "Seljalandsfoss → Canopy by Hilton Reykjavik City Centre · 交通：包车 · 交通约 120 分钟 · 活动约 0 分钟 · 常规驾驶约1小时40分钟，本表加20分钟缓冲；10月6日日落约18:39。", "mk": {"t": "包车已确认", "c": "done"}, "l": "https://www.rome2rio.com/s/Seljalandsfoss/Reykjav%C3%ADk"}, {"at": "2026-10-06T18:35:00+00:00", "tz": "Atlantic/Reykjavik", "h": "入住Canopy by Hilton Reykjavik City Centre", "n": "酒店门口 → 客房 · 交通：步行 · 交通约 0 分钟 · 活动约 25 分钟 · 如路况延误，直接顺延晚餐。", "mk": {"t": "酒店已预订", "c": "done"}, "l": "https://www.hilton.com/en/hotels/rekcapy-canopy-reykjavik-city-centre/"}, {"at": "2026-10-06T19:30:00+00:00", "tz": "Atlantic/Reykjavik", "h": "晚餐、休息", "n": "Canopy by Hilton Reykjavik City Centre → 市中心餐厅 · 交通：步行 · 交通约 15 分钟 · 活动约 75 分钟 · 当天车程长，晚餐安排在酒店附近。", "mk": {"t": "建议提前订位", "c": "need"}}], "sum": "10.6 周二 · 14 项 · 冰河湖周边 · 冰河湖周边→Jökulsárlón · Jökulsárlón · 冰河湖→Reynisfjara"}, {"n": 13, "date": "2026-10-07", "dd": "10.7", "dw": "周三", "color": "var(--d3)", "title": "雷克雅未克", "route": "雷克雅未克 · 雷克雅未克→KEF · 凯夫拉维克机场 · KEF→伦敦希思罗", "regions": ["雷克雅未克", "雷克雅未克→KEF", "凯夫拉维克机场", "KEF→伦敦希思罗", "伦敦希思罗", "伦敦→海口", "海口"], "items": [{"at": "2026-10-07T09:30:00+00:00", "tz": "Atlantic/Reykjavik", "h": "早餐/早午餐＋最后散步", "n": "Canopy by Hilton Reykjavik City Centre → 市中心 · 交通：步行 · 交通约 15 分钟 · 活动约 75 分钟 · 保持轻松节奏，为长途返程留体力。", "mk": {"t": "无需预约", "c": "free"}}, {"at": "2026-10-07T11:00:00+00:00", "tz": "Atlantic/Reykjavik", "h": "回酒店整理行李、退房", "n": "市中心 → Canopy by Hilton Reykjavik City Centre · 交通：步行 · 交通约 15 分钟 · 活动约 65 分钟 · 提前约好机场送机车辆。", "mk": {"t": "按酒店退房时间", "c": "stay"}}, {"at": "2026-10-07T12:20:00+00:00", "tz": "Atlantic/Reykjavik", "h": "前往凯夫拉维克机场", "n": "Canopy by Hilton Reykjavik City Centre → KEF · 交通：出租车/包车 · 交通约 50 分钟 · 活动约 0 分钟 · 计划提前约3小时抵达机场。", "mk": {"t": "建议提前预约", "c": "need"}}, {"at": "2026-10-07T13:10:00+00:00", "tz": "Atlantic/Reykjavik", "h": "值机、托运、安检、候机", "n": "KEF航站楼 → 登机口 · 交通：步行 · 交通约 0 分钟 · 活动约 135 分钟 · 为国际航班留足手续时间。", "mk": {"t": "机票已出票", "c": "done"}}, {"at": "2026-10-07T15:25:00+00:00", "tz": "Atlantic/Reykjavik", "h": "登机", "n": "登机口 → 航班座位 · 交通：步行 · 交通约 0 分钟 · 活动约 45 分钟 · 16:10起飞。", "mk": {"t": "按登机牌执行", "c": "free"}}, {"at": "2026-10-07T16:10:00+00:00", "tz": "Atlantic/Reykjavik", "h": "FI454，抵达<a class=\"place\" target=\"_blank\" rel=\"noopener\" href=\"https://www.flight.info/FI454\">LHR T2</a>", "n": "KEF → LHR T2 · 交通：飞机 · 交通约 190 分钟 · 活动约 0 分钟 · 当前时刻表显示16:10起飞、20:20抵达T2，飞行约3小时10分。", "mk": {"t": "机票已出票", "c": "done"}, "l": "https://www.flight.info/FI454"}, {"at": "2026-10-07T20:20:00+01:00", "tz": "Europe/London", "h": "T2转T3，衔接HU7912", "n": "LHR T2 → LHR T3 · 交通：机场转机 · 交通约 0 分钟 · 活动约 100 分钟 · 只有1小时40分钟", "mk": null, "l": "https://www.heathrow.com/heathrow-blog/a-guide-to-connections"}, {"at": "2026-10-07T22:00:00+01:00", "tz": "Europe/London", "h": "HU7912，LHR T3→<a class=\"place\" target=\"_blank\" rel=\"noopener\" href=\"https://www.flight.info/HU7912\">HAK T2</a>", "n": "LHR T3 → HAK T2 · 交通：飞机 · 交通约 690 分钟 · 活动约 0 分钟 · 当前时刻表显示每周三22:00起飞，次日16:30抵达海口T2。", "mk": {"t": "机票已出票", "c": "done"}, "l": "https://www.flight.info/HU7912"}], "sum": "10.7 周三 · 8 项 · 雷克雅未克 · 雷克雅未克→KEF · 凯夫拉维克机场 · KEF→伦敦希思罗"}];
+const FLIGHTS = [{"dir": "意大利 → 冰岛", "date": "10/2 周五", "no": "VCE→KEF 直飞", "from": {"iata": "VCE", "city": "威尼斯马可·波罗", "at": "2026-10-02T15:55:00+02:00", "tz": "Europe/Rome"}, "to": {"iata": "KEF", "city": "凯夫拉维克", "at": "2026-10-02T18:30:00+00:00", "tz": "Atlantic/Reykjavik"}, "dur": "约 4h35m", "note": "VCE → KEF · 交通：飞机 · 交通约 275 分钟 · 活动约 0 分钟 · 当前航线时刻表显示15:55起飞，直飞约4小时35分；到达时间为冰岛当地时间。"}, {"dir": "冰岛 → 伦敦", "date": "10/7 周三", "no": "FI454", "from": {"iata": "KEF", "city": "凯夫拉维克", "at": "2026-10-07T16:10:00+00:00", "tz": "Atlantic/Reykjavik"}, "to": {"iata": "LHR", "city": "伦敦希思罗 T2", "at": "2026-10-07T20:20:00+01:00", "tz": "Europe/London"}, "dur": "约 3h10m", "note": "KEF → LHR T2 · 交通：飞机 · 交通约 190 分钟 · 活动约 0 分钟 · 当前时刻表显示16:10起飞、20:20抵达T2，飞行约3小时10分。"}, {"dir": "伦敦 → 海口", "date": "10/7 周三", "no": "HU7912", "from": {"iata": "LHR", "city": "伦敦希思罗 T3", "at": "2026-10-07T22:00:00+01:00", "tz": "Europe/London"}, "to": {"iata": "HAK", "city": "海口 T2", "at": "2026-10-08T16:30:00+08:00", "tz": "Asia/Shanghai"}, "dur": "约 18h30m", "note": "LHR T2 → LHR T3 · 交通：机场转机 · 交通约 0 分钟 · 活动约 100 分钟 · 只有1小时40分钟"}];
+
+const $ = (s) => document.querySelector(s);
+const fmtTime = (iso, tz) => new Intl.DateTimeFormat("zh-CN", {
+  timeZone: tz || TZ, hour: "2-digit", minute: "2-digit", hour12: false
+}).format(new Date(iso));
+
+$("#h-title").textContent = TRIP.emoji + " " + TRIP.title;
+$("#h-sub").textContent = TRIP.sub;
+$("#ov-lead").textContent = TRIP.lead;
+
+const EVENTS = [];
+DAYS.forEach((d) => d.items.forEach((it) => EVENTS.push({
+  t: new Date(it.at).getTime(),
+  title: it.h.replace(/<[^>]+>/g, ""),
+  note: it.n || "",
+  day: d,
+  tz: it.tz
+})));
+EVENTS.sort((a,b) => a.t - b.t);
+
+const pad = (v) => String(v).padStart(2, "0");
+function tick() {
+  const now = Date.now();
+  const next = EVENTS.find((e) => e.t > now);
+  if (!next) {
+    $("#n-title").textContent = "行程已结束";
+    $("#n-note").textContent = "";
+    $("#n-count").textContent = "完成 🇮🇹🇮🇸";
+    return;
+  }
+  $("#n-title").textContent = next.title;
+  $("#n-note").textContent = "D" + next.day.n + " · " + next.day.dd + " " + next.day.dw + " · " + (next.note || next.day.title);
+  let s = Math.floor((next.t - now) / 1000);
+  const dd = Math.floor(s / 86400); s -= dd * 86400;
+  const hh = Math.floor(s / 3600); s -= hh * 3600;
+  const mm = Math.floor(s / 60); s -= mm * 60;
+  $("#n-count").innerHTML = (dd > 0 ? dd + "天 " : "") + pad(hh) + ":" + pad(mm) + ":" + pad(s) + "<small>后</small>";
+}
+tick(); setInterval(tick, 1000);
+
+document.querySelectorAll('nav a').forEach((a) => {
+  a.addEventListener("click", (e) => {
+    const el = document.querySelector(a.getAttribute("href"));
+    if (el) { e.preventDefault(); el.scrollIntoView({ behavior: "smooth", block: "start" }); }
+  });
+});
+</script>
+</body>
+</html>
