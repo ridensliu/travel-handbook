@@ -394,7 +394,6 @@ def render_html(title, assumption, days, notes, packing, flights, chips):
         "title": title.replace("｜", " · ").split("·")[0].strip() if title else "意大利＋冰岛",
         "sub": assumption,
         "chips": chips,
-        "lead": assumption,
     }
 
     template = Path("/workspace/hokkaido/index.html").read_text(encoding="utf-8")
@@ -516,7 +515,6 @@ const FLIGHTS = {json.dumps(flights, ensure_ascii=False)};
 </nav>
 <section id="overview">
   <h2>🗺 行程总览</h2>
-  <p class="lead" id="ov-lead"></p>
   <div class="card mapbox">
     <svg viewBox="0 0 900 420" role="img" aria-label="意大利与冰岛路线概览">
       <defs><style>.ol{{fill:var(--mapland);stroke:var(--mapink);stroke-width:2}}.rt{{fill:none;stroke-width:4;stroke-linecap:round}}.lbl{{fill:var(--mapink);font:600 14px sans-serif}}</style></defs>
@@ -572,7 +570,6 @@ const fmtTime = (iso, tz) => new Intl.DateTimeFormat("zh-CN", {{
 
 $("#h-title").textContent = TRIP.emoji + " " + TRIP.title;
 $("#h-sub").textContent = TRIP.sub;
-$("#ov-lead").textContent = TRIP.lead;
 
 const EVENTS = [];
 DAYS.forEach((d) => d.items.forEach((it) => EVENTS.push({{

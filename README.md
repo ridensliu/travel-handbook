@@ -80,12 +80,18 @@ python3 scripts/generate_italy_iceland.py
 
 ### 线上地址
 
-部署完成后，公开 URL 为：
+**已上线**（push `main` 后 Cloudflare 自动部署）：
 
 ```text
-https://italy-iceland.<你的Cloudflare账号子域>.workers.dev
+https://travel-handbook.liu525962083.workers.dev
 ```
 
-> **待部署**：若尚未连接 Cloudflare，请按上文步骤在 Dashboard 完成一次性「Import a repository」，并将 Worker **Rename** 为 `italy-iceland`。备选：在 GitHub Secrets 配置 `CLOUDFLARE_API_TOKEN` 与 `CLOUDFLARE_ACCOUNT_ID`，并添加 `.github/workflows/deploy.yml`（内容见 Project 文档 `docs/cloudflare-deploy-steps.md`）后由 Actions 自动部署。
+备用 workers.dev 子域（与 `wrangler.jsonc` 中 `name: italy-iceland` 一致）：
+
+```text
+https://italy-iceland.liu525962083.workers.dev
+```
+
+> Cloud Agent 自动化部署需在 Cursor Secrets 配置 `CLOUDFLARE_API_TOKEN`（Workers Scripts: Edit）与 `CLOUDFLARE_ACCOUNT_ID`。
 
 <!-- last verified: 2026-09-16 -->
