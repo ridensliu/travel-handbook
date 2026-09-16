@@ -86,6 +86,6 @@ python3 scripts/generate_italy_iceland.py
 https://italy-iceland.<你的Cloudflare账号子域>.workers.dev
 ```
 
-> **待部署**：若尚未连接 Cloudflare，请按上文步骤在 Dashboard 完成一次性「Import a repository」，并将 Worker **Rename** 为 `italy-iceland`。也可在 GitHub 仓库 Secrets 中配置 `CLOUDFLARE_API_TOKEN` 与 `CLOUDFLARE_ACCOUNT_ID`，由 [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) 自动部署。
+> **待部署**：若尚未连接 Cloudflare，请按上文步骤在 Dashboard 完成一次性「Import a repository」，并将 Worker **Rename** 为 `italy-iceland`。备选：在 GitHub Secrets 配置 `CLOUDFLARE_API_TOKEN` 与 `CLOUDFLARE_ACCOUNT_ID`，并添加 `.github/workflows/deploy.yml`（内容见 Project 文档 `docs/cloudflare-deploy-steps.md`）后由 Actions 自动部署。
 
 <!-- last verified: 2026-09-16 -->
