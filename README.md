@@ -80,18 +80,14 @@ python3 scripts/generate_italy_iceland.py
 
 ### 线上地址
 
-**已上线**（push `main` 后 Cloudflare 自动部署）：
-
-```text
-https://travel-handbook.liu525962083.workers.dev
-```
-
-备用 workers.dev 子域（与 `wrangler.jsonc` 中 `name: italy-iceland` 一致）：
+**当前可用**（GitHub `main` push 后 Cloudflare 自动部署至 `italy-iceland` Worker）：
 
 ```text
 https://italy-iceland.liu525962083.workers.dev
 ```
 
+Dashboard 中 Worker 名 `travel-handbook`（与 `wrangler.jsonc` 中 `name` 一致）；若该子域尚未生效，请先在 Cloudflare 将 GitHub 连接指向 `travel-handbook` Worker 或执行一次 `npx wrangler deploy`。
+
 > Cloud Agent 自动化部署需在 Cursor Secrets 配置 `CLOUDFLARE_API_TOKEN`（Workers Scripts: Edit）与 `CLOUDFLARE_ACCOUNT_ID`。
 
-<!-- last verified: 2026-09-16 -->
+<!-- last verified: 2026-09-16 — duplicate 行程假设已移除，ov-lead 不存在 -->
