@@ -401,7 +401,7 @@ def render_html(title, assumption, days, notes, packing, flights, chips):
     # Build new file from hokkaido template structure but replace content sections
     # Safer: write complete HTML using same CSS from template
     css_end = template.index("</style>")
-    css = template[template.index("<style>") : css_end + len("</style>")]
+    css = template[template.index("<style>") : css_end]
 
     nav_links = [
         ('overview', '🗺 总览'),
