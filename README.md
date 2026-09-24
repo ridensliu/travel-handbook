@@ -91,3 +91,7 @@ Dashboard 中 Worker 名 `travel-handbook`（与 `wrangler.jsonc` 中 `name` 一
 > Cloud Agent 自动化部署需在 Cursor Secrets 配置 `CLOUDFLARE_API_TOKEN`（Workers Scripts: Edit）与 `CLOUDFLARE_ACCOUNT_ID`。
 
 <!-- last verified: 2026-09-16 — duplicate 行程假设已移除，ov-lead 不存在 -->
+
+## 当前更新与部署约定（2026-09-24）
+
+后续默认只同步 GitHub 与硅谷，香港保留旧页面。最新餐饮版行程及发布路径见 [部署说明](docs/deployment.md)。上文生成器是旧版，不能直接重建当前新版网页。
