@@ -1,0 +1,388 @@
+{
+  "reason": "用户确认：26删去碧提宫，27上午前往碧提宫，27删去乔托钟楼；参观与餐厅错开，优先餐厅",
+  "days": [
+    {
+      "n": 2,
+      "date": "2026-09-26",
+      "dd": "9.26",
+      "dw": "周六",
+      "color": "var(--d2)",
+      "title": "佛罗伦萨",
+      "route": "",
+      "regions": [],
+      "items": [
+        {
+          "at": "2026-09-26T08:45:00+02:00",
+          "tz": "Europe/Rome",
+          "h": "旧宫 Palazzo Vecchio：五百人大厅、米开朗基罗《胜利》、多纳泰罗《朱迪斯与赫罗弗尼斯》等",
+          "n": "计划至 09:50 · 08:45抵达旧宫，09:00按预约进入；重点看五百人大厅和核心房间，09:50前往塔楼入口。",
+          "mk": {
+            "t": "已预约09:00",
+            "c": "done"
+          },
+          "sourceRow": 17,
+          "displayTime": "08:45",
+          "l": "https://musefirenze.it/musei/museo-di-palazzo-vecchio/",
+          "endAt": "2026-09-26T09:50:00+02:00"
+        },
+        {
+          "at": "2026-09-26T10:00:00+02:00",
+          "tz": "Europe/Rome",
+          "h": "阿诺尔福塔楼 Torre di Arnolfo＋城垛步道",
+          "n": "计划至 11:00 · 10:00预约登塔；塔楼无电梯。参观后留出前往餐厅的时间；天气限制以现场为准。",
+          "mk": {
+            "t": "已预约10:00",
+            "c": "done"
+          },
+          "sourceRow": 18,
+          "displayTime": "10:00",
+          "l": "https://musefirenze.it/musei/museo-di-palazzo-vecchio/",
+          "endAt": "2026-09-26T11:00:00+02:00"
+        },
+        {
+          "at": "2026-09-26T11:00:00+02:00",
+          "endAt": "2026-09-26T11:45:00+02:00",
+          "tz": "Europe/Rome",
+          "displayTime": "11:00",
+          "h": "前往 Osteria Vecchio Vicolo",
+          "n": "计划至 11:45 · 旧宫 → Osteria Vecchio Vicolo · 步行及候位缓冲；12:00午餐预约优先。",
+          "mk": null,
+          "sourceRow": null,
+          "adjustmentSource": "用户确认：餐厅优先，调整参观与转场"
+        },
+        {
+          "at": "2026-09-26T12:00:00+02:00",
+          "endAt": "2026-09-26T13:15:00+02:00",
+          "tz": "Europe/Rome",
+          "displayTime": "12:00",
+          "h": "osteria vecchio vicolo",
+          "n": "计划至 13:15 · 预约12:00（当地时间） · 2人 · 海鲜意面 · 用餐结束时间仅为行程预留，不是餐厅确认内容。",
+          "mk": {
+            "t": "已预约 · 2人",
+            "c": "done"
+          },
+          "sourceRow": null,
+          "adjustmentSource": "docs/restaurant-reservations.md"
+        },
+        {
+          "at": "2026-09-26T13:15:00+02:00",
+          "endAt": "2026-09-26T14:20:00+02:00",
+          "tz": "Europe/Rome",
+          "displayTime": "13:15",
+          "h": "午休、自由活动",
+          "n": "计划至 14:20 · 午餐后休息，14:20出发前往乌菲兹。",
+          "mk": null,
+          "sourceRow": null,
+          "adjustmentSource": "用户确认：餐厅优先，调整参观与转场"
+        },
+        {
+          "at": "2026-09-26T14:20:00+02:00",
+          "endAt": "2026-09-26T14:45:00+02:00",
+          "tz": "Europe/Rome",
+          "displayTime": "14:20",
+          "h": "前往乌菲兹美术馆",
+          "n": "计划至 14:45 · 预留步行及入口查找时间，14:45到场，为15:00参观留缓冲。",
+          "mk": null,
+          "sourceRow": null,
+          "adjustmentSource": "用户确认：餐厅优先，调整参观与转场"
+        },
+        {
+          "at": "2026-09-26T15:00:00+02:00",
+          "tz": "Europe/Rome",
+          "h": "乌菲兹美术馆",
+          "n": "计划至 17:00 · 保留原15:00时段；重点参观波提切利、达·芬奇等作品。17:00离馆前往圣马可修道院。",
+          "mk": {
+            "t": "必须提前预约",
+            "c": "need"
+          },
+          "sourceRow": 20,
+          "displayTime": "15:00",
+          "l": "https://www.uffizi.it/en/the-uffizi",
+          "endAt": "2026-09-26T17:00:00+02:00"
+        },
+        {
+          "at": "2026-09-26T17:00:00+02:00",
+          "endAt": "2026-09-26T17:30:00+02:00",
+          "tz": "Europe/Rome",
+          "displayTime": "17:00",
+          "h": "前往圣马可修道院",
+          "n": "计划至 17:30 · 乌菲兹 → 圣马可修道院 · 转场预留30分钟；视现场交通选择步行或出租车。",
+          "mk": null,
+          "sourceRow": null,
+          "adjustmentSource": "用户确认：餐厅优先，调整参观与转场"
+        },
+        {
+          "at": "2026-09-26T17:30:00+02:00",
+          "tz": "Europe/Rome",
+          "h": "圣马可修道院：安杰利科《圣母领报》、修士单人房壁画、米开罗佐图书馆",
+          "n": "计划至 18:10 · 按新版Excel所列9/26特别开放14:30–18:30安排；重点看《圣母领报》与修士单人房壁画。若排队或转场延误，缩短参观以保证晚餐。",
+          "mk": {
+            "t": "无需预约（Firenze Card）",
+            "c": "free"
+          },
+          "sourceRow": 19,
+          "displayTime": "17:30",
+          "l": "https://museitoscana.cultura.gov.it/luoghi_della_cultura/museo_di_san_marco/",
+          "endAt": "2026-09-26T18:10:00+02:00"
+        },
+        {
+          "at": "2026-09-26T18:10:00+02:00",
+          "tz": "Europe/Rome",
+          "h": "前往米开朗琪罗广场",
+          "n": "计划至 18:45 · 圣马可修道院 → 米开朗琪罗广场 · 建议出租车，预留35分钟；交通延误时缩短观景。",
+          "mk": {
+            "t": "无需预约",
+            "c": "free"
+          },
+          "sourceRow": 21,
+          "displayTime": "18:10",
+          "endAt": "2026-09-26T18:45:00+02:00"
+        },
+        {
+          "at": "2026-09-26T18:45:00+02:00",
+          "tz": "Europe/Rome",
+          "h": "米开朗琪罗广场看日落",
+          "n": "计划至 19:15 · 广场观景；日落参考原表约19:05。19:15结束，不再等完整蓝调，优先20:15晚餐。",
+          "mk": {
+            "t": "无需预约",
+            "c": "free"
+          },
+          "sourceRow": 22,
+          "displayTime": "18:45",
+          "l": "https://www.timeanddate.com/sun/italy/firenze?month=9",
+          "endAt": "2026-09-26T19:15:00+02:00"
+        },
+        {
+          "at": "2026-09-26T19:15:00+02:00",
+          "endAt": "2026-09-26T20:15:00+02:00",
+          "tz": "Europe/Rome",
+          "displayTime": "19:15",
+          "h": "前往 ristorante tullio a montebeni",
+          "n": "计划至 20:15 · 建议提前安排出租车，预留60分钟含候车缓冲；如交通不顺，提前结束观景。",
+          "mk": null,
+          "sourceRow": null,
+          "adjustmentSource": "用户确认：餐厅优先，调整参观与转场"
+        },
+        {
+          "at": "2026-09-26T20:15:00+02:00",
+          "tz": "Europe/Rome",
+          "h": "ristorante tullio a montebeni",
+          "n": "计划至 21:30 · 保留原20:15晚餐计划 · 牛排 · 预约仍待确认；结束时间为用餐预留。",
+          "mk": {
+            "t": "预约待确认",
+            "c": "need"
+          },
+          "sourceRow": 23,
+          "displayTime": "20:15",
+          "endAt": "2026-09-26T21:30:00+02:00"
+        }
+      ],
+      "sum": "9.26 周六 · 13 项 · 餐厅优先，已预留转场"
+    },
+    {
+      "n": 3,
+      "date": "2026-09-27",
+      "dd": "9.27",
+      "dw": "周日",
+      "color": "var(--d3)",
+      "title": "佛罗伦萨",
+      "route": "",
+      "regions": [],
+      "items": [
+        {
+          "at": "2026-09-27T07:45:00+02:00",
+          "tz": "Europe/Rome",
+          "h": "前往碧提宫",
+          "n": "计划至 08:15 · 市中心酒店 → 碧提宫 · 预留30分钟步行及入场缓冲。",
+          "mk": {
+            "t": "Firenze Card",
+            "c": "free"
+          },
+          "sourceRow": 24,
+          "displayTime": "07:45",
+          "endAt": "2026-09-27T08:15:00+02:00"
+        },
+        {
+          "at": "2026-09-27T08:15:00+02:00",
+          "tz": "Europe/Rome",
+          "h": "碧提宫：帕拉蒂娜画廊等核心展区",
+          "n": "计划至 09:55 · 碧提宫核心展区参观100分钟，重点帕拉蒂娜画廊；09:55转往花园，保留11:15午餐时间。",
+          "mk": {
+            "t": "Firenze Card",
+            "c": "free"
+          },
+          "sourceRow": 25,
+          "displayTime": "08:15",
+          "l": "https://www.uffizi.it/en/pitti-palace",
+          "endAt": "2026-09-27T09:55:00+02:00"
+        },
+        {
+          "at": "2026-09-27T09:55:00+02:00",
+          "endAt": "2026-09-27T10:00:00+02:00",
+          "tz": "Europe/Rome",
+          "displayTime": "09:55",
+          "h": "前往波波里花园",
+          "n": "计划至 10:00 · 碧提宫 → 波波里花园 · 预留5分钟，按现场通道进入。",
+          "mk": null,
+          "sourceRow": null,
+          "adjustmentSource": "用户确认：餐厅优先，调整参观与转场"
+        },
+        {
+          "at": "2026-09-27T10:00:00+02:00",
+          "tz": "Europe/Rome",
+          "h": "波波里花园：圆形剧场及附近区域",
+          "n": "计划至 10:40 · 花园快速参观40分钟，优先圆形剧场及附近区域；不走完整柏树林大道，10:40离园前往午餐。",
+          "mk": {
+            "t": "Firenze Card",
+            "c": "free"
+          },
+          "sourceRow": 26,
+          "displayTime": "10:00",
+          "l": "https://www.uffizi.it/en/boboli-garden",
+          "endAt": "2026-09-27T10:40:00+02:00"
+        },
+        {
+          "at": "2026-09-27T10:40:00+02:00",
+          "endAt": "2026-09-27T11:15:00+02:00",
+          "tz": "Europe/Rome",
+          "displayTime": "10:40",
+          "h": "前往 panini toscani",
+          "n": "计划至 11:15 · 波波里花园 → panini toscani · 步行预留35分钟，餐厅时间优先；若出口绕行则提前离园或乘车。",
+          "mk": null,
+          "sourceRow": null,
+          "adjustmentSource": "用户确认：餐厅优先，调整参观与转场"
+        },
+        {
+          "at": "2026-09-27T11:15:00+02:00",
+          "tz": "Europe/Rome",
+          "h": "panini toscani",
+          "n": "计划至 11:55 · 保留原午餐时间 · 披萨和开心果酱制品 · 无预约，若排队选择外带；12:45穹顶时段不变。",
+          "mk": {
+            "t": "无需预约",
+            "c": "free"
+          },
+          "sourceRow": 27,
+          "displayTime": "11:15",
+          "endAt": "2026-09-27T11:55:00+02:00"
+        },
+        {
+          "at": "2026-09-27T11:55:00+02:00",
+          "tz": "Europe/Rome",
+          "h": "休息、前往穹顶入口",
+          "n": "计划至 12:25 · 午餐后短休息、前往穹顶入口；12:25到场候检，避免吃得过饱。",
+          "mk": {
+            "t": "无需预约",
+            "c": "free"
+          },
+          "sourceRow": 28,
+          "displayTime": "11:55",
+          "endAt": "2026-09-27T12:25:00+02:00"
+        },
+        {
+          "at": "2026-09-27T12:45:00+02:00",
+          "tz": "Europe/Rome",
+          "h": "圣母百花教堂穹顶登顶",
+          "n": "计划至 14:05 · 保留原12:45穹顶时段，提前20分钟到场；通票姓名与证件信息需一致。",
+          "mk": {
+            "t": "必须提前锁定12:45时段",
+            "c": "need"
+          },
+          "sourceRow": 29,
+          "displayTime": "12:45",
+          "l": "https://tickets.duomo.firenze.it/en/support/service",
+          "endAt": "2026-09-27T14:05:00+02:00"
+        },
+        {
+          "at": "2026-09-27T14:05:00+02:00",
+          "tz": "Europe/Rome",
+          "h": "前往圣十字圣殿",
+          "n": "计划至 14:25 · 圣母百花教堂 → 圣十字圣殿 · 步行及入口查找预留20分钟。",
+          "mk": {
+            "t": "无需线上预约",
+            "c": "free"
+          },
+          "sourceRow": 30,
+          "displayTime": "14:05",
+          "l": "https://www.santacroceopera.it/en/organise-your-visit/",
+          "endAt": "2026-09-27T14:25:00+02:00"
+        },
+        {
+          "at": "2026-09-27T14:25:00+02:00",
+          "tz": "Europe/Rome",
+          "h": "圣十字圣殿：米开朗基罗、伽利略等名人墓＋乔托壁画＋多纳泰罗作品",
+          "n": "计划至 15:50 · 参观85分钟，重点名人墓、乔托壁画及多纳泰罗作品；按新版表说明当日现场取免费票、仅圣殿主体开放。15:50离开前往16:30餐厅预约。",
+          "mk": {
+            "t": "无需预约；现场领取免费票",
+            "c": "free"
+          },
+          "sourceRow": 31,
+          "displayTime": "14:25",
+          "l": "https://www.santacroceopera.it/en/organise-your-visit/",
+          "endAt": "2026-09-27T15:50:00+02:00"
+        },
+        {
+          "at": "2026-09-27T15:50:00+02:00",
+          "endAt": "2026-09-27T16:30:00+02:00",
+          "tz": "Europe/Rome",
+          "displayTime": "15:50",
+          "h": "前往 locanda de medici",
+          "n": "计划至 16:30 · 圣十字圣殿 → locanda de medici · 预留40分钟步行及候位缓冲；遇排队缩短圣殿参观。",
+          "mk": null,
+          "sourceRow": null,
+          "adjustmentSource": "用户确认：餐厅优先，调整参观与转场"
+        },
+        {
+          "at": "2026-09-27T16:30:00+02:00",
+          "tz": "Europe/Rome",
+          "h": "locanda de medici",
+          "n": "计划至 17:45 · 预约16:30（当地时间） · 2人 · 披萨意面 · 用餐结束时间仅为行程预留，不是餐厅确认内容。",
+          "mk": {
+            "t": "已预约 · 2人",
+            "c": "done"
+          },
+          "sourceRow": 32,
+          "displayTime": "16:30",
+          "endAt": "2026-09-27T17:45:00+02:00"
+        },
+        {
+          "at": "2026-09-27T17:45:00+02:00",
+          "tz": "Europe/Rome",
+          "h": "回酒店休息、整理行李",
+          "n": "计划至 20:30 · 用餐后返回酒店休息、整理次日行李；20:30出发前往Regina Bistecca。",
+          "mk": {
+            "t": "无需预约",
+            "c": "free"
+          },
+          "sourceRow": 33,
+          "displayTime": "17:45",
+          "endAt": "2026-09-27T20:30:00+02:00"
+        },
+        {
+          "at": "2026-09-27T20:30:00+02:00",
+          "endAt": "2026-09-27T21:15:00+02:00",
+          "tz": "Europe/Rome",
+          "displayTime": "20:30",
+          "h": "前往 Regina Bistecca",
+          "n": "计划至 21:15 · 酒店 → Regina Bistecca · 预留45分钟转场及候位缓冲，21:15预约不变。",
+          "mk": null,
+          "sourceRow": null,
+          "adjustmentSource": "用户确认：餐厅优先，调整参观与转场"
+        },
+        {
+          "at": "2026-09-27T21:15:00+02:00",
+          "tz": "Europe/Rome",
+          "h": "Regina Bistecca",
+          "n": "计划至 22:30 · 预约21:15（当地时间） · 2人 · 牛排 · 用餐结束时间仅为行程预留，不是餐厅确认内容。",
+          "mk": {
+            "t": "已预约 · 2人",
+            "c": "done"
+          },
+          "sourceRow": 34,
+          "displayTime": "21:15",
+          "endAt": "2026-09-27T22:30:00+02:00"
+        }
+      ],
+      "sum": "9.27 周日 · 15 项 · 餐厅优先，已预留转场"
+    }
+  ]
+}
