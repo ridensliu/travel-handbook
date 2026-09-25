@@ -12,8 +12,8 @@
 
 ## 地点导航（2026-09-25）
 
-- 明确地点名称使用 Apple 官方 Map Links：`https://maps.apple.com/?daddr=...`，不固定起点或交通方式，由地图从当前位置规划路线；iOS 打开 Apple 地图，开始逐向导航需在地图内确认。
+- 明确地点名称使用 Google Maps 通用路线链接：`https://www.google.com/maps/dir/?api=1&destination=...&dir_action=navigate`，不固定起点或交通方式，由 Google Maps 按设备位置规划并尝试开始导航；iPhone 已安装 Google Maps 时唤起 App，否则在浏览器打开。
 - 地点与导航查询名在 `docs/navigation-places.json`；中文景点采用当地名称并添加国家/城市，未确认的酒店、接客点不推测地址。查询名不等同于已核验坐标，具体集合点仍按订单。
 - `scripts/link_navigation.py` 只给可见文字加链接，保留现有参考链接和行程数据；可重复执行。修改现有映射后需同步修改已有链接（脚本跳过已有链接）。
 - 验证：`python3 -m unittest discover -s tests`；发布前检查 13 天、134 条活动（含新增转场和用餐安排）、手机横向溢出、链接目的地及公网 SHA256。
-- 协议依据：https://developer.apple.com/library/archive/featuredarticles/iPhoneURLScheme_Reference/MapLinks/MapLinks.html
+- 协议依据：https://developers.google.com/maps/documentation/urls/get-started

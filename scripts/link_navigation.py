@@ -35,9 +35,9 @@ def link_places(page, places):
                     if (start and token[start-1].isascii() and token[start-1].isalnum()) or (end<len(token) and token[end].isascii() and token[end].isalnum()):
                         return name
                 destination = lookup[name.lower()]
-                url = 'https://maps.apple.com/?daddr=' + quote(destination, safe='')
+                url = 'https://www.google.com/maps/dir/?api=1&destination=' + quote(destination, safe='') + '&dir_action=navigate'
                 label = html.escape('导航至' + html.unescape(name), quote=True)
-                return f'<a class="place" href="{url}" aria-label="{label}" title="从当前位置导航">{name}</a>'
+                return f'<a class="place" href="{url}" aria-label="{label}" title="使用 Google Maps 导航">{name}</a>'
             result.append(pattern.sub(replace, token))
     return ''.join(result)
 

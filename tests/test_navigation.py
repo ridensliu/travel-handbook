@@ -23,8 +23,12 @@ class NavigationTest(unittest.TestCase):
             found=[a for a,t in links if t==name and 'place' in a.get('class','')]
             self.assertTrue(found, name+' must be navigable')
             for a in found:
-                u=urlparse(a['href']); self.assertEqual(u.netloc,'maps.apple.com')
-                self.assertTrue(parse_qs(u.query).get('daddr'))
+                u=urlparse(a['href']); self.assertEqual(u.netloc,'www.google.com')
+                self.assertEqual(u.path,'/maps/dir/')
+                query=parse_qs(u.query)
+                self.assertEqual(query.get('api'),['1'])
+                self.assertTrue(query.get('destination'))
+                self.assertEqual(query.get('dir_action'),['navigate'])
                 self.assertNotIn('target',a)
     def test_no_placeholder_navigation(self):
         for a,t in Links(PAGE.read_text()).links:
